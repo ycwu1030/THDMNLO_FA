@@ -66,17 +66,38 @@ gamma/: RenormalizationInfo[gamma,mu_:mu]:={FieldNormalization[{Z,A}],QuantumFie
 
 (*Here I used the SUNIndex place to hold the flavor and Color Index, *)
 (*So they should be treated properly to avoid some automatical calculation within the SU(N) Group by FeynCalc*)
-QL[i_,c_]:=PL*{SumOver[jUpL,NF]*UU[i,jUpL]*QuantumField[FUp,{},{jUpL,c}],SumOver[jDownL,NF]*UD[i,jDownL]*QuantumField[FDown[jDownL,c]]};
-QLbar[i_,c_]:=PR*{SumOver[jUpLbar,NF]*UUC[i,jUpLbar]*QuantumField[FUpbar,{},{jUpLbar,c}],SumOver[jDownLbar,NF]*UDC[i,jDownLbar]*QuantumField[FDownbar,{},{jDownLbar,c}]};
+Bar[f_[args___]]:=f[args]/.{PL->PR,SumOver[j_,n_]:>SumOver[ToExpression[ToString[j]<>"bar"],n],
+UU[i_,j_]:>UUC[i,ToExpression[ToString[j]<>"bar"]],UD[i_,j_]:>UDC[i,ToExpression[ToString[j]<>"bar"]],
+QuantumField[FF_,{},{j_,c_}]:>QuantumField[HCbar[FF],{},{ToExpression[ToString[j]<>"bar"],c}],
+QuantumField[FF_,{},{j_}]:>QuantumField[HCbar[FF],{},{j}]
+};
+
+QL[i_,c_]:=PL*{SumOver[jUpL,NF]*UU[i,jUpL]*QuantumField[FUp,{},{jUpL,c}],SumOver[jDownL,NF]*UD[i,jDownL]*QuantumField[FDown,{},{jDownL,c}]};
+(*QLbar[i_,c_]:=PR*{SumOver[jUpLbar,NF]*UUC[i,jUpLbar]*QuantumField[FUpbar,{},{jUpLbar,c}],SumOver[jDownLbar,NF]*UDC[i,jDownLbar]*QuantumField[FDownbar,{},{jDownLbar,c}]};*)
 
 UR[i_,c_]:=PR*SumOver[jUR,NF]*UU[i,jUR]*QuantumField[FUp,{},{jUR,c}];
-URbar[i_,c_]:=PL*SumOver[jURbar,NF]*UUC[i,jURbar]*QuantumField[FUpbar,{},{jURbar,c}];
+(*URbar[i_,c_]:=PL*SumOver[jURbar,NF]*UUC[i,jURbar]*QuantumField[FUpbar,{},{jURbar,c}];*)
 
 DR[i_,c_]:=PR*SumOver[jDR,NF]*UD[i,jDR]*QuantumField[FDown,{},{jDR,c}];
-DRbar[i_,c_]:=PL*SumOver[jDRbar,NF]*UDC[i,jDRbar]*QuantumField[FDownbar,{},{jDRbar,c}];
+(*DRbar[i_,c_]:=PL*SumOver[jDRbar,NF]*UDC[i,jDRbar]*QuantumField[FDownbar,{},{jDRbar,c}];*)
 
 LL[i_]:=PL*{QuantumField[FNu,{},{i}],QuantumField[Fe,{},{i}]};
-LLbar[i_]:=PR*{QuantumField[FNubar,{},{i}],QuantumField[Febar,{},{i}]};
+(*LLbar[i_]:=PR*{QuantumField[FNubar,{},{i}],QuantumField[Febar,{},{i}]};*)
 
 eR[i_]:=PR*QuantumField[Fe,{},{i}];
-eRbar[i_]:=PL*QuantumField[Febar,{},{i}];
+(*eRbar[i_]:=PL*QuantumField[Febar,{},{i}];*)
+
+HCbar/:RenormalizationInfoFL[HCbar[f_],flavor_,c___]:=RenormalizationInfoFL[f,flavor,c]/.{f->HCbar[f]};
+HCbar/:RenormalizationInfoFR[HCbar[f_],flavor_,c___]:=RenormalizationInfoFR[f,flavor,c]/.{f->HCbar[f]};
+
+FNu/:RenormalizationInfoFL[FNu,flavor_]:={#1,QuantumField[FNu,{},{#2}]}&@@FieldNormalizationFL[1,flavor];
+
+Fe/:RenormalizationInfoFL[Fe,flavor_]:={#1,QuantumField[Fe,{},{#2}]}&@@FieldNormalizationFL[2,flavor];
+Fe/:RenormalizationInfoFR[Fe,flavor_]:={#1,QuantumField[Fe,{},{#2}]}&@@FieldNormalizationFR[2,flavor];
+
+FUp/:RenormalizationInfoFL[FUp,flavor_,c_]:={#1,QuantumField[FUp,{},{#2,c}]}&@@FieldNormalizationFL[3,flavor];
+FUp/:RenormalizationInfoFR[FUp,flavor_,c_]:={#1,QuantumField[FUp,{},{#2,c}]}&@@FieldNormalizationFR[3,flavor];
+
+FDown/:RenormalizationInfoFL[FDown,flavor_,c_]:={#1,QuantumField[FDown,{},{#2,c}]}&@@FieldNormalizationFL[4,flavor];
+FDown/:RenormalizationInfoFR[FDown,flavor_,c_]:={#1,QuantumField[FDown,{},{#2,c}]}&@@FieldNormalizationFR[4,flavor];
+
