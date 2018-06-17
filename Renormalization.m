@@ -17,7 +17,10 @@ internal=Unique["jFR"];
 {SumOver[internal,NF]*IndexDelta[flavor,internal]+SumOver[internal,NF]*dZfR[category,flavor,internal]/2,internal}]
 
 
-RenormalizedFermion[f_,flavor_,c___]:=PL*Times@@RenormalizationInfoFL[f,flavor,c]+PR*Times@@RenormalizationInfoFR[f,flavor,c];
-HCbar/:Renormalized[HCbar[f_],flavor_,c___]:=PR*Times@@RenormalizationInfoFL[HCbar[f],flavor,c]+PL*Times@@RenormalizationInfoFR[HCbar[f],flavor,c];
+RenormalizedFermion[f_,flavor_,c___]:=PL*Times@@(RenormalizationInfoFL[f,flavor,c][[1;;2]])+PR*Times@@(RenormalizationInfoFR[f,flavor,c][[1;;2]]);
+HCbar/:Renormalized[HCbar[f_],flavor_,c___]:=PR*Times@@(RenormalizationInfoFL[HCbar[f],flavor,c][[1;;2]])+PL*Times@@(RenormalizationInfoFR[HCbar[f],flavor,c][[1;;2]]);
 (*RenormalizedFL[f_,flavor_,c___]:=Times@@RenormalizationInfoFL[f,flavor,c];
 RenormalizedFR[f_,flavor_,c___]:=Times@@RenormalizationInfoFR[f,flavor,c];*)
+
+
+RenormalizedField[f_,index___]:=Which[FieldType[f]==TypeFermion,RenormalizedFermion[f,index],FieldType[f]==TypeBoson,RenormalizedBoson[f,index]];

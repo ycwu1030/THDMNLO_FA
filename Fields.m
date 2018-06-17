@@ -3,6 +3,11 @@
 Needs["FeynCalc`"];
 
 
+(**)
+TypeFermion=1;
+TypeBoson=2;
+
+
 (*Scalar Fields and their renormalization*)
 
 (*Scalar Fields at Tree level*)
@@ -28,17 +33,25 @@ v2=vev Sin[beta];
 
 
 (*Field Renormalization*)
-HH /: RenormalizationInfo[HH] := {FieldNormalization[{HH,HL}], QuantumField/@(Subscript[#,R]&/@{HH, HL}), 1};
-HL /: RenormalizationInfo[HL] := {FieldNormalization[{HH,HL}], QuantumField/@(Subscript[#,R]&/@{HH, HL}), 2};
+HH /: RenormalizationInfo[HH] := {FieldNormalization[{HH,HL}], QuantumField/@(Subscript[#,R]&/@{HH, HL}), 1,TypeBoson};
+HL /: RenormalizationInfo[HL] := {FieldNormalization[{HH,HL}], QuantumField/@(Subscript[#,R]&/@{HH, HL}), 2,TypeBoson};
+HH /: FieldType[HH] := TypeBoson;
+HL /: FieldType[HL] := TypeBoson;
 
-G0/: RenormalizationInfo[G0]:={FieldNormalization[{G0,HA}],QuantumField/@(Subscript[#,R]&/@{G0,HA}),1};
-HA/: RenormalizationInfo[HA]:={FieldNormalization[{G0,HA}],QuantumField/@(Subscript[#,R]&/@{G0,HA}),2};
+G0/: RenormalizationInfo[G0]:={FieldNormalization[{G0,HA}],QuantumField/@(Subscript[#,R]&/@{G0,HA}),1,TypeBoson};
+HA/: RenormalizationInfo[HA]:={FieldNormalization[{G0,HA}],QuantumField/@(Subscript[#,R]&/@{G0,HA}),2,TypeBoson};
+G0 /: FieldType[G0] := TypeBoson;
+HA /: FieldType[HA] := TypeBoson;
 
-Gp/: RenormalizationInfo[Gp]:={FieldNormalization[{Gp,Hp}],QuantumField/@(Subscript[#,R]&/@{Gp,Hp}),1};
-Hp/: RenormalizationInfo[Hp]:={FieldNormalization[{Gp,Hp}],QuantumField/@(Subscript[#,R]&/@{Gp,Hp}),2};
+Gp/: RenormalizationInfo[Gp]:={FieldNormalization[{Gp,Hp}],QuantumField/@(Subscript[#,R]&/@{Gp,Hp}),1,TypeBoson};
+Hp/: RenormalizationInfo[Hp]:={FieldNormalization[{Gp,Hp}],QuantumField/@(Subscript[#,R]&/@{Gp,Hp}),2,TypeBoson};
+Gp /: FieldType[Gp] := TypeBoson;
+Hp /: FieldType[Hp] := TypeBoson;
 
-Gm/: RenormalizationInfo[Gm]:={FieldNormalization[{Gp,Hp}],QuantumField/@(Subscript[#,R]&/@{Gm,Hm}),1};
-Hm/: RenormalizationInfo[Hm]:={FieldNormalization[{Gp,Hp}],QuantumField/@(Subscript[#,R]&/@{Gm,Hm}),2};
+Gm/: RenormalizationInfo[Gm]:={FieldNormalization[{Gp,Hp}],QuantumField/@(Subscript[#,R]&/@{Gm,Hm}),1,TypeBoson};
+Hm/: RenormalizationInfo[Hm]:={FieldNormalization[{Gp,Hp}],QuantumField/@(Subscript[#,R]&/@{Gm,Hm}),2,TypeBoson};
+Gm /: FieldType[Gm] := TypeBoson;
+Hm /: FieldType[Hm] := TypeBoson;
 
 
 (*Gauge Fields and their renormalization*)
@@ -55,18 +68,22 @@ BB[mu_]:=SW QuantumField[Z,{mu}]+CW QuantumField[gamma,{mu}];
 
 
 (*Field Renormalization*)
-Wp/: RenormalizationInfo[Wp,mu_:mu]:={FieldNormalization[{W,W}],{QuantumField[Subscript[Wp,R],{mu}],0},1};
-Wm/: RenormalizationInfo[Wm,mu_:mu]:={FieldNormalization[{W,W}],{QuantumField[Subscript[Wm,R],{mu}],0},1};
+Wp/: RenormalizationInfo[Wp,mu_:mu]:={FieldNormalization[{W,W}],{QuantumField[Subscript[Wp,R],{mu}],0},1,TypeBoson};
+Wm/: RenormalizationInfo[Wm,mu_:mu]:={FieldNormalization[{W,W}],{QuantumField[Subscript[Wm,R],{mu}],0},1,TypeBoson};
+Wp /: FieldType[Wp] := TypeBoson;
+Wm /: FieldType[Wm] := TypeBoson;
 
-Z/: RenormalizationInfo[Z,mu_:mu]:={FieldNormalization[{Z,A}],QuantumField[#,{mu}]&/@(Subscript[#,R]&/@{Z,gamma}),1};
-gamma/: RenormalizationInfo[gamma,mu_:mu]:={FieldNormalization[{Z,A}],QuantumField[#,{mu}]&/@(Subscript[#,R]&/@{Z,gamma}),2};
+Z/: RenormalizationInfo[Z,mu_:mu]:={FieldNormalization[{Z,A}],QuantumField[#,{mu}]&/@(Subscript[#,R]&/@{Z,gamma}),1,TypeBoson};
+gamma/: RenormalizationInfo[gamma,mu_:mu]:={FieldNormalization[{Z,A}],QuantumField[#,{mu}]&/@(Subscript[#,R]&/@{Z,gamma}),2,TypeBoson};
+Z /: FieldType[Z] := TypeBoson;
+gamma /: FieldType[gamma] := TypeBoson;
 
 
 (*Fermion Field and their renormalization*)
 
 (*Here I used the SUNIndex place to hold the flavor and Color Index, *)
 (*So they should be treated properly to avoid some automatical calculation within the SU(N) Group by FeynCalc*)
-Bar[f_[args___]]:=f[args]/.{PL->PR,SumOver[j_,n_]:>SumOver[ToExpression[ToString[j]<>"bar"],n],
+Bar[f_[args___]]:=f[args]/.{PL->PR,PR->PL,SumOver[j_,n_]:>SumOver[ToExpression[ToString[j]<>"bar"],n],
 UU[i_,j_]:>UUC[i,ToExpression[ToString[j]<>"bar"]],UD[i_,j_]:>UDC[i,ToExpression[ToString[j]<>"bar"]],
 QuantumField[FF_,{},{j_,c_}]:>QuantumField[HCbar[FF],{},{ToExpression[ToString[j]<>"bar"],c}],
 QuantumField[FF_,{},{j_}]:>QuantumField[HCbar[FF],{},{j}]
@@ -89,15 +106,19 @@ eR[i_]:=PR*QuantumField[Fe,{},{i}];
 
 HCbar/:RenormalizationInfoFL[HCbar[f_],flavor_,c___]:=RenormalizationInfoFL[f,flavor,c]/.{f->HCbar[f]};
 HCbar/:RenormalizationInfoFR[HCbar[f_],flavor_,c___]:=RenormalizationInfoFR[f,flavor,c]/.{f->HCbar[f]};
+HCbar/:FieldType[HCbar[f_]]:=FielType[f];
 
-FNu/:RenormalizationInfoFL[FNu,flavor_]:={#1,QuantumField[FNu,{},{#2}]}&@@FieldNormalizationFL[1,flavor];
+FNu/:RenormalizationInfoFL[FNu,flavor_]:={#1,QuantumField[Subscript[FNu,R],{},{#2}],TypeFermion}&@@FieldNormalizationFL[1,flavor];
+FNu /: FieldType[FNu] := TypeFermion;
 
-Fe/:RenormalizationInfoFL[Fe,flavor_]:={#1,QuantumField[Fe,{},{#2}]}&@@FieldNormalizationFL[2,flavor];
-Fe/:RenormalizationInfoFR[Fe,flavor_]:={#1,QuantumField[Fe,{},{#2}]}&@@FieldNormalizationFR[2,flavor];
+Fe/:RenormalizationInfoFL[Fe,flavor_]:={#1,QuantumField[Subscript[Fe,R],{},{#2}],TypeFermion}&@@FieldNormalizationFL[2,flavor];
+Fe/:RenormalizationInfoFR[Fe,flavor_]:={#1,QuantumField[Subscript[Fe,R],{},{#2}],TypeFermion}&@@FieldNormalizationFR[2,flavor];
+Fe /: FieldType[Fe] := TypeFermion;
 
-FUp/:RenormalizationInfoFL[FUp,flavor_,c_]:={#1,QuantumField[FUp,{},{#2,c}]}&@@FieldNormalizationFL[3,flavor];
-FUp/:RenormalizationInfoFR[FUp,flavor_,c_]:={#1,QuantumField[FUp,{},{#2,c}]}&@@FieldNormalizationFR[3,flavor];
+FUp/:RenormalizationInfoFL[FUp,flavor_,c_]:={#1,QuantumField[Subscript[FUp,R],{},{#2,c}],TypeFermion}&@@FieldNormalizationFL[3,flavor];
+FUp/:RenormalizationInfoFR[FUp,flavor_,c_]:={#1,QuantumField[Subscript[FUp,R],{},{#2,c}],TypeFermion}&@@FieldNormalizationFR[3,flavor];
+FUp /: FieldType[FUp] := TypeFermion;
 
-FDown/:RenormalizationInfoFL[FDown,flavor_,c_]:={#1,QuantumField[FDown,{},{#2,c}]}&@@FieldNormalizationFL[4,flavor];
-FDown/:RenormalizationInfoFR[FDown,flavor_,c_]:={#1,QuantumField[FDown,{},{#2,c}]}&@@FieldNormalizationFR[4,flavor];
-
+FDown/:RenormalizationInfoFL[FDown,flavor_,c_]:={#1,QuantumField[Subscript[FDown,R],{},{#2,c}],TypeFermion}&@@FieldNormalizationFL[4,flavor];
+FDown/:RenormalizationInfoFR[FDown,flavor_,c_]:={#1,QuantumField[Subscript[FDown,R],{},{#2,c}],TypeFermion}&@@FieldNormalizationFR[4,flavor];
+FDown /: FieldType[FDown] := TypeFermion;
