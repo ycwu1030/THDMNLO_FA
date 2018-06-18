@@ -6,6 +6,9 @@ Needs["FeynCalc`"];
 (**)
 TypeFermion=1;
 TypeBoson=2;
+QuantumField/: FieldCharge[QuantumField[f_,args___]]:=FieldCharge[f];
+QuantumField/: FieldCharge[QuantumField[Subscript[f_,r_],args___]]:=FieldCharge[f];
+SetAttributes[FieldCharge,Listable];
 
 
 (*Scalar Fields and their renormalization*)
@@ -32,26 +35,34 @@ v1=vev Cos[beta];
 v2=vev Sin[beta];
 
 
-(*Field Renormalization*)
+(*Field Renormalization AND some other information*)
 HH /: RenormalizationInfo[HH] := {FieldNormalization[{HH,HL}], QuantumField/@(Subscript[#,R]&/@{HH, HL}), 1,TypeBoson};
 HL /: RenormalizationInfo[HL] := {FieldNormalization[{HH,HL}], QuantumField/@(Subscript[#,R]&/@{HH, HL}), 2,TypeBoson};
 HH /: FieldType[HH] := TypeBoson;
+HH /: FieldCharge[HH] := 0;
 HL /: FieldType[HL] := TypeBoson;
+HL /: FieldCharge[HL] := 0;
 
 G0/: RenormalizationInfo[G0]:={FieldNormalization[{G0,HA}],QuantumField/@(Subscript[#,R]&/@{G0,HA}),1,TypeBoson};
 HA/: RenormalizationInfo[HA]:={FieldNormalization[{G0,HA}],QuantumField/@(Subscript[#,R]&/@{G0,HA}),2,TypeBoson};
 G0 /: FieldType[G0] := TypeBoson;
+G0 /: FieldCharge[G0] := 0;
 HA /: FieldType[HA] := TypeBoson;
+HA /: FieldCharge[HA] := 0;
 
 Gp/: RenormalizationInfo[Gp]:={FieldNormalization[{Gp,Hp}],QuantumField/@(Subscript[#,R]&/@{Gp,Hp}),1,TypeBoson};
 Hp/: RenormalizationInfo[Hp]:={FieldNormalization[{Gp,Hp}],QuantumField/@(Subscript[#,R]&/@{Gp,Hp}),2,TypeBoson};
 Gp /: FieldType[Gp] := TypeBoson;
+Gp /: FieldCharge[Gp] := 1;
 Hp /: FieldType[Hp] := TypeBoson;
+Hp /: FieldCharge[Hp] := 1;
 
 Gm/: RenormalizationInfo[Gm]:={FieldNormalization[{Gp,Hp}],QuantumField/@(Subscript[#,R]&/@{Gm,Hm}),1,TypeBoson};
 Hm/: RenormalizationInfo[Hm]:={FieldNormalization[{Gp,Hp}],QuantumField/@(Subscript[#,R]&/@{Gm,Hm}),2,TypeBoson};
 Gm /: FieldType[Gm] := TypeBoson;
+Gm /: FieldCharge[Gm] := -1;
 Hm /: FieldType[Hm] := TypeBoson;
+Hm /: FieldCharge[Hm] := -1;
 
 
 (*Gauge Fields and their renormalization*)
@@ -71,12 +82,16 @@ BB[mu_]:=SW QuantumField[Z,{mu}]+CW QuantumField[gamma,{mu}];
 Wp/: RenormalizationInfo[Wp,mu_:mu]:={FieldNormalization[{W,W}],{QuantumField[Subscript[Wp,R],{mu}],0},1,TypeBoson};
 Wm/: RenormalizationInfo[Wm,mu_:mu]:={FieldNormalization[{W,W}],{QuantumField[Subscript[Wm,R],{mu}],0},1,TypeBoson};
 Wp /: FieldType[Wp] := TypeBoson;
+Wp /: FieldCharge[Wp] := 1;
 Wm /: FieldType[Wm] := TypeBoson;
+Wm /: FieldCharge[Wm] := -1;
 
 Z/: RenormalizationInfo[Z,mu_:mu]:={FieldNormalization[{Z,A}],QuantumField[#,{mu}]&/@(Subscript[#,R]&/@{Z,gamma}),1,TypeBoson};
 gamma/: RenormalizationInfo[gamma,mu_:mu]:={FieldNormalization[{Z,A}],QuantumField[#,{mu}]&/@(Subscript[#,R]&/@{Z,gamma}),2,TypeBoson};
 Z /: FieldType[Z] := TypeBoson;
+Z /: FieldCharge[Z] := 0;
 gamma /: FieldType[gamma] := TypeBoson;
+gamma /: FieldCharge[gamma] := 0;
 
 
 (*Fermion Field and their renormalization*)
@@ -106,19 +121,24 @@ eR[i_]:=PR*QuantumField[Fe,{},{i}];
 
 HCbar/:RenormalizationInfoFL[HCbar[f_],flavor_,c___]:=RenormalizationInfoFL[f,flavor,c]/.{f->HCbar[f]};
 HCbar/:RenormalizationInfoFR[HCbar[f_],flavor_,c___]:=RenormalizationInfoFR[f,flavor,c]/.{f->HCbar[f]};
-HCbar/:FieldType[HCbar[f_]]:=FielType[f];
+HCbar/:FieldType[HCbar[f_]]:=FieldType[f];
+HCbar/:FieldCharge[HCbar[f_]]:=-FieldCharge[f];
 
 FNu/:RenormalizationInfoFL[FNu,flavor_]:={#1,QuantumField[Subscript[FNu,R],{},{#2}],TypeFermion}&@@FieldNormalizationFL[1,flavor];
 FNu /: FieldType[FNu] := TypeFermion;
+FNu /: FieldCharge[FNu] := 0;
 
 Fe/:RenormalizationInfoFL[Fe,flavor_]:={#1,QuantumField[Subscript[Fe,R],{},{#2}],TypeFermion}&@@FieldNormalizationFL[2,flavor];
 Fe/:RenormalizationInfoFR[Fe,flavor_]:={#1,QuantumField[Subscript[Fe,R],{},{#2}],TypeFermion}&@@FieldNormalizationFR[2,flavor];
 Fe /: FieldType[Fe] := TypeFermion;
+Fe /: FieldCharge[Fe] := -1;
 
 FUp/:RenormalizationInfoFL[FUp,flavor_,c_]:={#1,QuantumField[Subscript[FUp,R],{},{#2,c}],TypeFermion}&@@FieldNormalizationFL[3,flavor];
 FUp/:RenormalizationInfoFR[FUp,flavor_,c_]:={#1,QuantumField[Subscript[FUp,R],{},{#2,c}],TypeFermion}&@@FieldNormalizationFR[3,flavor];
 FUp /: FieldType[FUp] := TypeFermion;
+FUp /: FieldCharge[FUp] := 2/3;
 
 FDown/:RenormalizationInfoFL[FDown,flavor_,c_]:={#1,QuantumField[Subscript[FDown,R],{},{#2,c}],TypeFermion}&@@FieldNormalizationFL[4,flavor];
 FDown/:RenormalizationInfoFR[FDown,flavor_,c_]:={#1,QuantumField[Subscript[FDown,R],{},{#2,c}],TypeFermion}&@@FieldNormalizationFR[4,flavor];
 FDown /: FieldType[FDown] := TypeFermion;
+FDown /: FieldCharge[FDown] := -1/3;

@@ -1,0 +1,81 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2227,         71]
+NotebookOptionsPosition[      1826,         53]
+NotebookOutlinePosition[      2185,         69]
+CellTagsIndexPosition[      2142,         66]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.738330534168206*^9, 3.738330548473377*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Loading", " ", "Necessary", " ", "Components"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.738330948700673*^9, 3.7383309623501263`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"<<", "Utility.m"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "Fields.m"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "Parameters.m"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "Renormalization.m"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "ExtractVertex.m"}]}], "Input",
+ CellChangeTimes->{{3.738330551262745*^9, 3.7383305618094997`*^9}, {
+  3.738330747421639*^9, 3.738330789507167*^9}, {3.73833085157493*^9, 
+  3.738330852159069*^9}, {3.7383309165319233`*^9, 3.738330941319233*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"Loading", " ", "the", " ", "Lagrangians"}], ",", " ", 
+   RowBox[{"it", " ", "will", " ", "take", " ", "long", " ", "time"}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.73833096508569*^9, 3.738330985493569*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "Lagrangian.m"}]], "Input",
+ CellChangeTimes->{{3.738330943352542*^9, 3.738330943355957*^9}}]
+},
+WindowSize->{808, 655},
+WindowMargins->{{Automatic, -1380}, {-63, Automatic}},
+FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 16, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 189, 4, 43, "Input"],
+Cell[750, 26, 175, 3, 43, "Input"],
+Cell[928, 31, 500, 8, 144, "Input"],
+Cell[1431, 41, 266, 6, 69, "Input"],
+Cell[1700, 49, 122, 2, 43, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
