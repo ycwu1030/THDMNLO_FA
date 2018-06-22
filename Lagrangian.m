@@ -48,28 +48,34 @@ PartialDSelf[f_,mu_]:=RightPartialD[mu].f;
 CovariantDoubletD[f_List,mu_]:=(PartialDSelf[#,mu]&/@f)-I EL/(2 SW)(Plus@@(PauliSigma[]*Wi[mu])).f+I EL/(2 CW) (IdentityMatrix[2]*BB[mu]).f;
 CovariantDoubletDC[f_List,mu_]:=(PartialDSelf[#,mu]&/@f)+I EL/(2 SW)(Plus@@(Conjugate[PauliSigma[]]*Wi[mu])).f-I EL/(2 CW) (IdentityMatrix[2]*BB[mu]).f;
 
-LScalarKinetic=CovariantDoubletDC[Phi1C,mu].CovariantDoubletD[Phi1,mu]+CovariantDoubletDC[Phi2C,mu].CovariantDoubletD[Phi2,mu];
+LScalarKinetic=Module[{mu},CovariantDoubletDC[Phi1C,mu].CovariantDoubletD[Phi1,mu]+CovariantDoubletDC[Phi2C,mu].CovariantDoubletD[Phi2,mu]];
 
 
 (*Yukawa*)
 isigma2=I {{0,-I},{I,0}};
 
-LTypeIU=(Sqrt[2] Mf[3,i]/(v2))((Bar[QL[i,qc]].(isigma2.Phi2C))UR[i,qc]+(QL[i,qc].(isigma2.Phi2))Bar[UR[i,qc]])//Simplify;
-LTypeID=(Sqrt[2] Mf[4,i]/(v2))((Bar[QL[i,qc]].Phi2)DR[i,qc]+(QL[i,qc].Phi2C)Bar[DR[i,qc]])//Simplify;
-LTypeIL=(Sqrt[2] Mf[2,i]/(v2))((Bar[LL[i]].Phi2)eR[i]+(LL[i].Phi2C)Bar[eR[i]])//Simplify;
+LTypeIU=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[3,i,j]/(v2))((Bar[QL[i,qc]].(isigma2.Phi2C))uR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[3,i,j]/(v2))((QL[j,qc].(isigma2.Phi2))Bar[uR[i,qc]])];
+LTypeID=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[4,i,j]/(v2))((Bar[QL[i,qc]].Phi2)dR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[4,i,j]/(v2))((QL[j,qc].Phi2C)Bar[dR[i,qc]])];
+LTypeIL=Module[{i,j},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[2,i,j]/(v2))((Bar[LL[i]].Phi2)eR[j]+(LL[j].Phi2C)Bar[eR[i]])(*//Simplify*)];
 LTypeI=-(LTypeIU + LTypeID + LTypeIL);
 
-LTypeIIU=(Sqrt[2] Mf[3,i]/(v2))((Bar[QL[i,qc]].(isigma2.Phi2C))UR[i,qc]+(QL[i,qc].(isigma.Phi2C))Bar[UR[i,qc]])//Simplify;
-LTypeIID=(Sqrt[2] Mf[4,i]/(v2))((Bar[QL[i,qc]].Phi1)DR[i,qc]+(QL[i,qc].Phi1C)Bar[DR[i,qc]])//Simplify;
-LTypeIIL=(Sqrt[2] Mf[2,i]/(v2))((Bar[LL[i]].Phi1)eR[i]+(LL[i].Phi1C)Bar[eR[i]])//Simplify;
+LTypeIIU=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[3,i,j]/(v2))((Bar[QL[i,qc]].(isigma2.Phi2C))uR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[3,i,j]/(v2))((QL[j,qc].(isigma2.Phi2))Bar[uR[i,qc]])];
+LTypeIID=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[4,i,j]/(v1))((Bar[QL[i,qc]].Phi1)dR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[4,i,j]/(v1))((QL[j,qc].Phi1C)Bar[dR[i,qc]])];
+LTypeIIL=Module[{i,j},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[2,i,j]/(v1))((Bar[LL[i]].Phi1)eR[j]+(LL[j].Phi1C)Bar[eR[i]])(*//Simplify*)];
 LTypeII=-(LTypeIIU + LTypeIID + LTypeIIL);
 
-LTypeLSU=(Sqrt[2] Mf[3,i]/(v2))((Bar[QL[i,qc]].(isigma2.Phi2C))UR[i,qc]+(QL[i,qc].(isigma.Phi2C))Bar[UR[i,qc]])//Simplify;
-LTypeLSD=(Sqrt[2] Mf[4,i]/(v2))((Bar[QL[i,qc]].Phi2)DR[i,qc]+(QL[i,qc].Phi2C)Bar[DR[i,qc]])//Simplify;
-LTypeLSL=(Sqrt[2] Mf[2,i]/(v2))((Bar[LL[i]].Phi1)eR[i]+(LL[i].Phi1C)Bar[eR[i]])//Simplify;
+LTypeLSU=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[3,i,j]/(v2))((Bar[QL[i,qc]].(isigma2.Phi2C))uR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[3,i,j]/(v2))((QL[j,qc].(isigma2.Phi2))Bar[uR[i,qc]])];
+LTypeLSD=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[4,i,j]/(v2))((Bar[QL[i,qc]].Phi2)dR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[4,i,j]/(v2))((QL[j,qc].Phi2C)Bar[dR[i,qc]])];
+LTypeLSL=Module[{i,j},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[2,i,j]/(v1))((Bar[LL[i]].Phi1)eR[j]+(LL[j].Phi1C)Bar[eR[i]])(*//Simplify*)];
 LTypeLS=-(LTypeLSU + LTypeLSD + LTypeLSL);
 
-LTypeFLU=(Sqrt[2] Mf[3,i]/(v2))((Bar[QL[i,qc]].(isigma2.Phi2C))UR[i,qc]+(QL[i,qc].(isigma.Phi2C))Bar[UR[i,qc]])//Simplify;
-LTypeFLD=(Sqrt[2] Mf[4,i]/(v2))((Bar[QL[i,qc]].Phi1)DR[i,qc]+(QL[i,qc].Phi1C)Bar[DR[i,qc]])//Simplify;
-LTypeFLL=(Sqrt[2] Mf[2,i]/(v2))((Bar[LL[i]].Phi2)eR[i]+(LL[i].Phi2C)Bar[eR[i]])//Simplify;
+LTypeFLU=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[3,i,j]/(v2))((Bar[QL[i,qc]].(isigma2.Phi2C))uR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[3,i,j]/(v2))((QL[j,qc].(isigma2.Phi2))Bar[uR[i,qc]])];
+LTypeFLD=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[4,i,j]/(v1))((Bar[QL[i,qc]].Phi1)dR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[4,i,j]/(v1))((QL[j,qc].Phi1C)Bar[dR[i,qc]])];
+LTypeFLL=Module[{i,j},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[2,i,j]/(v2))((Bar[LL[i]].Phi2)eR[j]+(LL[j].Phi2C)Bar[eR[i]])(*//Simplify*)];
 LTypeFL=-(LTypeFLU + LTypeFLD + LTypeFLL);
+
+Gf[2,i_,j_]:=Mf[2,i]IndexDelta[i,j];
+GfC[2,i_,j_]:=Mf[2,i]IndexDelta[i,j];
+Gf[type_,i_,j_]:=Module[{k},SumOver[k,NF]Mf[type,k]ULC[type,i,k]UR[type,k,j]];
+GfC[type_,i_,j_]:=Module[{k},SumOver[k,NF]Mf[type,k]URC[type,i,k]UL[type,k,j]];
+

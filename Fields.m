@@ -8,6 +8,8 @@ TypeFermion=1;
 TypeBoson=2;
 QuantumField/: FieldCharge[QuantumField[f_,args___]]:=FieldCharge[f];
 QuantumField/: FieldCharge[QuantumField[Subscript[f_,r_],args___]]:=FieldCharge[f];
+Subscript/: FieldCharge[Subscript[f_,r_]]:=FieldCharge[f];
+Subscript/: HCbar[Subscript[f_,r_]]:=Subscript[HCbar[f],r];
 SetAttributes[FieldCharge,Listable];
 
 
@@ -64,6 +66,9 @@ Gm /: FieldCharge[Gm] := -1;
 Hm /: FieldType[Hm] := TypeBoson;
 Hm /: FieldCharge[Hm] := -1;
 
+ScalarList:=QuantumField[#]&/@{HL,HH,HA,Hp,Hm,Gp,Gm,G0};
+RenormalizedScalarList:=QuantumField[Subscript[#,R]]&/@{HL,HH,HA,Hp,Hm,Gp,Gm,G0};
+
 
 (*Gauge Fields and their renormalization*)
 (*Gauge covariant derivative: always use -1 convention Subscript[D, \[Mu]]=\!\(
@@ -93,24 +98,27 @@ Z /: FieldCharge[Z] := 0;
 gamma /: FieldType[gamma] := TypeBoson;
 gamma /: FieldCharge[gamma] := 0;
 
+GaugeBosonList[Index_]:=QuantumField[#,{Index}]&/@{Wp,Wm,Z,gamma};
+RenormalizedGaugeBosonList[Index_]:=QuantumField[Subscript[#,R],{Index}]&/@{Wp,Wm,Z,gamma};
+
 
 (*Fermion Field and their renormalization*)
 
 (*Here I used the SUNIndex place to hold the flavor and Color Index, *)
 (*So they should be treated properly to avoid some automatical calculation within the SU(N) Group by FeynCalc*)
 Bar[f_[args___]]:=f[args]/.{PL->PR,PR->PL,SumOver[j_,n_]:>SumOver[ToExpression[ToString[j]<>"bar"],n],
-UU[i_,j_]:>UUC[i,ToExpression[ToString[j]<>"bar"]],UD[i_,j_]:>UDC[i,ToExpression[ToString[j]<>"bar"]],
+ULC[type_,i_,j_]:>UL[type,ToExpression[ToString[j]<>"bar"],i],URC[type_,i_,j_]:>UR[type,ToExpression[ToString[j]<>"bar"],i],
 QuantumField[FF_,{},{j_,c_}]:>QuantumField[HCbar[FF],{},{ToExpression[ToString[j]<>"bar"],c}],
 QuantumField[FF_,{},{j_}]:>QuantumField[HCbar[FF],{},{j}]
 };
 
-QL[i_,c_]:=PL*{SumOver[jUpL,NF]*UU[i,jUpL]*QuantumField[FUp,{},{jUpL,c}],SumOver[jDownL,NF]*UD[i,jDownL]*QuantumField[FDown,{},{jDownL,c}]};
+QL[i_,c_]:=Module[{jUpL,jDownL},PL*{SumOver[jUpL,NF]*ULC[3,i,jUpL]*QuantumField[FUp,{},{jUpL,c}],SumOver[jDownL,NF]*ULC[4,i,jDownL]*QuantumField[FDown,{},{jDownL,c}]}];
 (*QLbar[i_,c_]:=PR*{SumOver[jUpLbar,NF]*UUC[i,jUpLbar]*QuantumField[FUpbar,{},{jUpLbar,c}],SumOver[jDownLbar,NF]*UDC[i,jDownLbar]*QuantumField[FDownbar,{},{jDownLbar,c}]};*)
 
-UR[i_,c_]:=PR*SumOver[jUR,NF]*UU[i,jUR]*QuantumField[FUp,{},{jUR,c}];
+uR[i_,c_]:=Module[{jUR},PR*SumOver[jUR,NF]*URC[3,i,jUR]*QuantumField[FUp,{},{jUR,c}]];
 (*URbar[i_,c_]:=PL*SumOver[jURbar,NF]*UUC[i,jURbar]*QuantumField[FUpbar,{},{jURbar,c}];*)
 
-DR[i_,c_]:=PR*SumOver[jDR,NF]*UD[i,jDR]*QuantumField[FDown,{},{jDR,c}];
+dR[i_,c_]:=Module[{jDR},PR*SumOver[jDR,NF]*URC[4,i,jDR]*QuantumField[FDown,{},{jDR,c}]];
 (*DRbar[i_,c_]:=PL*SumOver[jDRbar,NF]*UDC[i,jDRbar]*QuantumField[FDownbar,{},{jDRbar,c}];*)
 
 LL[i_]:=PL*{QuantumField[FNu,{},{i}],QuantumField[Fe,{},{i}]};
@@ -142,3 +150,8 @@ FDown/:RenormalizationInfoFL[FDown,flavor_,c_]:={#1,QuantumField[Subscript[FDown
 FDown/:RenormalizationInfoFR[FDown,flavor_,c_]:={#1,QuantumField[Subscript[FDown,R],{},{#2,c}],TypeFermion}&@@FieldNormalizationFR[4,flavor];
 FDown /: FieldType[FDown] := TypeFermion;
 FDown /: FieldCharge[FDown] := -1/3;
+
+FermionList[index_List]:=QuantumField[#,{},index]&/@{FUp,FDown,Fe,FNu};
+AntiFermionList[index_List]:=QuantumField[HCbar[#],{},index]&/@{FUp,FDown,Fe,FNu};
+RenormalizedFermionList[index_List]:=QuantumField[Subscript[#,R],{},index]&/@{FUp,FDown,Fe,FNu};
+RenormalizedAntiFermionList[index_List]:=QuantumField[Subscript[HCbar[#],R],{},index]&/@{FUp,FDown,Fe,FNu};
