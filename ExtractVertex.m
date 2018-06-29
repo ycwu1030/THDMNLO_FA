@@ -19,12 +19,19 @@ vertexCT=Collect[(FunctionalD[D[I Lag,r1],Fields])/.{QuantumField[___]:>0, 0 . 0
 If[PossibleZeroQ[vertexCT],FRVertexNULL[{Fields,vertex,vertexCT}],FRVertex[{Fields,vertex,vertexCT}]]
 ]
 (*First For the Pure Scalar Couplings, 3 or 4 points*)
-ScalarCouplings[Lag_,Fields_List,n_]:=Block[{vertex,PossibleN,tmp},
-If[n!=3||n!=4,{},
-vertex=Select[Total[FieldCharge[#]]==0&][DeleteDuplicates[Sort/@Tuples[Fields,n]]];
+ScalarCouplings[Lag_,Fields_List,n_]:=Block[{vertex,PossibleN,tmp,fyrule,i},
+If[n!=3||n!=4,vertex={},
+vertex=Select[DeleteDuplicates[Sort/@Tuples[Fields,n]]],Total[FieldCharge[#]] == 0 &];
 PossibleN=Length[vertex];
-tmp=FRwithCT[Lag,#]&/@vertex;
-tmp]
+Print["Generating ",n,"-Scalar Vertex",Dynamic[calculated],"/",PossibleN];
+fyrule={}
+For[i=1,i<=PossibleN,i++,
+  calculated=i;
+  tmp = FRwithCT[Lag,vertex[[i]]];
+  fyrule={fyrule,tmp};
+];
+fyrule=Flatten[fyrule];
+{Select[fyrule,Head[#]==FRVertex&],Select[fyrule,Head[#]==FRVertexNULL&]}
 ];
 
 
@@ -33,7 +40,7 @@ tmp]
 SSVVCouplings[Lag_,SField_List,VField_List,index1_,index2_]:=Block[{vertex,vertexS,vertexV,PossibleN,i,Fields,tmp,fyrule},
 vertexS=DeleteDuplicates[Sort/@Tuples[{SField,SField}]];
 vertexV=DeleteDuplicates[Sort/@Tuples[{VField,VField}]];
-vertex=Select[Total[FieldCharge[#]]==0&][Flatten/@Tuples[{vertexS,vertexV}]];
+vertex=Select[Flatten/@Tuples[{vertexS,vertexV}],Total[FieldCharge[#]] == 0 &];
 (*vertex=Select[Total[FieldCharge[#]]==0&][DeleteDuplicates[Sort/@Tuples[{SField,SField,VField,VField}]]];*)
 PossibleN=Length[vertex];
 Print["Generating SSVV Vertex: ",Dynamic[calculated],"/",PossibleN];
@@ -45,14 +52,14 @@ For[i=1,i<=PossibleN,i++,
 	fyrule={fyrule,tmp};
 ];
 fyrule=Flatten[fyrule];
-{Select[Head[#]==FRVertex&][fyrule],Select[Head[#]==FRVertexNULL&][fyrule]}
+{Select[fyrule,Head[#]==FRVertex&],Select[fyrule,Head[#]==FRVertexNULL&]}
 ]
 
 (*SVV g_{mu2 mu3}*)
 SVVCouplings[Lag_,SField_List,VField_List,index1_,index2_]:=Block[{vertex,vertexS,vertexV,PossibleN,i,Fields,tmp,fyrule},
 vertexS=SField;
 vertexV=DeleteDuplicates[Sort/@Tuples[{VField,VField}]];
-vertex=Select[Total[FieldCharge[#]]==0&][Flatten/@Tuples[{vertexS,vertexV}]];
+vertex=Select[Flatten/@Tuples[{vertexS,vertexV}],Total[FieldCharge[#]] == 0 &];
 PossibleN=Length[vertex];
 Print["Generating SVV Vertex: ",Dynamic[calculated],"/",PossibleN];
 fyrule={};
@@ -63,14 +70,14 @@ For[i=1,i<=PossibleN,i++,
 	fyrule={fyrule,tmp};
 ];
 fyrule=Flatten[fyrule];
-{Select[Head[#]==FRVertex&][fyrule],Select[Head[#]==FRVertexNULL&][fyrule]}
+{Select[fyrule,Head[#]==FRVertex&],Select[fyrule,Head[#]==FRVertexNULL&]}
 ]
 
 (*SSV  (p_1-p2)_mu3*)
 SSVCouplings[Lag_,SField_List,VField_List,index_]:=Block[{vertex,vertexS,vertexV,PossibleN,i,Fields,tmp,fyrule},
 vertexS=DeleteDuplicates[Sort/@Tuples[{SField,SField}]];
 vertexV=VField;
-vertex=Select[Total[FieldCharge[#]]==0&][Flatten/@Tuples[{vertexS,vertexV}]];
+vertex=Select[Flatten/@Tuples[{vertexS,vertexV}],Total[FieldCharge[#]] == 0 &];
 PossibleN=Length[vertex];
 Print["Generating SSV Vertex: ",Dynamic[calculated],"/",PossibleN];
 fyrule={};
@@ -81,7 +88,7 @@ For[i=1,i<=PossibleN,i++,
 	fyrule={fyrule,tmp/.{FourVector[Subscript[p,Fields[[1]]],index]:>1,FourVector[Subscript[p,Fields[[2]]],index]:>0}};
 ];
 fyrule=Flatten[fyrule];
-{Select[Head[#]==FRVertex&][fyrule],Select[Head[#]==FRVertexNULL&][fyrule]}
+{Select[fyrule,Head[#]==FRVertex&],Select[fyrule,Head[#]==FRVertexNULL&]}
 ]
 
 
@@ -89,7 +96,7 @@ fyrule=Flatten[fyrule];
 FFSCouplings[Lag_,FField_List,SField_List,flavorindex_List,colorindex___List]:=Block[{vertex,vertexF,vertexS,PossibleN,i,Fields,tmp,fyrule,indexes},
 vertexF=DeleteDuplicates[Sort/@Tuples[{FField,HCbar/@FField}]];
 vertexS=SField;
-vertex=Select[Total[FieldCharge[#]]==0&][Flatten/@Tuples[{vertexF,vertexS}]];
+vertex=Select[Flatten/@Tuples[{vertexF,vertexS}],Total[FieldCharge[#]] == 0&];
 PossibleN=Length[vertex];
 Print["Generating FFS Vertex: ", Dynamic[calculated],"/",PossibleN];
 fyrule={};
@@ -101,5 +108,5 @@ For[i=1,i<=PossibleN,i++,
 	fyrule={fyrule,tmp};
 ];
 fyrule=ExpandSums[Flatten[fyrule]/.{SUNIndex[f_] :> f, SUNDelta -> IndexDelta}];
-{Select[Head[#]==FRVertex&][fyrule],Select[Head[#]==FRVertexNULL&][fyrule]}
+{Select[fyrule,Head[#]==FRVertex&],Select[fyrule,Head[#]==FRVertexNULL&]}
 ]
