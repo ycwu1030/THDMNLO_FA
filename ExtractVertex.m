@@ -7,6 +7,10 @@ RightPartialD[LorentzIndex[mu_]]:>0
 };
 PreHandling[Lag_]:=ExpandPartialD[Lag]/.MomentumInsert;
 
+PrepareRenormalizedLag[Lag_] := 
+  PreHandling[
+   Normal[Series[Renormalization[LScalarKinetic], {r1, 0, 1}]]];
+
 
 (*The function to extract the Feynman Rules*)
 FRwithCT[Lag_,Fields_List]:=Block[{vertex,vertexCT},
@@ -96,6 +100,6 @@ For[i=1,i<=PossibleN,i++,
 	tmp=FRwithCT[Lag,{QuantumField[Fields[[1]],{},indexes[[1]]],QuantumField[Fields[[2]],{},indexes[[2]]],QuantumField[Fields[[3]]]}];
 	fyrule={fyrule,tmp};
 ];
-fyrule=Flatten[fyrule];
+fyrule=ExpandSums[Flatten[fyrule]/.{SUNIndex[f_] :> f, SUNDelta -> IndexDelta}];
 {Select[Head[#]==FRVertex&][fyrule],Select[Head[#]==FRVertexNULL&][fyrule]}
 ]
