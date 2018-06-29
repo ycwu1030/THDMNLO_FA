@@ -133,6 +133,7 @@ HCbar/:FieldType[HCbar[f_]]:=FieldType[f];
 HCbar/:FieldCharge[HCbar[f_]]:=-FieldCharge[f];
 
 FNu/:RenormalizationInfoFL[FNu,flavor_]:={#1,QuantumField[Subscript[FNu,R],{},{#2}],TypeFermion}&@@FieldNormalizationFL[1,flavor];
+FNu/:RenormalizationInfoFR[FNu,flavor_]:={0,0,TypeFermion}; (*No Right Handed Neutrino*)
 FNu /: FieldType[FNu] := TypeFermion;
 FNu /: FieldCharge[FNu] := 0;
 

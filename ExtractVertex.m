@@ -9,7 +9,7 @@ PreHandling[Lag_]:=ExpandPartialD[Lag]/.MomentumInsert;
 
 PrepareRenormalizedLag[Lag_] := 
   PreHandling[
-   Normal[Series[Renormalization[LScalarKinetic], {r1, 0, 1}]]];
+   Normal[Series[Renormalization[Lag], {r1, 0, 1}]]];
 
 
 (*The function to extract the Feynman Rules*)
@@ -21,7 +21,7 @@ If[PossibleZeroQ[vertexCT],FRVertexNULL[{Fields,vertex,vertexCT}],FRVertex[{Fiel
 (*First For the Pure Scalar Couplings, 3 or 4 points*)
 ScalarCouplings[Lag_,Fields_List,n_]:=Block[{vertex,PossibleN,tmp,fyrule,i},
 If[n!=3||n!=4,vertex={},
-vertex=Select[DeleteDuplicates[Sort/@Tuples[Fields,n]]],Total[FieldCharge[#]] == 0 &];
+vertex=Select[DeleteDuplicates[Sort/@Tuples[Fields,n]],Total[FieldCharge[#]] == 0 &];];
 PossibleN=Length[vertex];
 Print["Generating ",n,"-Scalar Vertex",Dynamic[calculated],"/",PossibleN];
 fyrule={}
