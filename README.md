@@ -8,3 +8,7 @@ The original files are too mess. So here, I try to reorganize them in a form tha
 1. Parallel Calculation in Mathematica
 1. Encapsulation
 1. As a plug-in for FR?
+
+# Contributors
+- @HanYuanyuaner [Han Yuan](https://github.com/HanYuanyuaner)
+- @ycwu1030 [Yongcheng Wu](https://github.com/ycwu1030)
