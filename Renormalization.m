@@ -18,7 +18,7 @@ internal=Unique["jFR"];
 
 
 RenormalizedFermion[f_,flavor_,c___]:=PL*Times@@(RenormalizationInfoFL[f,flavor,c][[1;;2]])+PR*Times@@(RenormalizationInfoFR[f,flavor,c][[1;;2]]);
-HCbar/:Renormalized[HCbar[f_],flavor_,c___]:=PR*Times@@(RenormalizationInfoFL[HCbar[f],flavor,c][[1;;2]])+PL*Times@@(RenormalizationInfoFR[HCbar[f],flavor,c][[1;;2]]);
+HCbar/:RenormalizedFermion[HCbar[f_],flavor_,c___]:=PR*(Times@@(RenormalizationInfoFL[HCbar[f],flavor,c][[1;;2]])/.{dZfL[argc___]:>dZfLC[argc]})+PL*(Times@@(RenormalizationInfoFR[HCbar[f],flavor,c][[1;;2]])/.{dZfR[argc___]:>dZfRC[argc]});
 (*RenormalizedFL[f_,flavor_,c___]:=Times@@RenormalizationInfoFL[f,flavor,c];
 RenormalizedFR[f_,flavor_,c___]:=Times@@RenormalizationInfoFR[f,flavor,c];*)
 

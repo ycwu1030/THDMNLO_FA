@@ -10,9 +10,9 @@ ExpandSums[other_, h___] := ExpandSums[#, h] & /@ other;
 
 
 (*The Chiral Projector*)
-PL/:PL^2:=PL;
+PL/:PL^n_Integer:=PL;
 PL/:PL PR:=0;
-PR/:PR^2:=PR;
+PR/:PR^n_Integer:=PR;
 PR/:PR PL:=0;
 
 

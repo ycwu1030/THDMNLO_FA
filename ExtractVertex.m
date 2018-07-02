@@ -5,11 +5,9 @@ MomentumInsert={QuantumField[FCPartialD[LorentzIndex[mu_]],f_,args___]:>-I FourV
 QuantumField[FCPartialD[LorentzIndex[mu_]],Subscript[f_,r_],args___]:>-I FourVector[Subscript[p,f],mu]QuantumField[Subscript[f,r],args],
 RightPartialD[LorentzIndex[mu_]]:>0
 };
-PreHandling[Lag_]:=ExpandPartialD[Lag]/.MomentumInsert;
+(*PreHandling[Lag_]:=ExpandPartialD[Lag]/.MomentumInsert;*)
 
-PrepareRenormalizedLag[Lag_] := 
-  PreHandling[
-   Normal[Series[Renormalization[Lag], {r1, 0, 1}]]];
+PrepareRenormalizedLag[Lag_] := Normal[Series[ExpandPartialD[Renormalization[Lag]], {r1, 0, 1}]]/.MomentumInsert;
 
 
 (*The function to extract the Feynman Rules*)
@@ -19,15 +17,16 @@ vertexCT=Collect[(FunctionalD[D[I Lag,r1],Fields])/.{QuantumField[___]:>0, 0 . 0
 If[PossibleZeroQ[vertexCT],FRVertexNULL[{Fields,vertex,vertexCT}],FRVertex[{Fields,vertex,vertexCT}]]
 ]
 (*First For the Pure Scalar Couplings, 3 or 4 points*)
-ScalarCouplings[Lag_,Fields_List,n_]:=Block[{vertex,PossibleN,tmp,fyrule,i},
-If[n!=3||n!=4,vertex={},
+ScalarCouplings[Lag_,Fields_List,n_]:=Block[{vertex,PossibleN,tmp,fyrule,fields,i},
+If[n!=3&&n!=4,vertex={},
 vertex=Select[DeleteDuplicates[Sort/@Tuples[Fields,n]],Total[FieldCharge[#]] == 0 &];];
 PossibleN=Length[vertex];
 Print["Generating ",n,"-Scalar Vertex",Dynamic[calculated],"/",PossibleN];
-fyrule={}
+fyrule={};
 For[i=1,i<=PossibleN,i++,
   calculated=i;
-  tmp = FRwithCT[Lag,vertex[[i]]];
+  fields=vertex[[i]];
+  tmp = FRwithCT[Lag,QuantumField/@fields];
   fyrule={fyrule,tmp};
 ];
 fyrule=Flatten[fyrule];
@@ -107,6 +106,7 @@ For[i=1,i<=PossibleN,i++,
 	tmp=FRwithCT[Lag,{QuantumField[Fields[[1]],{},indexes[[1]]],QuantumField[Fields[[2]],{},indexes[[2]]],QuantumField[Fields[[3]]]}];
 	fyrule={fyrule,tmp};
 ];
-fyrule=ExpandSums[Flatten[fyrule]/.{SUNIndex[f_] :> f, SUNDelta -> IndexDelta}];
+fyrule=Flatten[fyrule];
+fyrule=Cases[fyrule,F_[{{f1_,f2_,f3_},fy0_,fy1_}]:>F[{{f1,f2,f3},ExpandSums[Expand[fy0/.{SUNIndex[f_] :> f, SUNDelta -> IndexDelta}]],ExpandSums[Expand[fy1/.{SUNIndex[f_] :> f, SUNDelta -> IndexDelta}]]}]];
 {Select[fyrule,Head[#]==FRVertex&],Select[fyrule,Head[#]==FRVertexNULL&]}
 ]
