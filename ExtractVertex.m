@@ -7,7 +7,7 @@ RightPartialD[LorentzIndex[mu_]]:>0
 };
 (*PreHandling[Lag_]:=ExpandPartialD[Lag]/.MomentumInsert;*)
 
-PrepareRenormalizedLag[Lag_] := Normal[Series[ExpandPartialD[Renormalization[Lag]], {r1, 0, 1}]]/.MomentumInsert;
+PrepareRenormalizedLag[Lag_] := Normal[Series[ExpandPartialD[Renormalization[Expand[Lag]]], {r1, 0, 1}]]/.MomentumInsert;
 
 
 (*The function to extract the Feynman Rules*)

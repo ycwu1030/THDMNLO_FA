@@ -22,3 +22,5 @@ SW/: Renormalization[SW]:=SW+r1 dSW1;
 vev /: Renormalization[vev]:=vev+r1 dvev1;
 CW /: Renormalization[CW]:=CW+ r1 dCW1;
 Mf/: Renormalization[Mf[type_,f1_]]:=Mf[type,f1]+ r1 dMf[type,f1];
+VCKM/: Renormalization[VCKM[i_,j_]]:=VCKM[i,j] + r1 dVCKM[i,j];
+VCKMC/: Renormalization[VCKMC[i_,j_]]:=VCKMC[i,j] + r1 dVCKMC[i,j];
