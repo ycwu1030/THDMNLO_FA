@@ -4,6 +4,9 @@
 
 
 (*Scalar Potential*)
+LSPFile="LagrangianData/LScalarPotentialPhysics.dat";
+If[FileExistsQ[LSPFile],Print["Reading Potential Lagrangian From File: "<>LSPFile<>"......"];LScalarPotentialPhysics=Get[LSPFile];,
+Print["Calculating the Potential Lagrangian......"];
 Tm112=m112*Phi1C.Phi1;
 Tm222=m222*Phi2C.Phi2;
 Tm122=-m122*(Phi1C.Phi2+Phi2C.Phi1);
@@ -30,7 +33,7 @@ ReorganizationRules=Solve[{VHH==THH,VHL==THL,VMHH2==MHH2,VMHL2==MHL2,VMHA2==MHA2
 Print["...... Simplify the parameter transformation rules. This will take long time, Be patient ......"];
 ReorganizationRules=Collect[ReorganizationRules,{THH,THL,MHH2,MHL2,MHA2,MHp2,M2},Simplify];
 
-Print["...... Collecting the new Scalar potential. This will take long time, Be patient ......"]
+Print["...... Collecting the new Scalar potential. This will take long time, Be patient ......"];
 Tm112=Simplify[Tm112//.ReorganizationRules[[1]]];
 Tm222=Simplify[Tm222//.ReorganizationRules[[1]]];
 Tm122=Simplify[Tm122//.ReorganizationRules[[1]]];
@@ -42,38 +45,69 @@ TLam5=Simplify[TLam5//.ReorganizationRules[[1]]];
 
 VScalarPotentialPhysics = Tm112 + Tm222 + Tm122 + TLam1 + TLam2 + TLam3 + TLam4 + TLam5;
 LScalarPotentialPhysics = -VScalarPotentialPhysics;
+Put[LScalarPotentialPhysics,LSPFile];
+];
 
 
 (*Scalar Kinetic*)
+LSKFile="LagrangianData/LScalarKinetic.dat";
+If[FileExistsQ[LSKFile],Print["Reading Scalar Kinetic Terms From File: "<>LSKFile<>"......"];LScalarKinetic=Get[LSKFile];,
 PartialDSelf[f_,mu_]:=RightPartialD[mu].f;
 CovariantDoubletD[f_List,mu_]:=(PartialDSelf[#,mu]&/@f)-I EL/(2 SW)(Plus@@(PauliSigma[]*Wi[mu])).f+I EL/(2 CW) (IdentityMatrix[2]*BB[mu]).f;
 CovariantDoubletDC[f_List,mu_]:=(PartialDSelf[#,mu]&/@f)+I EL/(2 SW)(Plus@@(Conjugate[PauliSigma[]]*Wi[mu])).f-I EL/(2 CW) (IdentityMatrix[2]*BB[mu]).f;
-
+Print["Calculating the Scalar Kinetic Terms......"];
 LScalarKinetic=Module[{mu},CovariantDoubletDC[Phi1C,mu].CovariantDoubletD[Phi1,mu]+CovariantDoubletDC[Phi2C,mu].CovariantDoubletD[Phi2,mu]];
+Put[LScalarKinetic,LSKFile];
+];
 
 
 (*Yukawa*)
+YukawaFilePrefix="LagrangianData/LType";
 isigma2=I {{0,-I},{I,0}};
 
+If[FileExistsQ[YukawaFilePrefix<>"I.dat"],
+Print["Reading Type-I Yukawa Lagrangian From File: "<>YukawaFilePrefix<>"I.dat"<>"......"];
+LTypeI=Get[YukawaFilePrefix<>"I.dat"];,
+Print["Calculating Type-I Yukawa Lagrangian......"];
 LTypeIU=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[3,i,j]/(v2))((Bar[QL[i,qc]].(isigma2.Phi2C))uR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[3,i,j]/(v2))((QL[j,qc].(isigma2.Phi2))Bar[uR[i,qc]])];
 LTypeID=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[4,i,j]/(v2))((Bar[QL[i,qc]].Phi2)dR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[4,i,j]/(v2))((QL[j,qc].Phi2C)Bar[dR[i,qc]])];
 LTypeIL=Module[{i,j},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[2,i,j]/(v2))((Bar[LL[i]].Phi2)eR[j]+(LL[j].Phi2C)Bar[eR[i]])(*//Simplify*)];
 LTypeI=-(LTypeIU + LTypeID + LTypeIL);
+Put[LTypeI,YukawaFilePrefix<>"I.dat"];
+];
 
+If[FileExistsQ[YukawaFilePrefix<>"II.dat"],
+Print["Reading Type-II Yukawa Lagrangian From File: "<>YukawaFilePrefix<>"II.dat"<>"......"];
+LTypeII=Get[YukawaFilePrefix<>"II.dat"];,
+Print["Calculating Type-II Yukawa Lagrangian......"];
 LTypeIIU=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[3,i,j]/(v2))((Bar[QL[i,qc]].(isigma2.Phi2C))uR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[3,i,j]/(v2))((QL[j,qc].(isigma2.Phi2))Bar[uR[i,qc]])];
 LTypeIID=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[4,i,j]/(v1))((Bar[QL[i,qc]].Phi1)dR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[4,i,j]/(v1))((QL[j,qc].Phi1C)Bar[dR[i,qc]])];
 LTypeIIL=Module[{i,j},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[2,i,j]/(v1))((Bar[LL[i]].Phi1)eR[j]+(LL[j].Phi1C)Bar[eR[i]])(*//Simplify*)];
 LTypeII=-(LTypeIIU + LTypeIID + LTypeIIL);
+Put[LTypeII,YukawaFilePrefix<>"II.dat"];
+];
 
+If[FileExistsQ[YukawaFilePrefix<>"LS.dat"],
+Print["Reading Type-LS Yukawa Lagrangian From File: "<>YukawaFilePrefix<>"LS.dat"<>"......"];
+LTypeLS=Get[YukawaFilePrefix<>"LS.dat"];,
+Print["Calculating Type-LS Yukawa Lagrangian......"];
 LTypeLSU=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[3,i,j]/(v2))((Bar[QL[i,qc]].(isigma2.Phi2C))uR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[3,i,j]/(v2))((QL[j,qc].(isigma2.Phi2))Bar[uR[i,qc]])];
 LTypeLSD=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[4,i,j]/(v2))((Bar[QL[i,qc]].Phi2)dR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[4,i,j]/(v2))((QL[j,qc].Phi2C)Bar[dR[i,qc]])];
 LTypeLSL=Module[{i,j},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[2,i,j]/(v1))((Bar[LL[i]].Phi1)eR[j]+(LL[j].Phi1C)Bar[eR[i]])(*//Simplify*)];
 LTypeLS=-(LTypeLSU + LTypeLSD + LTypeLSL);
+Put[LTypeLS,YukawaFilePrefix<>"LS.dat"];
+];
 
+If[FileExistsQ[YukawaFilePrefix<>"FL.dat"],
+Print["Reading Type-FL Yukawa Lagrangian From Files: "<>YukawaFilePrefix<>"FL.dat"<>"......"];
+LTypeFL=Get[YukawaFilePrefix<>"FL.dat"];,
+Print["Calculating Type-FL Yukawa Lagrangian......"];
 LTypeFLU=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[3,i,j]/(v2))((Bar[QL[i,qc]].(isigma2.Phi2C))uR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[3,i,j]/(v2))((QL[j,qc].(isigma2.Phi2))Bar[uR[i,qc]])];
 LTypeFLD=Module[{i,j,qc},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[4,i,j]/(v1))((Bar[QL[i,qc]].Phi1)dR[j,qc])+(SumOver[i,NF]SumOver[j,NF]Sqrt[2] GfC[4,i,j]/(v1))((QL[j,qc].Phi1C)Bar[dR[i,qc]])];
 LTypeFLL=Module[{i,j},(SumOver[i,NF]SumOver[j,NF]Sqrt[2] Gf[2,i,j]/(v2))((Bar[LL[i]].Phi2)eR[j]+(LL[j].Phi2C)Bar[eR[i]])(*//Simplify*)];
 LTypeFL=-(LTypeFLU + LTypeFLD + LTypeFLL);
+Put[LTypeFL,YukawaFilePrefix<>"FL.dat"];
+];
 
 Gf[2,i_,j_]:=Mf[2,i]IndexDelta[i,j];
 GfC[2,i_,j_]:=Mf[2,i]IndexDelta[i,j];

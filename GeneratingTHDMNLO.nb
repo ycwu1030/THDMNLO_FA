@@ -10,14 +10,16 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     12922,        382]
-NotebookOptionsPosition[     11147,        328]
-NotebookOutlinePosition[     11501,        344]
-CellTagsIndexPosition[     11458,        341]
+NotebookDataLength[     24351,        718]
+NotebookOptionsPosition[     21675,        636]
+NotebookOutlinePosition[     22029,        652]
+CellTagsIndexPosition[     21986,        649]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{"<<", "FeynCalc`"}], "\[IndentingNewLine]", 
  RowBox[{
@@ -25,6 +27,122 @@ Cell[BoxData[{
    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}]}], "Input",
  CellChangeTimes->{{3.738330534168206*^9, 3.738330548473377*^9}, {
   3.739373025191134*^9, 3.739373031778203*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{
+    StyleBox["\<\"FeynCalc \"\>", "Text",
+     StripOnInput->False,
+     FontWeight->Bold], "\[InvisibleSpace]", 
+    StyleBox["\<\"9.2.0. For help, use the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"documentation", " ", "center"}],
+       BaseStyle->"Link",
+       ButtonData:>"paclet:FeynCalc/",
+       ButtonNote->"paclet:FeynCalc/"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\", check out the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox["wiki",
+       BaseStyle->"Hyperlink",
+       ButtonData:>{
+         URL["https://github.com/FeynCalc/feyncalc/wiki"], None},
+       ButtonNote->"https://github.com/FeynCalc/feyncalc/wiki"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\" or write to the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"mailing", " ", 
+        RowBox[{"list", "."}]}],
+       BaseStyle->"Hyperlink",
+       ButtonData:>{
+         URL["http://www.feyncalc.org/forum/"], None},
+       ButtonNote->"http://www.feyncalc.org/forum/"],
+      DisplayForm], "Text",
+     StripOnInput->False]}],
+   SequenceForm[
+    Style["FeynCalc ", "Text", Bold], 
+    Style["9.2.0. For help, use the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox[
+      "documentation center", BaseStyle -> "Link", ButtonData :> 
+       "paclet:FeynCalc/", ButtonNote -> "paclet:FeynCalc/"]], "Text"], 
+    Style[", check out the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox["wiki", ButtonData :> {
+         URL["https://github.com/FeynCalc/feyncalc/wiki"], None}, BaseStyle -> 
+       "Hyperlink", ButtonNote -> 
+       "https://github.com/FeynCalc/feyncalc/wiki"]], "Text"], 
+    Style[" or write to the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox["mailing list.", ButtonData :> {
+         URL["http://www.feyncalc.org/forum/"], None}, BaseStyle -> 
+       "Hyperlink", ButtonNote -> "http://www.feyncalc.org/forum/"]], "Text"]],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.739652073310286*^9, 3.739661417818261*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{
+    StyleBox["\<\"See also the supplied \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"examples", "."}],
+       BaseStyle->"Hyperlink",
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{FeynCalc`$FeynCalcDirectory, "Examples"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\" If you use FeynCalc in your research, please cite\"\>", 
+     "Text",
+     StripOnInput->False]}],
+   SequenceForm[
+    Style["See also the supplied ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox[
+      "examples.", BaseStyle -> "Hyperlink", ButtonFunction :> SystemOpen[
+         FileNameJoin[{FeynCalc`$FeynCalcDirectory, "Examples"}]], Evaluator -> 
+       Automatic, Method -> "Preemptive"]], "Text"], 
+    Style[" If you use FeynCalc in your research, please cite", "Text"]],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.739652073310286*^9, 3.7396614178303747`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox["\<\" \[Bullet] V. Shtabovenko, R. Mertig and F. Orellana, Comput. \
+Phys. Commun., 207C, 432-444, 2016, arXiv:1601.01167\"\>", "Text",
+   StripOnInput->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.739652073310286*^9, 3.739661417842784*^9}],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox["\<\" \[Bullet] R. Mertig, M. B\[ODoubleDot]hm, and A. Denner, \
+Comput. Phys. Commun., 64, 345-359, 1991.\"\>", "Text",
+   StripOnInput->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.739652073310286*^9, 3.739661417854403*^9}]
+}, Open  ]]
+}, Open  ]],
 
 Cell[BoxData[
  RowBox[{"(*", 
@@ -50,31 +168,193 @@ Cell[BoxData[
   "*)"}]], "Input",
  CellChangeTimes->{{3.73833096508569*^9, 3.738330985493569*^9}}],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{"<<", "Lagrangian.m"}]], "Input",
  CellChangeTimes->{{3.738330943352542*^9, 3.738330943355957*^9}}],
 
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox["\<\"Reading Potential Lagrangian From File: \
+LagrangianData/LScalarPotentialPhysics.dat......\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
+   3.739656931127716*^9}, 3.7396614241531467`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Reading Scalar Kinetic Terms From File: \
+LagrangianData/LScalarKinetic.dat......\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
+   3.739656931127716*^9}, 3.7396614241646767`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Reading Type-I Yukawa Lagrangian From File: \
+LagrangianData/LTypeI.dat......\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
+   3.739656931127716*^9}, 3.739661424175947*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Reading Type-II Yukawa Lagrangian From File: \
+LagrangianData/LTypeII.dat......\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
+   3.739656931127716*^9}, 3.739661424187047*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Reading Type-LS Yukawa Lagrangian From File: \
+LagrangianData/LTypeLS.dat......\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
+   3.739656931127716*^9}, 3.7396614241987534`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Reading Type-FL Yukawa Lagrangian From Files: \
+LagrangianData/LTypeFL.dat......\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
+   3.739656931127716*^9}, 3.739661424209918*^9}]
+}, Open  ]]
+}, Open  ]],
+
 Cell[BoxData[
  RowBox[{
   RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"LSKRe", "=", 
-     RowBox[{"PrepareRenormalizedLag", "[", "LScalarKinetic", "]"}]}], ";", 
-    "\[IndentingNewLine]", 
-    RowBox[{"LSPRe", "=", 
-     RowBox[{
-     "PrepareRenormalizedLag", "[", "LScalarPotentialPhysics", "]"}]}], ";"}],
-    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Renormalizing", " ", "the", " ", "Lagrangian"}], "*)"}], 
+  "\[IndentingNewLine]", 
   RowBox[{
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{"LYI", ",", "LYII", ",", "LYLS", ",", "LYFL"}], "}"}], "=", 
-    RowBox[{"PrepareRenormalizedLag", "/@", 
-     RowBox[{"{", 
-      RowBox[{"LTypeI", ",", "LTypeII", ",", "LTypeLS", ",", "LTypeFL"}], 
-      "}"}]}]}], ";"}]}]], "Input",
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+     "FileExistsQ", "[", "\"\<LagrangianData/LScalarKineticRe.dat\>\"", "]"}],
+      ",", 
+     RowBox[{
+      RowBox[{"LSKRe", "=", 
+       RowBox[{
+       "Get", "[", "\"\<LagrangianData/LScalarKineticRe.dat\>\"", "]"}]}], 
+      ";"}], ",", 
+     RowBox[{
+      RowBox[{"LSKRe", "=", 
+       RowBox[{"PrepareRenormalizedLag", "[", "LScalarKinetic", "]"}]}], ";", 
+      
+      RowBox[{"Put", "[", 
+       RowBox[{"LSKRe", ",", "\"\<LagrangianData/LScalarKineticRe.dat\>\""}], 
+       "]"}]}]}], "]"}], ";"}]}]], "Input",
  CellChangeTimes->{{3.739226667439067*^9, 3.7392268131592283`*^9}, 
-   3.739486128799968*^9, 3.739492096973147*^9, 3.739571666349752*^9}],
+   3.739486128799968*^9, 3.739492096973147*^9, 3.739571666349752*^9, {
+   3.739655564374405*^9, 3.739655590048027*^9}, {3.7396601235258512`*^9, 
+   3.739660309883423*^9}, {3.739660378250091*^9, 3.739660519855042*^9}, {
+   3.739661386364108*^9, 3.739661387823235*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+    "FileExistsQ", "[", 
+     "\"\<LagrangianData/LScalarPotentialPhysicsRe.dat\>\"", "]"}], ",", 
+    RowBox[{
+     RowBox[{"LSPRe", "=", 
+      RowBox[{
+      "Get", "[", "\"\<LagrangianData/LScalarPotentialPhysicsRe.dat\>\"", 
+       "]"}]}], ";"}], ",", 
+    RowBox[{
+     RowBox[{"LSPRe", "=", 
+      RowBox[{
+      "PrepareRenormalizedLag", "[", "LScalarPotentialPhysics", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Put", "[", 
+      RowBox[{
+      "LSPRe", ",", "\"\<LagrangianData/LScalarPotentialPhysicsRe.dat\>\""}], 
+      "]"}]}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7396613889221573`*^9, 3.739661395118672*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox[
+    RowBox[{"$RecursionLimit", "::", "reclim2"}], "MessageName"], 
+   RowBox[{
+   ":", " "}], "\<\"Recursion depth of \
+\[NoBreak]\\!\\(\\*FormBox[\\\"1024\\\", TraditionalForm]\\)\[NoBreak] \
+exceeded during evaluation of \[NoBreak]\\!\\(\\*FormBox[RowBox[{\\\"dZ\\\", \
+\\\"(\\\", \\\"HHHH\\\", \\\")\\\"}], TraditionalForm]\\)\[NoBreak].\"\>"}], 
+  TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.739661663908123*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"FileExistsQ", "[", "\"\<LagrangianData/LTypeIRe.dat\>\"", "]"}], 
+    ",", 
+    RowBox[{
+     RowBox[{"LYI", "=", 
+      RowBox[{"Get", "[", "\"\<LagrangianData/LTypeIRe.dat\>\"", "]"}]}], 
+     ";"}], ",", 
+    RowBox[{
+     RowBox[{"LYI", "=", 
+      RowBox[{"PrepareRenormalizedLag", "[", "LTypeI", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Put", "[", 
+      RowBox[{"LYI", ",", "\"\<LagrangianData/LTypeIRe.dat\>\""}], "]"}]}]}], 
+   "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"FileExistsQ", "[", "\"\<LagrangianData/LTypeIIRe.dat\>\"", "]"}],
+     ",", 
+    RowBox[{
+     RowBox[{"LYII", "=", 
+      RowBox[{"Get", "[", "\"\<LagrangianData/LTypeIIRe.dat\>\"", "]"}]}], 
+     ";"}], ",", 
+    RowBox[{
+     RowBox[{"LYII", "=", 
+      RowBox[{"PrepareRenormalizedLag", "[", "LTypeII", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Put", "[", 
+      RowBox[{"LYII", ",", "\"\<LagrangianData/LTypeIIRe.dat\>\""}], 
+      "]"}]}]}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"FileExistsQ", "[", "\"\<LagrangianData/LTypeLSRe.dat\>\"", "]"}],
+     ",", 
+    RowBox[{
+     RowBox[{"LYLS", "=", 
+      RowBox[{"Get", "[", "\"\<LagrangianData/LTypeLSRe.dat\>\"", "]"}]}], 
+     ";"}], ",", 
+    RowBox[{
+     RowBox[{"LYLS", "=", 
+      RowBox[{"PrepareRenormalizedLag", "[", "LTypeLS", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Put", "[", 
+      RowBox[{"LYLS", ",", "\"\<LagrangianData/LTypeLSRe.dat\>\""}], 
+      "]"}]}]}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"FileExistsQ", "[", "\"\<LagrangianData/LTypeFLRe.dat\>\"", "]"}],
+     ",", 
+    RowBox[{
+     RowBox[{"LYFL", "=", 
+      RowBox[{"Get", "[", "\"\<LagrangianData/LTypeFLRe.dat\>\"", "]"}]}], 
+     ";"}], ",", 
+    RowBox[{
+     RowBox[{"LYFL", "=", 
+      RowBox[{"PrepareRenormalizedLag", "[", "LTypeFL", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Put", "[", 
+      RowBox[{"LYFL", ",", "\"\<LagrangianData/LTypeFLRe.dat\>\""}], 
+      "]"}]}]}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7396613963367558`*^9, 3.739661396338912*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -324,7 +604,35 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{"CLFFSFL", ">>", "VertexRawData/CLFFSFL.dat"}]], "Input",
- CellChangeTimes->{{3.739492629850368*^9, 3.739492639459659*^9}}]
+ CellChangeTimes->{{3.739492629850368*^9, 3.739492639459659*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CSVV", "=", 
+   RowBox[{"<<", "VertexRawData/CSVV.dat"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.739652078475934*^9, 3.739652096826716*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CSSVV", "=", 
+   RowBox[{"<<", "VertexRawData/CSSVV.dat"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.739652775353938*^9, 3.7396527854378557`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CSSV", "=", 
+   RowBox[{"<<", "VertexRawData/CSSV.dat"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.739652833787264*^9, 3.739652844811941*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CQFFSII", "=", 
+   RowBox[{"<<", "VertexRawData/CQFFSII.dat"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7396535668538103`*^9, 3.739653587710635*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "Output.m"}]], "Input",
+ CellChangeTimes->{{3.739652098747409*^9, 3.739652124608923*^9}}]
 },
 WindowSize->{1280, 751},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -343,47 +651,75 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 294, 6, 69, "Input"],
-Cell[855, 28, 175, 3, 43, "Input"],
-Cell[1033, 33, 534, 9, 144, "Input"],
-Cell[1570, 44, 266, 6, 43, "Input"],
-Cell[1839, 52, 122, 2, 43, "Input"],
-Cell[1964, 56, 768, 20, 94, "Input"],
-Cell[2735, 78, 1219, 38, 119, "Input"],
-Cell[3957, 118, 301, 7, 43, "Input"],
-Cell[4261, 127, 234, 6, 43, "Input"],
-Cell[4498, 135, 251, 6, 43, "Input"],
-Cell[4752, 143, 220, 5, 43, "Input"],
-Cell[4975, 150, 221, 5, 43, "Input"],
-Cell[5199, 157, 398, 10, 43, "Input"],
-Cell[5600, 169, 285, 7, 43, "Input"],
-Cell[5888, 178, 354, 9, 43, "Input"],
-Cell[6245, 189, 289, 7, 43, "Input"],
-Cell[6537, 198, 352, 9, 43, "Input"],
-Cell[6892, 209, 336, 8, 43, "Input"],
-Cell[7231, 219, 353, 9, 43, "Input"],
-Cell[7587, 230, 336, 8, 43, "Input"],
-Cell[7926, 240, 166, 3, 43, "Input"],
-Cell[8095, 245, 184, 3, 43, "Input"],
-Cell[8282, 250, 154, 2, 43, "Input"],
-Cell[8439, 254, 165, 3, 43, "Input"],
-Cell[8607, 259, 143, 2, 43, "Input"],
-Cell[8753, 263, 146, 2, 43, "Input"],
-Cell[8902, 267, 171, 3, 43, "Input"],
-Cell[9076, 272, 146, 2, 43, "Input"],
-Cell[9225, 276, 142, 2, 43, "Input"],
-Cell[9370, 280, 140, 2, 43, "Input"],
-Cell[9513, 284, 142, 2, 43, "Input"],
-Cell[9658, 288, 142, 2, 43, "Input"],
-Cell[9803, 292, 142, 2, 43, "Input"],
-Cell[9948, 296, 146, 2, 43, "Input"],
-Cell[10097, 300, 144, 2, 43, "Input"],
-Cell[10244, 304, 146, 2, 43, "Input"],
-Cell[10393, 308, 148, 2, 43, "Input"],
-Cell[10544, 312, 146, 2, 43, "Input"],
-Cell[10693, 316, 150, 2, 43, "Input"],
-Cell[10846, 320, 148, 2, 43, "Input"],
-Cell[10997, 324, 146, 2, 43, "Input"]
+Cell[CellGroupData[{
+Cell[580, 22, 294, 6, 69, "Input"],
+Cell[CellGroupData[{
+Cell[899, 32, 2346, 64, 39, "Print"],
+Cell[3248, 98, 1133, 30, 39, "Print"],
+Cell[4384, 130, 287, 5, 38, "Print"],
+Cell[4674, 137, 272, 5, 38, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[4973, 146, 175, 3, 43, "Input"],
+Cell[5151, 151, 534, 9, 144, "Input"],
+Cell[5688, 162, 266, 6, 43, "Input"],
+Cell[CellGroupData[{
+Cell[5979, 172, 122, 2, 43, "Input"],
+Cell[CellGroupData[{
+Cell[6126, 178, 295, 6, 30, "Print"],
+Cell[6424, 186, 283, 5, 30, "Print"],
+Cell[6710, 193, 277, 5, 30, "Print"],
+Cell[6990, 200, 279, 5, 30, "Print"],
+Cell[7272, 207, 281, 5, 30, "Print"],
+Cell[7556, 214, 280, 5, 30, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[7863, 223, 1057, 27, 144, "Input"],
+Cell[CellGroupData[{
+Cell[8945, 254, 722, 21, 119, "Input"],
+Cell[9670, 277, 478, 11, 34, "Message"]
+}, Open  ]],
+Cell[10163, 291, 2244, 65, 319, "Input"],
+Cell[12410, 358, 1219, 38, 119, "Input"],
+Cell[13632, 398, 301, 7, 43, "Input"],
+Cell[13936, 407, 234, 6, 43, "Input"],
+Cell[14173, 415, 251, 6, 43, "Input"],
+Cell[14427, 423, 220, 5, 43, "Input"],
+Cell[14650, 430, 221, 5, 43, "Input"],
+Cell[14874, 437, 398, 10, 43, "Input"],
+Cell[15275, 449, 285, 7, 43, "Input"],
+Cell[15563, 458, 354, 9, 43, "Input"],
+Cell[15920, 469, 289, 7, 43, "Input"],
+Cell[16212, 478, 352, 9, 43, "Input"],
+Cell[16567, 489, 336, 8, 43, "Input"],
+Cell[16906, 499, 353, 9, 43, "Input"],
+Cell[17262, 510, 336, 8, 43, "Input"],
+Cell[17601, 520, 166, 3, 43, "Input"],
+Cell[17770, 525, 184, 3, 43, "Input"],
+Cell[17957, 530, 154, 2, 43, "Input"],
+Cell[18114, 534, 165, 3, 43, "Input"],
+Cell[18282, 539, 143, 2, 43, "Input"],
+Cell[18428, 543, 146, 2, 43, "Input"],
+Cell[18577, 547, 171, 3, 43, "Input"],
+Cell[18751, 552, 146, 2, 43, "Input"],
+Cell[18900, 556, 142, 2, 43, "Input"],
+Cell[19045, 560, 140, 2, 43, "Input"],
+Cell[19188, 564, 142, 2, 43, "Input"],
+Cell[19333, 568, 142, 2, 43, "Input"],
+Cell[19478, 572, 142, 2, 43, "Input"],
+Cell[19623, 576, 146, 2, 43, "Input"],
+Cell[19772, 580, 144, 2, 43, "Input"],
+Cell[19919, 584, 146, 2, 43, "Input"],
+Cell[20068, 588, 148, 2, 43, "Input"],
+Cell[20219, 592, 146, 2, 43, "Input"],
+Cell[20368, 596, 150, 2, 43, "Input"],
+Cell[20521, 600, 148, 2, 43, "Input"],
+Cell[20672, 604, 146, 2, 43, "Input"],
+Cell[20821, 608, 177, 4, 43, "Input"],
+Cell[21001, 614, 181, 4, 43, "Input"],
+Cell[21185, 620, 177, 4, 43, "Input"],
+Cell[21365, 626, 185, 4, 43, "Input"],
+Cell[21553, 632, 118, 2, 43, "Input"]
 }
 ]
 *)
