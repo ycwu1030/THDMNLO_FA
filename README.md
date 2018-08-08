@@ -6,8 +6,10 @@ The original files are too messy and un-readable. So here, I try to reorganize t
 ## To Do List
 1. Output to FeynArts Model File Format 
 1. Parallel Calculation in Mathematica
-1. Encapsulation
-1. As a plug-in for FR?
+
+[comment]: # (1. Encapsulation)
+
+[comment]: # (1. As a plug-in for FR?)
 
 ## Contributors
 - @HanYuanyuaner [Han Yuan](https://github.com/HanYuanyuaner)
