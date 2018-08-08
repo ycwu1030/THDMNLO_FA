@@ -14,4 +14,4 @@ The original files are too messy and un-readable. So here, I try to reorganize t
 - @ycwu1030 [Yongcheng Wu](https://github.com/ycwu1030)
 
 ## Citation
-If you use this work, please cite: [arXiv:1808.xxxxx](https://arxiv.org/abs/1808.xxxxx)
+If you use this work, please cite: [arXiv:1808.02037](https://arxiv.org/abs/1808.02037)
