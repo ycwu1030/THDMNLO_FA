@@ -47,9 +47,36 @@ totalN=Length[Vertex];
 FAOutput={};
 For[i=1,i<=totalN,i++,
 expr=Vertex[[i]];
-tmp=If[WithFermion,Cases[{expr},FRVertex[{{fields__},lo_,nlo_}]:>C[fields]=={{lo/.{PR->0,PL->1},nlo/.{PR->0,PL->1}},{lo/.{PR->1,PL->0},nlo/.{PR->1,PL->0}}}],Cases[{expr},FRVertex[{{fields__},lo_,nlo_}]:>C[fields]=={lo,nlo}]];
+tmp=If[WithFermion,Cases[{expr},FRVertex[{{fields__},lo_,nlo_}]:>C[fields]=={{lo/.{PR->0,PL->1},nlo/.{PR->0,PL->1}},{lo/.{PR->1,PL->0},nlo/.{PR->1,PL->0}}}],Cases[{expr},FRVertex[{{fields__},lo_,nlo_}]:>C[fields]=={{lo,nlo}}]];
 tmp=tmp//.FieldCode//.FieldRenormalizationConstantReplace//.SpecialReplacement;
 FAOutput={FAOutput,tmp[[1]]};
 ];
 Flatten[FAOutput]
+]
+(*To Files*)
+(*Convert to Formatted Style*)
+FormattedStyle[exp_]:=Block[{FieldList,FRs,Content,SList},
+FieldList=exp/.{FRVertex[arg1_,arg2_]:>arg1};
+FRs=exp/.{FRVertex[arg1_,arg2_]:>arg2};
+Content=ToString[InputForm[FieldList]]<>"==\n\t";
+SList=StringRiffle[ToString[InputForm[#]]&/@FRs,",\n\t"];
+Content<>"{"<>SList<>"}"
+];
+ToFeynArtsModFile[filename_,Vertex_List,WithFermion_:False]:=Block[{SingleConvert,str,i,totalN,FAOutput,rulelist,Header,Content,Ender},
+Vertex=ReleaseHold[Vertex];
+totalN=Length[Vertex];
+Header="M$CouplingMatrices = Join[ M$CouplingMatrices, {\n";
+Ender="}];\n";
+FAOutput=Header;
+SingleConvert[exp_]:=Block[{expr,tmp},
+expr=exp;
+tmp=If[WithFermion,Cases[{expr},FRVertex[{{fields__},lo_,nlo_}]:>FRVertex[C[fields],{{lo/.{PR->0,PL->1},nlo/.{PR->0,PL->1}},{lo/.{PR->1,PL->0},nlo/.{PR->1,PL->0}}}]],Cases[{expr},FRVertex[{{fields__},lo_,nlo_}]:>FRVertex[C[fields],{{lo,nlo}}]]];
+tmp=tmp//.FieldCode//.FieldRenormalizationConstantReplace//.SpecialReplacement;
+FormattedStyle[tmp[[1]]]
+];
+rulelist=StringRiffle[SingleConvert/@Vertex,",\n"];
+FAOutput=FAOutput<>rulelist<>Ender;
+str=OpenWrite[filename];
+WriteString[str,FAOutput];
+Close[str];
 ]
