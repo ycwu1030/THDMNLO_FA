@@ -32,4 +32,33 @@ Renormalization[coeff_ term_]:=Renormalization[coeff] Renormalization[term];
 Renormalization[coeff_/term_]:=Renormalization[coeff]/Renormalization[term];
 Renormalization[term_^n_]:=Renormalization[term]^n;
 Renormalization[f_[args___]]:=f@@(Renormalization/@{args});
+QuantumField/: Renormalization[QuantumField[FCPartialD[args1___],FCPartialD[args2___],f_,index___]]:=RenormalizedField@@(Flatten[Join[{f},{index}]])/.{QuantumField[fR_,indexR___]:>QuantumField[FCPartialD[args1],FCPartialD[args2],fR,indexR]};
+QuantumField/: Renormalization[QuantumField[FCPartialD[args___],f_,index___]]:=RenormalizedField@@(Flatten[Join[{f},{index}]])/.{QuantumField[fR_,indexR___]:>QuantumField[FCPartialD[args],fR,indexR]};
 QuantumField/: Renormalization[QuantumField[f_,args___]]:=RenormalizedField@@(Flatten[Join[{f},{args}]]);
+
+
+(*Utility handling Expansion and Momentum replacement of the Lagrangian*)
+MomentumInsert={QuantumField[FCPartialD[LorentzIndex[mu_]],FCPartialD[LorentzIndex[nu_]],f_Symbol,args___]:>(-I FourVector[Subscript[p,f],mu])(-I FourVector[Subscript[p,f],nu])QuantumField[f,args],
+QuantumField[FCPartialD[LorentzIndex[mu_]],FCPartialD[LorentzIndex[nu_]],Subscript[f_,r_],args___]:>(-I FourVector[Subscript[p,f],mu])(-I FourVector[Subscript[p,f],nu])QuantumField[Subscript[f,r],args],
+QuantumField[FCPartialD[LorentzIndex[mu_]],f_Symbol,args___]:>-I FourVector[Subscript[p,f],mu]QuantumField[f,args],
+QuantumField[FCPartialD[LorentzIndex[mu_]],Subscript[f_,r_],args___]:>-I FourVector[Subscript[p,f],mu]QuantumField[Subscript[f,r],args],
+RightPartialD[LorentzIndex[mu_]]:>0
+};
+(*PreHandling[Lag_]:=ExpandPartialD[Lag]/.MomentumInsert;*)
+$Calculated=0;
+PrepareRenormalizedLag[Lag_] := Block[{Ltemp,Tree,CTs,Term,Lens,LTree,LCTs,i},
+Ltemp=List@@Expand[Lag];
+Lens=Length[Ltemp];
+Tree={};
+CTs={};
+Print["Calculating: ",Dynamic[$Calculated],"/",Lens];
+For[i=1,i<=Lens,i++,
+$Calculated=i;
+Term=Normal[Series[Renormalization[Ltemp[[i]]],{r1,0,1}]];
+Tree={Tree,Term/.{r1->0}/.MomentumInsert};
+CTs={CTs,Coefficient[Term,r1]/.MomentumInsert};
+];
+LTree=Flatten[Tree];
+LCTs=Flatten[CTs];
+{LTree,LCTs}
+]

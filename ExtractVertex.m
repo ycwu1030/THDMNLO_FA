@@ -1,27 +1,19 @@
 (* ::Package:: *)
 
-(*Utility handling Expansion and Momentum replacement of the Lagrangian*)
-MomentumInsert={QuantumField[FCPartialD[LorentzIndex[mu_]],f_,args___]:>-I FourVector[Subscript[p,f],mu]QuantumField[f,args],
-QuantumField[FCPartialD[LorentzIndex[mu_]],Subscript[f_,r_],args___]:>-I FourVector[Subscript[p,f],mu]QuantumField[Subscript[f,r],args],
-RightPartialD[LorentzIndex[mu_]]:>0
-};
-(*PreHandling[Lag_]:=ExpandPartialD[Lag]/.MomentumInsert;*)
-
-PrepareRenormalizedLag[Lag_] := Normal[Series[ExpandPartialD[Renormalization/@Expand[Lag]], {r1, 0, 1}]]/.MomentumInsert;
-
-
 (*The function to extract the Feynman Rules*)
-FRwithCT[Lag_,Fields_List]:=Block[{vertex,vertexCT},
-vertex=Collect[(FunctionalD[I Lag/.{r1->0},Fields])/.{QuantumField[___]:>0, 0 . 0 ->0},{MHL2,MHH2,MHA2,MHp2,M2},Simplify[#,CW^2+SW^2==1]&];
-vertexCT=Collect[(FunctionalD[D[I Lag,r1],Fields])/.{QuantumField[___]:>0, 0 . 0->0},{dMHL21,dMHH21,dMHA21,dMHp21,dM21,dMWsq1,dMZsq1,dZe1,dalpha1,dbeta1,_dMf,_dZ},Simplify[#,CW^2+SW^2==1]&];
+FRwithCT[Lag_List,Fields_List]:=Block[{vertex,vertexCT},
+vertex=Collect[Plus@@((FunctionalD[I #,Fields]/.{QuantumField[args1___].QuantumField[args2___]:>0,QuantumField[args___]:>0})&/@Lag[[1]]),{MHL2,MHH2,MHp2},Simplify];
+(*vertex=Collect[(FunctionalD[I Lag/.{r1->0},Fields])/.{QuantumField[___]:>0, 0 . 0 ->0},{MHL2,MHH2,MHA2,MHp2,M2},Simplify[#,CW^2+SW^2==1]&];*)
+vertexCT=Collect[Plus@@((FunctionalD[I #,Fields]/.{QuantumField[args1___].QuantumField[args2___]:>0,QuantumField[args___]:>0})&/@Lag[[2]]),{dMHL21,dMHH21,dMHp21,dZe1,dtheta1,dalpha1,_dMf,_dZ},Simplify];
+(*vertexCT=Collect[(FunctionalD[D[I Lag,r1],Fields])/.{QuantumField[___]:>0, 0 . 0->0},{dMHL21,dMHH21,dMHA21,dMHp21,dM21,dMWsq1,dMZsq1,dZe1,dalpha1,dbeta1,_dMf,_dZ},Simplify[#,CW^2+SW^2==1]&];*)
 If[PossibleZeroQ[vertexCT],FRVertexNULL[{Fields,vertex,vertexCT}],FRVertex[{Fields,vertex,vertexCT}]]
 ]
 (*First For the Pure Scalar Couplings, 3 or 4 points*)
-ScalarCouplings[Lag_,Fields_List,n_]:=Block[{vertex,PossibleN,tmp,fyrule,fields,i},
-If[n!=3&&n!=4,vertex={},
+ScalarCouplings[Lag_List,Fields_List,n_]:=Block[{vertex,PossibleN,tmp,fyrule,fields,i},
+If[n!=3&&n!=4&&n!=2,vertex={},
 vertex=Select[DeleteDuplicates[Sort/@Tuples[Fields,n]],Total[FieldCharge[#]] == 0 &];];
 PossibleN=Length[vertex];
-Print["Generating ",n,"-Scalar Vertex",Dynamic[calculated],"/",PossibleN];
+Print["Generating ",n,"-Scalar Vertex: ",Dynamic[calculated],"/",PossibleN];
 fyrule={};
 For[i=1,i<=PossibleN,i++,
   calculated=i;
@@ -36,7 +28,7 @@ fyrule=Flatten[fyrule];
 
 (*Scalar Involved Gauge Coupling*)
 (*SSVV g_{mu3 mu4}*)
-SSVVCouplings[Lag_,SField_List,VField_List,index1_,index2_]:=Block[{vertex,vertexS,vertexV,PossibleN,i,Fields,tmp,fyrule},
+SSVVCouplings[Lag_List,SField_List,VField_List,index1_,index2_]:=Block[{vertex,vertexS,vertexV,PossibleN,i,Fields,tmp,fyrule},
 vertexS=DeleteDuplicates[Sort/@Tuples[{SField,SField}]];
 vertexV=DeleteDuplicates[Sort/@Tuples[{VField,VField}]];
 vertex=Select[Flatten/@Tuples[{vertexS,vertexV}],Total[FieldCharge[#]] == 0 &];
@@ -55,7 +47,7 @@ fyrule=Flatten[fyrule];
 ]
 
 (*SVV g_{mu2 mu3}*)
-SVVCouplings[Lag_,SField_List,VField_List,index1_,index2_]:=Block[{vertex,vertexS,vertexV,PossibleN,i,Fields,tmp,fyrule},
+SVVCouplings[Lag_List,SField_List,VField_List,index1_,index2_]:=Block[{vertex,vertexS,vertexV,PossibleN,i,Fields,tmp,fyrule},
 vertexS=SField;
 vertexV=DeleteDuplicates[Sort/@Tuples[{VField,VField}]];
 vertex=Select[Flatten/@Tuples[{vertexS,vertexV}],Total[FieldCharge[#]] == 0 &];
@@ -73,7 +65,7 @@ fyrule=Flatten[fyrule];
 ]
 
 (*SSV  (p_1-p2)_mu3*)
-SSVCouplings[Lag_,SField_List,VField_List,index_]:=Block[{vertex,vertexS,vertexV,PossibleN,i,Fields,tmp,fyrule},
+SSVCouplings[Lag_List,SField_List,VField_List,index_]:=Block[{vertex,vertexS,vertexV,PossibleN,i,Fields,tmp,fyrule},
 vertexS=DeleteDuplicates[Sort/@Tuples[{SField,SField}]];
 vertexV=VField;
 vertex=Select[Flatten/@Tuples[{vertexS,vertexV}],Total[FieldCharge[#]] == 0 &];
@@ -92,7 +84,7 @@ fyrule=Flatten[fyrule];
 
 
 (*Yukawa Coupling *)
-FFSCouplings[Lag_,FField_List,SField_List,flavorindex_List,colorindex___List]:=Block[{vertex,vertexF,vertexS,PossibleN,i,Fields,tmp,fyrule,indexes},
+FFSCouplings[Lag_List,FField_List,SField_List,flavorindex_List,colorindex___List]:=Block[{vertex,vertexF,vertexS,PossibleN,i,Fields,tmp,fyrule,indexes},
 vertexF=DeleteDuplicates[Sort/@Tuples[{FField,HCbar/@FField}]];
 vertexS=SField;
 vertex=Select[Flatten/@Tuples[{vertexF,vertexS}],Total[FieldCharge[#]] == 0&];
