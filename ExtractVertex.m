@@ -2,9 +2,9 @@
 
 (*The function to extract the Feynman Rules*)
 FRwithCT[Lag_List,Fields_List]:=Block[{vertex,vertexCT},
-vertex=Collect[Plus@@((FunctionalD[I #,Fields]/.{QuantumField[args1___].QuantumField[args2___]:>0,QuantumField[args___]:>0})&/@Lag[[1]]),{MHL2,MHH2,MHp2},Simplify];
+vertex=Collect[Plus@@((FunctionalD[I #,Fields]/.{QuantumField[args1___].QuantumField[args2___]:>0,QuantumField[args___]:>0})&/@Lag[[1]]),{MHL2,MHH2,MHp2},Simplify[#,CW^2+SW^2==1]&];
 (*vertex=Collect[(FunctionalD[I Lag/.{r1->0},Fields])/.{QuantumField[___]:>0, 0 . 0 ->0},{MHL2,MHH2,MHA2,MHp2,M2},Simplify[#,CW^2+SW^2==1]&];*)
-vertexCT=Collect[Plus@@((FunctionalD[I #,Fields]/.{QuantumField[args1___].QuantumField[args2___]:>0,QuantumField[args___]:>0})&/@Lag[[2]]),{dMHL21,dMHH21,dMHp21,dZe1,dtheta1,dalpha1,_dMf,_dZ},Simplify];
+vertexCT=Collect[Plus@@((FunctionalD[I #,Fields]/.{QuantumField[args1___].QuantumField[args2___]:>0,QuantumField[args___]:>0})&/@Lag[[2]]),{dMHL21,dMHH21,dMHp21,dZe1,dtheta1,dalpha1,_dMf,_dZ},Simplify[#,CW^2+SW^2==1]&];
 (*vertexCT=Collect[(FunctionalD[D[I Lag,r1],Fields])/.{QuantumField[___]:>0, 0 . 0->0},{dMHL21,dMHH21,dMHA21,dMHp21,dM21,dMWsq1,dMZsq1,dZe1,dalpha1,dbeta1,_dMf,_dZ},Simplify[#,CW^2+SW^2==1]&];*)
 If[PossibleZeroQ[vertexCT],FRVertexNULL[{Fields,vertex,vertexCT}],FRVertex[{Fields,vertex,vertexCT}]]
 ]
@@ -76,7 +76,9 @@ For[i=1,i<=PossibleN,i++,
 	calculated=i;
 	Fields=vertex[[i]];
 	tmp=FRwithCT[Lag,{QuantumField[Fields[[1]]],QuantumField[Fields[[2]]],QuantumField[Fields[[3]],{index}]}];
-	fyrule={fyrule,tmp/.{FourVector[Subscript[p,Fields[[1]]],index]:>1,FourVector[Subscript[p,Fields[[2]]],index]:>0}};
+	fyrule={fyrule,tmp/.{FourVector[Subscript[p,Fields[[1]]],index]:>1,FourVector[Subscript[p,Fields[[2]]],index]:>0}/.{Pair[_LorentzIndex, 
+        Momentum[Subscript[p, Cases[{Fields[[1]]},Subscript[f_,___]:>f][[1]]]]]:>1,Pair[_LorentzIndex, 
+        Momentum[Subscript[p, Cases[{Fields[[2]]},Subscript[f_,___]:>f][[1]]]]]:>0}};
 ];
 fyrule=Flatten[fyrule];
 {Select[fyrule,Head[#]==FRVertex&],Select[fyrule,Head[#]==FRVertexNULL&]}

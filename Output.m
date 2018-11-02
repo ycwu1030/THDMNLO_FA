@@ -73,8 +73,10 @@ expr=exp;
 tmp=If[WithFermion,
 Cases[{expr},FRVertex[{{fields__},lo_,nlo_}]:>FRVertex[C[fields],{{lo/.{PR->0,PL->1},nlo/.{PR->0,PL->1}},{lo/.{PR->1,PL->0},nlo/.{PR->1,PL->0}}}]],
 Cases[{expr},FRVertex[{{fields__},lo_,nlo_}]:>FRVertex[C[fields],{{lo,nlo}}]]];
-check=Cases[tmp,FRVertex[C[fields__],{{lo_,nlo_}}]:>{{fields},lo,nlo}];
-tmp=If[Length[check[[1,1]]]==2,{FRVertex[C@@check[[1,1]],{{0,-Coefficient[check[[1,3]]/.{Pair[_Momentum,_Momentum]:>pp2},pp2]},{0,check[[1,3]]/.{Pair[_Momentum,_Momentum]:>0}}}]},tmp];
+check=Cases[{expr},FRVertex[{{fields__},lo_,nlo_}]:>{{fields},lo,nlo}];
+tmp=If[Length[check[[1,1]]]==2,
+{FRVertex[C@@check[[1,1]],{{0,-Coefficient[check[[1,3]]/.{Pair[_Momentum,_Momentum]:>pp2},pp2]},{0,check[[1,3]]/.{Pair[_Momentum,_Momentum]:>0}}}]},
+tmp];
 tmp=tmp//.FieldCode//.FieldRenormalizationConstantReplace//.SpecialReplacement;
 FormattedStyle[tmp[[1]]]
 ];
