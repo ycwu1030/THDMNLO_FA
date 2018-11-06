@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     40950,       1200]
-NotebookOptionsPosition[     37744,       1086]
-NotebookOutlinePosition[     38102,       1102]
-CellTagsIndexPosition[     38059,       1099]
+NotebookDataLength[     38051,       1106]
+NotebookOptionsPosition[     35225,       1006]
+NotebookOutlinePosition[     35579,       1022]
+CellTagsIndexPosition[     35536,       1019]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -94,9 +94,10 @@ Cell[BoxData[
          URL["http://www.feyncalc.org/forum/"], None}, BaseStyle -> 
        "Hyperlink", ButtonNote -> "http://www.feyncalc.org/forum/"]], "Text"]],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.739652073310286*^9, 3.739661417818261*^9, 
-  3.744107995125733*^9, 3.744111123634921*^9, 3.7441111740406837`*^9, 
-  3.75009519894412*^9}],
+ CellChangeTimes->{
+  3.739652073310286*^9, 3.739661417818261*^9, 3.744107995125733*^9, 
+   3.744111123634921*^9, 3.7441111740406837`*^9, 3.75009519894412*^9, {
+   3.750440182926355*^9, 3.750440195420279*^9}}],
 
 Cell[BoxData[
  FormBox[
@@ -128,27 +129,30 @@ Cell[BoxData[
        Automatic, Method -> "Preemptive"]], "Text"], 
     Style[" If you use FeynCalc in your research, please cite", "Text"]],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.739652073310286*^9, 3.739661417818261*^9, 
-  3.744107995125733*^9, 3.744111123634921*^9, 3.7441111740406837`*^9, 
-  3.7500951989544163`*^9}],
+ CellChangeTimes->{
+  3.739652073310286*^9, 3.739661417818261*^9, 3.744107995125733*^9, 
+   3.744111123634921*^9, 3.7441111740406837`*^9, 3.75009519894412*^9, {
+   3.750440182926355*^9, 3.750440195430911*^9}}],
 
 Cell[BoxData[
  FormBox[
   StyleBox["\<\" \[Bullet] V. Shtabovenko, R. Mertig and F. Orellana, Comput. \
 Phys. Commun., 207C, 432-444, 2016, arXiv:1601.01167\"\>", "Text",
    StripOnInput->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.739652073310286*^9, 3.739661417818261*^9, 
-  3.744107995125733*^9, 3.744111123634921*^9, 3.7441111740406837`*^9, 
-  3.750095198964349*^9}],
+ CellChangeTimes->{
+  3.739652073310286*^9, 3.739661417818261*^9, 3.744107995125733*^9, 
+   3.744111123634921*^9, 3.7441111740406837`*^9, 3.75009519894412*^9, {
+   3.750440182926355*^9, 3.75044019544123*^9}}],
 
 Cell[BoxData[
  FormBox[
   StyleBox["\<\" \[Bullet] R. Mertig, M. B\[ODoubleDot]hm, and A. Denner, \
 Comput. Phys. Commun., 64, 345-359, 1991.\"\>", "Text",
    StripOnInput->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.739652073310286*^9, 3.739661417818261*^9, 
-  3.744107995125733*^9, 3.744111123634921*^9, 3.7441111740406837`*^9, 
-  3.750095198974312*^9}]
+ CellChangeTimes->{
+  3.739652073310286*^9, 3.739661417818261*^9, 3.744107995125733*^9, 
+   3.744111123634921*^9, 3.7441111740406837`*^9, 3.75009519894412*^9, {
+   3.750440182926355*^9, 3.750440195452128*^9}}]
 }, Open  ]]
 }, Open  ]],
 
@@ -192,16 +196,16 @@ LagrangianData/LScalarPotentialPhysics.dat......\"\>",
   3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
    3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
    3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
-   3.750096685551875*^9}],
+   3.750096685551875*^9, 3.750440199530081*^9}],
 
 Cell[BoxData[
- FormBox["\<\"Calculating the Scalar Kinetic Terms......\"\>", 
-  TraditionalForm]], "Print",
+ FormBox["\<\"Reading Scalar Kinetic Terms From File: \
+LagrangianData/LScalarKinetic.dat......\"\>", TraditionalForm]], "Print",
  CellChangeTimes->{
   3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
    3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
    3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
-   3.75009668556833*^9}],
+   3.750096685551875*^9, 3.750440199541803*^9}],
 
 Cell[BoxData[
  FormBox["\<\"Reading Type-I Yukawa Lagrangian From File: \
@@ -210,7 +214,7 @@ LagrangianData/LTypeI.dat......\"\>", TraditionalForm]], "Print",
   3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
    3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
    3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
-   3.75009669630663*^9}],
+   3.750096685551875*^9, 3.750440199552046*^9}],
 
 Cell[BoxData[
  FormBox["\<\"Reading Type-II Yukawa Lagrangian From File: \
@@ -219,7 +223,7 @@ LagrangianData/LTypeII.dat......\"\>", TraditionalForm]], "Print",
   3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
    3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
    3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
-   3.750096696327138*^9}],
+   3.750096685551875*^9, 3.750440199561952*^9}],
 
 Cell[BoxData[
  FormBox["\<\"Reading Type-LS Yukawa Lagrangian From File: \
@@ -228,7 +232,7 @@ LagrangianData/LTypeLS.dat......\"\>", TraditionalForm]], "Print",
   3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
    3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
    3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
-   3.750096696339478*^9}],
+   3.750096685551875*^9, 3.750440199571725*^9}],
 
 Cell[BoxData[
  FormBox["\<\"Reading Type-FL Yukawa Lagrangian From Files: \
@@ -237,11 +241,9 @@ LagrangianData/LTypeFL.dat......\"\>", TraditionalForm]], "Print",
   3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
    3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
    3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
-   3.7500966963496733`*^9}]
+   3.750096685551875*^9, 3.75044019958295*^9}]
 }, Open  ]]
 }, Open  ]],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
@@ -273,21 +275,6 @@ Cell[BoxData[
    3.739661386364108*^9, 3.739661387823235*^9}}],
 
 Cell[BoxData[
- FormBox[
-  InterpretationBox[
-   RowBox[{"\<\"Calculating: \"\>", "\[InvisibleSpace]", 
-    DynamicBox[ToBoxes[$CellContext`$Calculated, TraditionalForm],
-     ImageSizeCache->{9., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
-    "\[InvisibleSpace]", "264"}],
-   SequenceForm["Calculating: ", 
-    Dynamic[$CellContext`$Calculated], "/", 264],
-   Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750095293207408*^9, 3.750096721596158*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
  RowBox[{
   RowBox[{"If", "[", 
    RowBox[{
@@ -309,21 +296,6 @@ Cell[BoxData[
       "LSPRe", ",", "\"\<LagrangianData/LScalarPotentialPhysicsRe.dat\>\""}], 
       "]"}]}]}], "]"}], ";"}]], "Input",
  CellChangeTimes->{{3.7396613889221573`*^9, 3.739661395118672*^9}}],
-
-Cell[BoxData[
- FormBox[
-  InterpretationBox[
-   RowBox[{"\<\"Calculating: \"\>", "\[InvisibleSpace]", 
-    DynamicBox[ToBoxes[$CellContext`$Calculated, TraditionalForm],
-     ImageSizeCache->{9., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
-    "\[InvisibleSpace]", "2173"}],
-   SequenceForm["Calculating: ", 
-    Dynamic[$CellContext`$Calculated], "/", 2173],
-   Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.7500953010127077`*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
@@ -392,58 +364,6 @@ Cell[BoxData[{
       "]"}]}]}], "]"}], ";"}]}], "Input",
  CellChangeTimes->{{3.7396613963367558`*^9, 3.739661396338912*^9}}],
 
-Cell[CellGroupData[{
-
-Cell[BoxData[
- FormBox[
-  InterpretationBox[
-   RowBox[{"\<\"Calculating: \"\>", "\[InvisibleSpace]", 
-    DynamicBox[ToBoxes[$CellContext`$Calculated, TraditionalForm],
-     ImageSizeCache->{9., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
-    "\[InvisibleSpace]", "42"}],
-   SequenceForm["Calculating: ", 
-    Dynamic[$CellContext`$Calculated], "/", 42],
-   Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750095329231422*^9}],
-
-Cell[BoxData[
- FormBox[
-  InterpretationBox[
-   RowBox[{"\<\"Calculating: \"\>", "\[InvisibleSpace]", 
-    DynamicBox[ToBoxes[$CellContext`$Calculated, TraditionalForm],
-     ImageSizeCache->{9., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
-    "\[InvisibleSpace]", "42"}],
-   SequenceForm["Calculating: ", 
-    Dynamic[$CellContext`$Calculated], "/", 42],
-   Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750095332687303*^9}],
-
-Cell[BoxData[
- FormBox[
-  InterpretationBox[
-   RowBox[{"\<\"Calculating: \"\>", "\[InvisibleSpace]", 
-    DynamicBox[ToBoxes[$CellContext`$Calculated, TraditionalForm],
-     ImageSizeCache->{9., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
-    "\[InvisibleSpace]", "42"}],
-   SequenceForm["Calculating: ", 
-    Dynamic[$CellContext`$Calculated], "/", 42],
-   Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750095335351902*^9}],
-
-Cell[BoxData[
- FormBox[
-  InterpretationBox[
-   RowBox[{"\<\"Calculating: \"\>", "\[InvisibleSpace]", 
-    DynamicBox[ToBoxes[$CellContext`$Calculated, TraditionalForm],
-     ImageSizeCache->{9., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
-    "\[InvisibleSpace]", "42"}],
-   SequenceForm["Calculating: ", 
-    Dynamic[$CellContext`$Calculated], "/", 42],
-   Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750095337087405*^9}]
-}, Open  ]]
-}, Open  ]],
-
 Cell[BoxData[{
  RowBox[{
   RowBox[{"SRe", "=", 
@@ -511,7 +431,7 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating SVV Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "24"}],
    SequenceForm["Generating SVV Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 24],
@@ -546,7 +466,7 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating SSV Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "44"}],
    SequenceForm["Generating SSV Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 44],
@@ -582,7 +502,7 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating SSVV Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "94"}],
    SequenceForm["Generating SSVV Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 94],
@@ -633,7 +553,7 @@ Cell[BoxData[
    RowBox[{"\<\"Generating \"\>", "\[InvisibleSpace]", "2", 
     "\[InvisibleSpace]", "\<\"-Scalar Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "14"}],
    SequenceForm["Generating ", 2, "-Scalar Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 14],
@@ -669,7 +589,7 @@ Cell[BoxData[
    RowBox[{"\<\"Generating \"\>", "\[InvisibleSpace]", "3", 
     "\[InvisibleSpace]", "\<\"-Scalar Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "36"}],
    SequenceForm["Generating ", 3, "-Scalar Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 36],
@@ -703,7 +623,7 @@ Cell[BoxData[
    RowBox[{"\<\"Generating \"\>", "\[InvisibleSpace]", "4", 
     "\[InvisibleSpace]", "\<\"-Scalar Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "84"}],
    SequenceForm["Generating ", 4, "-Scalar Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 84],
@@ -741,7 +661,7 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating FFS Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "12"}],
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
@@ -777,7 +697,7 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating FFS Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "12"}],
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
@@ -815,7 +735,7 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating FFS Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "12"}],
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
@@ -851,7 +771,7 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating FFS Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "12"}],
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
@@ -889,7 +809,7 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating FFS Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "12"}],
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
@@ -925,7 +845,7 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating FFS Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "12"}],
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
@@ -963,7 +883,7 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating FFS Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "12"}],
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
@@ -999,7 +919,7 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating FFS Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "12"}],
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
@@ -1085,7 +1005,7 @@ Cell[BoxData[
   3.750151955329506*^9}}]
 },
 WindowSize->{1280, 755},
-WindowMargins->{{-36, Automatic}, {Automatic, 184}},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 16, \
 2016)",
 StyleDefinitions->"Default.nb"
@@ -1104,104 +1024,90 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 294, 6, 69, "Input"],
 Cell[CellGroupData[{
-Cell[899, 32, 2441, 66, 39, "Print"],
-Cell[3343, 100, 1229, 32, 39, "Print"],
-Cell[4575, 134, 383, 7, 38, "Print"],
-Cell[4961, 143, 368, 7, 38, "Print"]
+Cell[899, 32, 2492, 67, 39, "Print"],
+Cell[3394, 101, 1277, 33, 39, "Print"],
+Cell[4674, 136, 432, 8, 38, "Print"],
+Cell[5109, 146, 418, 8, 38, "Print"]
 }, Open  ]]
 }, Open  ]],
-Cell[5356, 154, 175, 3, 43, "Input"],
-Cell[5534, 159, 534, 9, 144, "Input"],
-Cell[6071, 170, 266, 6, 43, "Input"],
+Cell[5554, 158, 175, 3, 43, "Input"],
+Cell[5732, 163, 534, 9, 144, "Input"],
+Cell[6269, 174, 266, 6, 43, "Input"],
 Cell[CellGroupData[{
-Cell[6362, 180, 122, 2, 43, "Input"],
+Cell[6560, 184, 122, 2, 43, "Input"],
 Cell[CellGroupData[{
-Cell[6509, 186, 415, 8, 30, "Print"],
-Cell[6927, 196, 366, 7, 30, "Print"],
-Cell[7296, 205, 398, 7, 30, "Print"],
-Cell[7697, 214, 401, 7, 30, "Print"],
-Cell[8101, 223, 401, 7, 30, "Print"],
-Cell[8505, 232, 404, 7, 30, "Print"]
+Cell[6707, 190, 437, 8, 30, "Print"],
+Cell[7147, 200, 425, 7, 30, "Print"],
+Cell[7575, 209, 421, 7, 30, "Print"],
+Cell[7999, 218, 423, 7, 30, "Print"],
+Cell[8425, 227, 423, 7, 30, "Print"],
+Cell[8851, 236, 423, 7, 30, "Print"]
 }, Open  ]]
 }, Open  ]],
+Cell[9301, 247, 1057, 27, 144, "Input"],
+Cell[10361, 276, 722, 21, 119, "Input"],
+Cell[11086, 299, 2244, 65, 319, "Input"],
+Cell[13333, 366, 1219, 38, 119, "Input"],
 Cell[CellGroupData[{
-Cell[8958, 245, 1057, 27, 144, "Input"],
-Cell[10018, 274, 474, 10, 30, "Print"]
+Cell[14577, 408, 639, 18, 94, "Input"],
+Cell[15219, 428, 517, 11, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10529, 289, 722, 21, 119, "Input"],
-Cell[11254, 312, 456, 10, 30, "Print"]
+Cell[15773, 444, 615, 17, 94, "Input"],
+Cell[16391, 463, 589, 12, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11747, 327, 2244, 65, 319, "Input"],
-Cell[CellGroupData[{
-Cell[14016, 396, 450, 10, 30, "Print"],
-Cell[14469, 408, 450, 10, 30, "Print"],
-Cell[14922, 420, 450, 10, 30, "Print"],
-Cell[15375, 432, 450, 10, 30, "Print"]
-}, Open  ]]
-}, Open  ]],
-Cell[15852, 446, 1219, 38, 119, "Input"],
-Cell[CellGroupData[{
-Cell[17096, 488, 639, 18, 94, "Input"],
-Cell[17738, 508, 517, 11, 30, "Print"]
+Cell[17017, 480, 641, 17, 94, "Input"],
+Cell[17661, 499, 493, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18292, 524, 615, 17, 94, "Input"],
-Cell[18910, 543, 589, 12, 30, "Print"]
+Cell[18191, 514, 1198, 33, 94, "Input"],
+Cell[19392, 549, 601, 12, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19536, 560, 641, 17, 94, "Input"],
-Cell[20180, 579, 493, 10, 30, "Print"]
+Cell[20030, 566, 604, 17, 94, "Input"],
+Cell[20637, 585, 547, 11, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[20710, 594, 1198, 33, 94, "Input"],
-Cell[21911, 629, 601, 12, 30, "Print"]
+Cell[21221, 601, 604, 16, 94, "Input"],
+Cell[21828, 619, 548, 11, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22549, 646, 604, 17, 94, "Input"],
-Cell[23156, 665, 547, 11, 30, "Print"]
+Cell[22413, 635, 756, 21, 94, "Input"],
+Cell[23172, 658, 469, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23740, 681, 604, 16, 94, "Input"],
-Cell[24347, 699, 548, 11, 30, "Print"]
+Cell[23678, 673, 685, 19, 94, "Input"],
+Cell[24366, 694, 468, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[24932, 715, 756, 21, 94, "Input"],
-Cell[25691, 738, 469, 10, 30, "Print"]
+Cell[24871, 709, 766, 21, 94, "Input"],
+Cell[25640, 732, 469, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26197, 753, 685, 19, 94, "Input"],
-Cell[26885, 774, 468, 10, 30, "Print"]
+Cell[26146, 747, 695, 19, 94, "Input"],
+Cell[26844, 768, 469, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[27390, 789, 766, 21, 94, "Input"],
-Cell[28159, 812, 469, 10, 30, "Print"]
+Cell[27350, 783, 768, 21, 94, "Input"],
+Cell[28121, 806, 469, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28665, 827, 695, 19, 94, "Input"],
-Cell[29363, 848, 469, 10, 30, "Print"]
+Cell[28627, 821, 695, 19, 94, "Input"],
+Cell[29325, 842, 469, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[29869, 863, 768, 21, 94, "Input"],
-Cell[30640, 886, 469, 10, 30, "Print"]
+Cell[29831, 857, 768, 21, 94, "Input"],
+Cell[30602, 880, 469, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[31146, 901, 695, 19, 94, "Input"],
-Cell[31844, 922, 469, 10, 30, "Print"]
+Cell[31108, 895, 697, 19, 94, "Input"],
+Cell[31808, 916, 469, 10, 30, "Print"]
 }, Open  ]],
-Cell[CellGroupData[{
-Cell[32350, 937, 768, 21, 94, "Input"],
-Cell[33121, 960, 469, 10, 30, "Print"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[33627, 975, 697, 19, 94, "Input"],
-Cell[34327, 996, 469, 10, 30, "Print"]
-}, Open  ]],
-Cell[34811, 1009, 118, 2, 43, "Input"],
-Cell[34932, 1013, 275, 6, 44, "Input"],
-Cell[35210, 1021, 1377, 32, 119, "Input"],
-Cell[36590, 1055, 1150, 29, 94, "Input"]
+Cell[32292, 929, 118, 2, 43, "Input"],
+Cell[32413, 933, 275, 6, 44, "Input"],
+Cell[32691, 941, 1377, 32, 119, "Input"],
+Cell[34071, 975, 1150, 29, 94, "Input"]
 }
 ]
 *)

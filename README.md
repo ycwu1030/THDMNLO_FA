@@ -12,7 +12,20 @@ The original files are too messy and un-readable. So here, I try to reorganize t
 
 [comment]: # (1. As a plug-in for FR?)
 
+## Convention
+The sign convention is
+
+- $\eta_G$ = 1
+- $\eta_e$ = 1
+- $\eta$ = -1
+- $\eta_Z$ = 1
+- $\eta_\theta$ = -1
+- $\eta'$ = 1
+The definition of above symbol is according to [arXiv:1209.6213](https://arxiv.org/abs/1209.6213)
+
 ## Usage
+Note that this project is not finished yet, if you want to use the whole complete model files, please directly contact author [Yongcheng Wu](https://github.com/ycwu1030).
+
 - Before running the notebook, please make two new directories:
     1. LagrangianData
     1. VertexRawData
