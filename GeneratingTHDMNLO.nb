@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    138939,       3902]
-NotebookOptionsPosition[    135683,       3789]
-NotebookOutlinePosition[    136037,       3805]
-CellTagsIndexPosition[    135994,       3802]
+NotebookDataLength[     48376,       1380]
+NotebookOptionsPosition[     44664,       1250]
+NotebookOutlinePosition[     45018,       1266]
+CellTagsIndexPosition[     44975,       1263]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -97,7 +97,8 @@ Cell[BoxData[
  CellChangeTimes->{
   3.739652073310286*^9, 3.739661417818261*^9, 3.744107995125733*^9, 
    3.744111123634921*^9, 3.7441111740406837`*^9, 3.75009519894412*^9, {
-   3.750440182926355*^9, 3.750440195420279*^9}, 3.7505281769289713`*^9}],
+   3.750440182926355*^9, 3.750440195420279*^9}, 3.7505281769289713`*^9, 
+   3.750583791800786*^9}],
 
 Cell[BoxData[
  FormBox[
@@ -132,7 +133,8 @@ Cell[BoxData[
  CellChangeTimes->{
   3.739652073310286*^9, 3.739661417818261*^9, 3.744107995125733*^9, 
    3.744111123634921*^9, 3.7441111740406837`*^9, 3.75009519894412*^9, {
-   3.750440182926355*^9, 3.750440195420279*^9}, 3.7505281769417133`*^9}],
+   3.750440182926355*^9, 3.750440195420279*^9}, 3.7505281769289713`*^9, 
+   3.750583791811401*^9}],
 
 Cell[BoxData[
  FormBox[
@@ -142,7 +144,8 @@ Phys. Commun., 207C, 432-444, 2016, arXiv:1601.01167\"\>", "Text",
  CellChangeTimes->{
   3.739652073310286*^9, 3.739661417818261*^9, 3.744107995125733*^9, 
    3.744111123634921*^9, 3.7441111740406837`*^9, 3.75009519894412*^9, {
-   3.750440182926355*^9, 3.750440195420279*^9}, 3.750528176952982*^9}],
+   3.750440182926355*^9, 3.750440195420279*^9}, 3.7505281769289713`*^9, 
+   3.750583791824894*^9}],
 
 Cell[BoxData[
  FormBox[
@@ -152,7 +155,8 @@ Comput. Phys. Commun., 64, 345-359, 1991.\"\>", "Text",
  CellChangeTimes->{
   3.739652073310286*^9, 3.739661417818261*^9, 3.744107995125733*^9, 
    3.744111123634921*^9, 3.7441111740406837`*^9, 3.75009519894412*^9, {
-   3.750440182926355*^9, 3.750440195420279*^9}, 3.750528176964698*^9}]
+   3.750440182926355*^9, 3.750440195420279*^9}, 3.7505281769289713`*^9, 
+   3.750583791837438*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -191,67 +195,137 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[
- FormBox["\<\"Reading Potential Lagrangian From File: \
-LagrangianData/LScalarPotentialPhysics.dat......\"\>", 
+ FormBox["\<\"Calculating the Potential Lagrangian......\"\>", 
   TraditionalForm]], "Print",
  CellChangeTimes->{
   3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
    3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
    3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
    3.750096685551875*^9, 3.750440199530081*^9, 3.750528215038467*^9, 
-   3.7505284193751307`*^9}],
+   3.7505284193751307`*^9, 3.75058379823794*^9}],
 
 Cell[BoxData[
- FormBox["\<\"Reading Scalar Kinetic Terms From File: \
-LagrangianData/LScalarKinetic.dat......\"\>", TraditionalForm]], "Print",
+ FormBox["\<\"...... Generating the rules transforming from Lagrangian \
+parameters to physics parameters ......\"\>", TraditionalForm]], "Print",
  CellChangeTimes->{
   3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
    3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
    3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
    3.750096685551875*^9, 3.750440199530081*^9, 3.750528215038467*^9, 
-   3.7505284193857517`*^9}],
+   3.7505284193751307`*^9, 3.7505838315202*^9}],
 
 Cell[BoxData[
- FormBox["\<\"Reading Type-I Yukawa Lagrangian From File: \
-LagrangianData/LTypeI.dat......\"\>", TraditionalForm]], "Print",
+ FormBox["\<\"...... Simplify the parameter transformation rules. This will \
+take long time, Be patient ......\"\>", TraditionalForm]], "Print",
  CellChangeTimes->{
   3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
    3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
    3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
    3.750096685551875*^9, 3.750440199530081*^9, 3.750528215038467*^9, 
-   3.7505284193961573`*^9}],
+   3.7505284193751307`*^9, 3.750583869864768*^9}]
+}, Open  ]],
 
 Cell[BoxData[
- FormBox["\<\"Reading Type-II Yukawa Lagrangian From File: \
-LagrangianData/LTypeII.dat......\"\>", TraditionalForm]], "Print",
+ FormBox[
+  RowBox[{
+   StyleBox[
+    RowBox[{"Simplify", "::", "time"}], "MessageName"], 
+   RowBox[{
+   ":", " "}], "\<\"Time spent on a transformation exceeded \
+\[NoBreak]\\!\\(\\*FormBox[\\\"300.`\\\", TraditionalForm]\\)\[NoBreak] \
+seconds, and the transformation was aborted. Increasing the value of \
+TimeConstraint option may improve the result of simplification.\"\>"}], 
+  TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.7505845991472187`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox[
+    RowBox[{"Simplify", "::", "time"}], "MessageName"], 
+   RowBox[{
+   ":", " "}], "\<\"Time spent on a transformation exceeded \
+\[NoBreak]\\!\\(\\*FormBox[\\\"300.`\\\", TraditionalForm]\\)\[NoBreak] \
+seconds, and the transformation was aborted. Increasing the value of \
+TimeConstraint option may improve the result of simplification.\"\>"}], 
+  TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.750584925351006*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox["\<\"...... Collecting the new Scalar potential. This will take long \
+time, Be patient ......\"\>", TraditionalForm]], "Print",
  CellChangeTimes->{
   3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
    3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
    3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
    3.750096685551875*^9, 3.750440199530081*^9, 3.750528215038467*^9, 
-   3.750528419406974*^9}],
+   3.7505284193751307`*^9, 3.750584981463172*^9}],
 
 Cell[BoxData[
- FormBox["\<\"Reading Type-LS Yukawa Lagrangian From File: \
-LagrangianData/LTypeLS.dat......\"\>", TraditionalForm]], "Print",
+ FormBox["\<\"Calculating the Scalar Kinetic Terms......\"\>", 
+  TraditionalForm]], "Print",
  CellChangeTimes->{
   3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
    3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
    3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
    3.750096685551875*^9, 3.750440199530081*^9, 3.750528215038467*^9, 
-   3.750528419417384*^9}],
+   3.7505284193751307`*^9, 3.750585001094738*^9}],
 
 Cell[BoxData[
- FormBox["\<\"Reading Type-FL Yukawa Lagrangian From Files: \
-LagrangianData/LTypeFL.dat......\"\>", TraditionalForm]], "Print",
+ FormBox["\<\"Calculating Type-I Yukawa Lagrangian......\"\>", 
+  TraditionalForm]], "Print",
  CellChangeTimes->{
   3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
    3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
    3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
    3.750096685551875*^9, 3.750440199530081*^9, 3.750528215038467*^9, 
-   3.750528419428583*^9}]
+   3.7505284193751307`*^9, 3.7505850158082523`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Calculating Type-II Yukawa Lagrangian......\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
+   3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
+   3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
+   3.750096685551875*^9, 3.750440199530081*^9, 3.750528215038467*^9, 
+   3.7505284193751307`*^9, 3.750585015822382*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Calculating Type-LS Yukawa Lagrangian......\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
+   3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
+   3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
+   3.750096685551875*^9, 3.750440199530081*^9, 3.750528215038467*^9, 
+   3.7505284193751307`*^9, 3.7505850158366747`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Calculating Type-FL Yukawa Lagrangian......\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
+   3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
+   3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
+   3.750096685551875*^9, 3.750440199530081*^9, 3.750528215038467*^9, 
+   3.7505284193751307`*^9, 3.750585015848103*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Calculating the Ghost Lagrangian......\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.739656481901144*^9, 3.73965673120376*^9, {3.739656906366684*^9, 
+   3.739656931127716*^9}, 3.7396614241531467`*^9, 3.744108004054955*^9, 
+   3.744111177569935*^9, 3.7500952104503727`*^9, 3.750096307234386*^9, 
+   3.750096685551875*^9, 3.750440199530081*^9, 3.750528215038467*^9, 
+   3.7505284193751307`*^9, 3.750585015860611*^9}]
 }, Open  ]]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
@@ -283,6 +357,21 @@ Cell[BoxData[
    3.739661386364108*^9, 3.739661387823235*^9}}],
 
 Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"Calculating: \"\>", "\[InvisibleSpace]", 
+    DynamicBox[ToBoxes[$CellContext`$Calculated, TraditionalForm],
+     ImageSizeCache->{18., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+    "\[InvisibleSpace]", "264"}],
+   SequenceForm["Calculating: ", 
+    Dynamic[$CellContext`$Calculated], "/", 264],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.750585308831785*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
  RowBox[{
   RowBox[{"If", "[", 
    RowBox[{
@@ -304,6 +393,21 @@ Cell[BoxData[
       "LSPRe", ",", "\"\<LagrangianData/LScalarPotentialPhysicsRe.dat\>\""}], 
       "]"}]}]}], "]"}], ";"}]], "Input",
  CellChangeTimes->{{3.7396613889221573`*^9, 3.739661395118672*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"Calculating: \"\>", "\[InvisibleSpace]", 
+    DynamicBox[ToBoxes[$CellContext`$Calculated, TraditionalForm],
+     ImageSizeCache->{18., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+    "\[InvisibleSpace]", "2173"}],
+   SequenceForm["Calculating: ", 
+    Dynamic[$CellContext`$Calculated], "/", 2173],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.750585313194118*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
@@ -375,10 +479,75 @@ Cell[BoxData[{
 Cell[CellGroupData[{
 
 Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"Calculating: \"\>", "\[InvisibleSpace]", 
+    DynamicBox[ToBoxes[$CellContext`$Calculated, TraditionalForm],
+     ImageSizeCache->{18., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+    "\[InvisibleSpace]", "42"}],
+   SequenceForm["Calculating: ", 
+    Dynamic[$CellContext`$Calculated], "/", 42],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.750585339733327*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"Calculating: \"\>", "\[InvisibleSpace]", 
+    DynamicBox[ToBoxes[$CellContext`$Calculated, TraditionalForm],
+     ImageSizeCache->{18., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+    "\[InvisibleSpace]", "42"}],
+   SequenceForm["Calculating: ", 
+    Dynamic[$CellContext`$Calculated], "/", 42],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.750585343525552*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"Calculating: \"\>", "\[InvisibleSpace]", 
+    DynamicBox[ToBoxes[$CellContext`$Calculated, TraditionalForm],
+     ImageSizeCache->{18., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+    "\[InvisibleSpace]", "42"}],
+   SequenceForm["Calculating: ", 
+    Dynamic[$CellContext`$Calculated], "/", 42],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.750585346501545*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"Calculating: \"\>", "\[InvisibleSpace]", 
+    DynamicBox[ToBoxes[$CellContext`$Calculated, TraditionalForm],
+     ImageSizeCache->{18., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+    "\[InvisibleSpace]", "42"}],
+   SequenceForm["Calculating: ", 
+    Dynamic[$CellContext`$Calculated], "/", 42],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.750585348556696*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
  RowBox[{
-  RowBox[{"LGhostRe", "=", 
-   RowBox[{"PrepareRenormalizedLag", "[", "LGhost", "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.750528230174738*^9, 3.7505282551064*^9}}],
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"FileExistsQ", "[", "\"\<LagrangianData/LGhostRe.dat\>\"", "]"}], 
+    ",", 
+    RowBox[{
+     RowBox[{"LGhostRe", "=", 
+      RowBox[{"Get", "[", "\"\<LagrangianData/LGhostRe.dat\>\"", "]"}]}], 
+     ";"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"LGhostRe", "=", 
+      RowBox[{"PrepareRenormalizedLag", "[", "LGhost", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Put", "[", 
+      RowBox[{"LGhostRe", ",", "\"\<LagrangianData/LGhostRe.dat\>\""}], 
+      "]"}]}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7505854475302963`*^9, 3.750585513407771*^9}}],
 
 Cell[BoxData[
  FormBox[
@@ -390,1423 +559,7 @@ Cell[BoxData[
    SequenceForm["Calculating: ", 
     Dynamic[$CellContext`$Calculated], "/", 19],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.7505282557098007`*^9, 3.750528423994635*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData["LGhostRe"], "Input",
- CellChangeTimes->{{3.750528425745461*^9, 3.7505284273538446`*^9}}],
-
-Cell[BoxData[
- FormBox[
-  RowBox[{"(", "\[NoBreak]", GridBox[{
-     {
-      RowBox[{"-", 
-       FractionBox[
-        RowBox[{"EL", " ", "MW", " ", "vev", " ", 
-         FormBox[
-          SubscriptBox["GhostWm", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox[
-           RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-          TraditionalForm], " ", 
-         RowBox[{"RXi", "(", "Wp", ")"}]}], 
-        RowBox[{"2", " ", "SW"}]]}], 
-      FractionBox[
-       RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-        FormBox[
-         SubscriptBox["G0", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox["GhostWm", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox[
-          RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-         TraditionalForm], " ", 
-        RowBox[{"RXi", "(", "Wp", ")"}]}], 
-       RowBox[{"2", " ", "SW"}]], 
-      RowBox[{"EL", " ", "MW", " ", 
-       FormBox[
-        SubscriptBox["GhostA", "R"],
-        TraditionalForm], " ", 
-       FormBox[
-        SubscriptBox["Gm", "R"],
-        TraditionalForm], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}]}], 
-      RowBox[{"-", 
-       FractionBox[
-        RowBox[{"CW", " ", "EL", " ", "MW", " ", 
-         FormBox[
-          SubscriptBox["GhostZ", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox["Gm", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox[
-           RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-          TraditionalForm], " ", 
-         RowBox[{"RXi", "(", "Wp", ")"}]}], 
-        RowBox[{"2", " ", "SW"}]]}], 
-      FractionBox[
-       RowBox[{"EL", " ", "MW", " ", "SW", " ", 
-        FormBox[
-         SubscriptBox["GhostZ", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox["Gm", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox[
-          RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-         TraditionalForm], " ", 
-        RowBox[{"RXi", "(", "Wp", ")"}]}], 
-       RowBox[{"2", " ", "CW"}]], 
-      RowBox[{"-", 
-       FractionBox[
-        RowBox[{"EL", " ", "MW", " ", 
-         RowBox[{"cos", "(", 
-          RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-         FormBox[
-          SubscriptBox["GhostWm", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox["HH", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox[
-           RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-          TraditionalForm], " ", 
-         RowBox[{"RXi", "(", "Wp", ")"}]}], 
-        RowBox[{"2", " ", "SW"}]]}], 
-      RowBox[{"-", 
-       FractionBox[
-        RowBox[{"EL", " ", "MW", " ", "vev", " ", 
-         FormBox[
-          SubscriptBox["GhostWp", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox[
-           RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-          TraditionalForm], " ", 
-         RowBox[{"RXi", "(", "Wp", ")"}]}], 
-        RowBox[{"2", " ", "SW"}]]}], 
-      RowBox[{"-", 
-       FractionBox[
-        RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-         FormBox[
-          SubscriptBox["G0", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox["GhostWp", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox[
-           RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-          TraditionalForm], " ", 
-         RowBox[{"RXi", "(", "Wp", ")"}]}], 
-        RowBox[{"2", " ", "SW"}]]}], 
-      RowBox[{"EL", " ", "MW", " ", 
-       FormBox[
-        SubscriptBox["GhostA", "R"],
-        TraditionalForm], " ", 
-       FormBox[
-        SubscriptBox["Gp", "R"],
-        TraditionalForm], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}]}], 
-      RowBox[{"-", 
-       FractionBox[
-        RowBox[{"CW", " ", "EL", " ", "MW", " ", 
-         FormBox[
-          SubscriptBox["GhostZ", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox["Gp", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox[
-           RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-          TraditionalForm], " ", 
-         RowBox[{"RXi", "(", "Wp", ")"}]}], 
-        RowBox[{"2", " ", "SW"}]]}], 
-      FractionBox[
-       RowBox[{"EL", " ", "MW", " ", "SW", " ", 
-        FormBox[
-         SubscriptBox["GhostZ", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox["Gp", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox[
-          RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-         TraditionalForm], " ", 
-        RowBox[{"RXi", "(", "Wp", ")"}]}], 
-       RowBox[{"2", " ", "CW"}]], 
-      RowBox[{"-", 
-       FractionBox[
-        RowBox[{"EL", " ", "MW", " ", 
-         RowBox[{"cos", "(", 
-          RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-         FormBox[
-          SubscriptBox["GhostWp", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox["HH", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox[
-           RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-          TraditionalForm], " ", 
-         RowBox[{"RXi", "(", "Wp", ")"}]}], 
-        RowBox[{"2", " ", "SW"}]]}], 
-      RowBox[{"-", 
-       FractionBox[
-        RowBox[{"EL", " ", "MZ", " ", "vev", " ", 
-         FormBox[
-          SubscriptBox["GhostZ", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox[
-           RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-          TraditionalForm], " ", 
-         RowBox[{"RXi", "(", "Z", ")"}]}], 
-        RowBox[{"2", " ", "CW", " ", "SW"}]]}], 
-      FractionBox[
-       RowBox[{"EL", " ", "MZ", " ", 
-        FormBox[
-         SubscriptBox["GhostWp", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox["Gm", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox[
-          RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-         TraditionalForm], " ", 
-        RowBox[{"RXi", "(", "Z", ")"}]}], 
-       RowBox[{"2", " ", "SW"}]], 
-      FractionBox[
-       RowBox[{"EL", " ", "MZ", " ", 
-        FormBox[
-         SubscriptBox["GhostWm", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox["Gp", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox[
-          RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-         TraditionalForm], " ", 
-        RowBox[{"RXi", "(", "Z", ")"}]}], 
-       RowBox[{"2", " ", "SW"}]], 
-      RowBox[{"-", 
-       FractionBox[
-        RowBox[{"EL", " ", "MZ", " ", 
-         RowBox[{"cos", "(", 
-          RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-         FormBox[
-          SubscriptBox["GhostZ", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox["HH", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox[
-           RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-          TraditionalForm], " ", 
-         RowBox[{"RXi", "(", "Z", ")"}]}], 
-        RowBox[{"2", " ", "CW", " ", "SW"}]]}], 
-      FractionBox[
-       RowBox[{"EL", " ", "MW", " ", 
-        FormBox[
-         SubscriptBox["GhostWm", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox["HL", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox[
-          RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-         TraditionalForm], " ", 
-        RowBox[{"RXi", "(", "Wp", ")"}], " ", 
-        RowBox[{"sin", "(", 
-         RowBox[{"alpha", "-", "beta"}], ")"}]}], 
-       RowBox[{"2", " ", "SW"}]], 
-      FractionBox[
-       RowBox[{"EL", " ", "MW", " ", 
-        FormBox[
-         SubscriptBox["GhostWp", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox["HL", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox[
-          RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-         TraditionalForm], " ", 
-        RowBox[{"RXi", "(", "Wp", ")"}], " ", 
-        RowBox[{"sin", "(", 
-         RowBox[{"alpha", "-", "beta"}], ")"}]}], 
-       RowBox[{"2", " ", "SW"}]], 
-      FractionBox[
-       RowBox[{"EL", " ", "MZ", " ", 
-        FormBox[
-         SubscriptBox["GhostZ", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox["HL", "R"],
-         TraditionalForm], " ", 
-        FormBox[
-         SubscriptBox[
-          RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-         TraditionalForm], " ", 
-        RowBox[{"RXi", "(", "Z", ")"}], " ", 
-        RowBox[{"sin", "(", 
-         RowBox[{"alpha", "-", "beta"}], ")"}]}], 
-       RowBox[{"2", " ", "CW", " ", "SW"}]]},
-     {
-      RowBox[{"-", 
-       FractionBox[
-        RowBox[{"EL", " ", "MW", " ", 
-         RowBox[{"(", 
-          RowBox[{
-           RowBox[{"dvev1", " ", "SW"}], "+", 
-           RowBox[{"dZe1", " ", "vev", " ", "SW"}], "+", 
-           RowBox[{"vev", " ", 
-            RowBox[{"dZ", "(", "UWUW", ")"}], " ", "SW"}], "-", 
-           RowBox[{"dSW1", " ", "vev"}]}], ")"}], " ", 
-         FormBox[
-          SubscriptBox["GhostWm", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox[
-           RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-          TraditionalForm], " ", 
-         RowBox[{"RXi", "(", "Wp", ")"}]}], 
-        RowBox[{"2", " ", 
-         SuperscriptBox["SW", "2"]}]]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-       FormBox[
-        SubscriptBox["GhostWm", "R"],
-        TraditionalForm], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", 
-             FractionBox["dSW1", 
-              SuperscriptBox["SW", "2"]]}], "+", 
-            FractionBox[
-             RowBox[{"dZ", "(", "UWUW", ")"}], "SW"], "+", 
-            FractionBox["dZe1", "SW"]}], ")"}], " ", 
-          FormBox[
-           SubscriptBox["G0", "R"],
-           TraditionalForm]}], "+", 
-         FractionBox[
-          RowBox[{
-           RowBox[{
-            RowBox[{"dZ", "(", "G0G0", ")"}], " ", 
-            FormBox[
-             SubscriptBox["G0", "R"],
-             TraditionalForm]}], "+", 
-           RowBox[{
-            RowBox[{"dZ", "(", "G0HA", ")"}], " ", 
-            FormBox[
-             SubscriptBox["HA", "R"],
-             TraditionalForm]}]}], 
-          RowBox[{"2", " ", "SW"}]]}], ")"}], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}]}], 
-      RowBox[{"EL", " ", "MW", " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{"dZe1", "+", 
-               FractionBox[
-                RowBox[{"dZ", "(", "UWUW", ")"}], "2"]}], ")"}], " ", 
-             FormBox[
-              SubscriptBox["GhostA", "R"],
-              TraditionalForm]}], "+", 
-            RowBox[{
-             FractionBox["1", "2"], " ", 
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"dZ", "(", "UAUA", ")"}], " ", 
-                FormBox[
-                 SubscriptBox["GhostA", "R"],
-                 TraditionalForm]}], "+", 
-               RowBox[{
-                RowBox[{"dZ", "(", "UAUZ", ")"}], " ", 
-                FormBox[
-                 SubscriptBox["GhostZ", "R"],
-                 TraditionalForm]}]}], ")"}]}]}], ")"}], " ", 
-          FormBox[
-           SubscriptBox["Gm", "R"],
-           TraditionalForm]}], "+", 
-         RowBox[{
-          FractionBox["1", "2"], " ", 
-          FormBox[
-           SubscriptBox["GhostA", "R"],
-           TraditionalForm], " ", 
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-             FormBox[
-              SubscriptBox["Gm", "R"],
-              TraditionalForm]}], "+", 
-            RowBox[{
-             RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-             FormBox[
-              SubscriptBox["Hm", "R"],
-              TraditionalForm]}]}], ")"}]}]}], ")"}], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "EL", " ", "MW", " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"-", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"(", 
-               RowBox[{
-                RowBox[{"-", 
-                 FractionBox[
-                  RowBox[{"CW", " ", "dSW1"}], 
-                  SuperscriptBox["SW", "2"]]}], "+", 
-                FractionBox[
-                 RowBox[{"CW", " ", 
-                  RowBox[{"dZ", "(", "UWUW", ")"}]}], 
-                 RowBox[{"2", " ", "SW"}]], "+", 
-                FractionBox[
-                 RowBox[{"dCW1", "+", 
-                  RowBox[{"CW", " ", "dZe1"}]}], "SW"]}], ")"}], " ", 
-              FormBox[
-               SubscriptBox["GhostZ", "R"],
-               TraditionalForm]}], "+", 
-             FractionBox[
-              RowBox[{"CW", " ", 
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-                  FormBox[
-                   SubscriptBox["GhostA", "R"],
-                   TraditionalForm]}], "+", 
-                 RowBox[{
-                  RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-                  FormBox[
-                   SubscriptBox["GhostZ", "R"],
-                   TraditionalForm]}]}], ")"}]}], 
-              RowBox[{"2", " ", "SW"}]]}], ")"}]}], " ", 
-          FormBox[
-           SubscriptBox["Gm", "R"],
-           TraditionalForm]}], "-", 
-         FractionBox[
-          RowBox[{"CW", " ", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm], " ", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-              FormBox[
-               SubscriptBox["Gm", "R"],
-               TraditionalForm]}], "+", 
-             RowBox[{
-              RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-              FormBox[
-               SubscriptBox["Hm", "R"],
-               TraditionalForm]}]}], ")"}]}], 
-          RowBox[{"2", " ", "SW"}]]}], ")"}], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "EL", " ", "MW", " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{
-               FractionBox["dSW1", "CW"], "+", 
-               RowBox[{
-                RowBox[{"(", 
-                 RowBox[{
-                  FractionBox["dZe1", "CW"], "-", 
-                  FractionBox["dCW1", 
-                   SuperscriptBox["CW", "2"]]}], ")"}], " ", "SW"}], "+", 
-               FractionBox[
-                RowBox[{"SW", " ", 
-                 RowBox[{"dZ", "(", "UWUW", ")"}]}], 
-                RowBox[{"2", " ", "CW"}]]}], ")"}], " ", 
-             FormBox[
-              SubscriptBox["GhostZ", "R"],
-              TraditionalForm]}], "+", 
-            FractionBox[
-             RowBox[{"SW", " ", 
-              RowBox[{"(", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-                 FormBox[
-                  SubscriptBox["GhostA", "R"],
-                  TraditionalForm]}], "+", 
-                RowBox[{
-                 RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-                 FormBox[
-                  SubscriptBox["GhostZ", "R"],
-                  TraditionalForm]}]}], ")"}]}], 
-             RowBox[{"2", " ", "CW"}]]}], ")"}], " ", 
-          FormBox[
-           SubscriptBox["Gm", "R"],
-           TraditionalForm]}], "+", 
-         FractionBox[
-          RowBox[{"SW", " ", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm], " ", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-              FormBox[
-               SubscriptBox["Gm", "R"],
-               TraditionalForm]}], "+", 
-             RowBox[{
-              RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-              FormBox[
-               SubscriptBox["Hm", "R"],
-               TraditionalForm]}]}], ")"}]}], 
-          RowBox[{"2", " ", "CW"}]]}], ")"}], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "EL", " ", "MW", " ", 
-       FormBox[
-        SubscriptBox["GhostWm", "R"],
-        TraditionalForm], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"dZ", "(", "HHHH", ")"}], " ", 
-               FormBox[
-                SubscriptBox["HH", "R"],
-                TraditionalForm]}], "+", 
-              RowBox[{
-               RowBox[{"dZ", "(", "HHHL", ")"}], " ", 
-               FormBox[
-                SubscriptBox["HL", "R"],
-                TraditionalForm]}]}], ")"}]}], 
-           RowBox[{"2", " ", "SW"}]]}], "-", 
-         RowBox[{
-          FormBox[
-           SubscriptBox["HH", "R"],
-           TraditionalForm], " ", 
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{
-               FractionBox["dZe1", "SW"], "-", 
-               FractionBox["dSW1", 
-                SuperscriptBox["SW", "2"]]}], ")"}], " ", 
-             RowBox[{"cos", "(", 
-              RowBox[{"alpha", "-", "beta"}], ")"}]}], "+", 
-            FractionBox[
-             RowBox[{
-              RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-              RowBox[{"cos", "(", 
-               RowBox[{"alpha", "-", "beta"}], ")"}]}], "SW"], "+", 
-            FractionBox[
-             RowBox[{
-              RowBox[{"dbeta1", " ", 
-               RowBox[{"sin", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}], "-", 
-              RowBox[{"dalpha1", " ", 
-               RowBox[{"sin", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}]}], "SW"]}], ")"}]}]}],
-         ")"}]}], 
-      RowBox[{"-", 
-       FractionBox[
-        RowBox[{"EL", " ", "MW", " ", 
-         RowBox[{"(", 
-          RowBox[{
-           RowBox[{"dvev1", " ", "SW"}], "+", 
-           RowBox[{"dZe1", " ", "vev", " ", "SW"}], "+", 
-           RowBox[{"vev", " ", 
-            RowBox[{"dZ", "(", "UWUW", ")"}], " ", "SW"}], "-", 
-           RowBox[{"dSW1", " ", "vev"}]}], ")"}], " ", 
-         FormBox[
-          SubscriptBox["GhostWp", "R"],
-          TraditionalForm], " ", 
-         FormBox[
-          SubscriptBox[
-           RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-          TraditionalForm], " ", 
-         RowBox[{"RXi", "(", "Wp", ")"}]}], 
-        RowBox[{"2", " ", 
-         SuperscriptBox["SW", "2"]}]]}], 
-      RowBox[{
-       RowBox[{"-", 
-        FractionBox["1", "2"]}], " ", "\[ImaginaryI]", " ", "EL", " ", "MW", 
-       " ", 
-       FormBox[
-        SubscriptBox["GhostWp", "R"],
-        TraditionalForm], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", 
-             FractionBox["dSW1", 
-              SuperscriptBox["SW", "2"]]}], "+", 
-            FractionBox[
-             RowBox[{"dZ", "(", "UWUW", ")"}], "SW"], "+", 
-            FractionBox["dZe1", "SW"]}], ")"}], " ", 
-          FormBox[
-           SubscriptBox["G0", "R"],
-           TraditionalForm]}], "+", 
-         FractionBox[
-          RowBox[{
-           RowBox[{
-            RowBox[{"dZ", "(", "G0G0", ")"}], " ", 
-            FormBox[
-             SubscriptBox["G0", "R"],
-             TraditionalForm]}], "+", 
-           RowBox[{
-            RowBox[{"dZ", "(", "G0HA", ")"}], " ", 
-            FormBox[
-             SubscriptBox["HA", "R"],
-             TraditionalForm]}]}], 
-          RowBox[{"2", " ", "SW"}]]}], ")"}], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}]}], 
-      RowBox[{"EL", " ", "MW", " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{"dZe1", "+", 
-               FractionBox[
-                RowBox[{"dZ", "(", "UWUW", ")"}], "2"]}], ")"}], " ", 
-             FormBox[
-              SubscriptBox["GhostA", "R"],
-              TraditionalForm]}], "+", 
-            RowBox[{
-             FractionBox["1", "2"], " ", 
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"dZ", "(", "UAUA", ")"}], " ", 
-                FormBox[
-                 SubscriptBox["GhostA", "R"],
-                 TraditionalForm]}], "+", 
-               RowBox[{
-                RowBox[{"dZ", "(", "UAUZ", ")"}], " ", 
-                FormBox[
-                 SubscriptBox["GhostZ", "R"],
-                 TraditionalForm]}]}], ")"}]}]}], ")"}], " ", 
-          FormBox[
-           SubscriptBox["Gp", "R"],
-           TraditionalForm]}], "+", 
-         RowBox[{
-          FractionBox["1", "2"], " ", 
-          FormBox[
-           SubscriptBox["GhostA", "R"],
-           TraditionalForm], " ", 
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-             FormBox[
-              SubscriptBox["Gp", "R"],
-              TraditionalForm]}], "+", 
-            RowBox[{
-             RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-             FormBox[
-              SubscriptBox["Hp", "R"],
-              TraditionalForm]}]}], ")"}]}]}], ")"}], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "EL", " ", "MW", " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"-", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"(", 
-               RowBox[{
-                RowBox[{"-", 
-                 FractionBox[
-                  RowBox[{"CW", " ", "dSW1"}], 
-                  SuperscriptBox["SW", "2"]]}], "+", 
-                FractionBox[
-                 RowBox[{"CW", " ", 
-                  RowBox[{"dZ", "(", "UWUW", ")"}]}], 
-                 RowBox[{"2", " ", "SW"}]], "+", 
-                FractionBox[
-                 RowBox[{"dCW1", "+", 
-                  RowBox[{"CW", " ", "dZe1"}]}], "SW"]}], ")"}], " ", 
-              FormBox[
-               SubscriptBox["GhostZ", "R"],
-               TraditionalForm]}], "+", 
-             FractionBox[
-              RowBox[{"CW", " ", 
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-                  FormBox[
-                   SubscriptBox["GhostA", "R"],
-                   TraditionalForm]}], "+", 
-                 RowBox[{
-                  RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-                  FormBox[
-                   SubscriptBox["GhostZ", "R"],
-                   TraditionalForm]}]}], ")"}]}], 
-              RowBox[{"2", " ", "SW"}]]}], ")"}]}], " ", 
-          FormBox[
-           SubscriptBox["Gp", "R"],
-           TraditionalForm]}], "-", 
-         FractionBox[
-          RowBox[{"CW", " ", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm], " ", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-              FormBox[
-               SubscriptBox["Gp", "R"],
-               TraditionalForm]}], "+", 
-             RowBox[{
-              RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-              FormBox[
-               SubscriptBox["Hp", "R"],
-               TraditionalForm]}]}], ")"}]}], 
-          RowBox[{"2", " ", "SW"}]]}], ")"}], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "EL", " ", "MW", " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{
-               FractionBox["dSW1", "CW"], "+", 
-               RowBox[{
-                RowBox[{"(", 
-                 RowBox[{
-                  FractionBox["dZe1", "CW"], "-", 
-                  FractionBox["dCW1", 
-                   SuperscriptBox["CW", "2"]]}], ")"}], " ", "SW"}], "+", 
-               FractionBox[
-                RowBox[{"SW", " ", 
-                 RowBox[{"dZ", "(", "UWUW", ")"}]}], 
-                RowBox[{"2", " ", "CW"}]]}], ")"}], " ", 
-             FormBox[
-              SubscriptBox["GhostZ", "R"],
-              TraditionalForm]}], "+", 
-            FractionBox[
-             RowBox[{"SW", " ", 
-              RowBox[{"(", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-                 FormBox[
-                  SubscriptBox["GhostA", "R"],
-                  TraditionalForm]}], "+", 
-                RowBox[{
-                 RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-                 FormBox[
-                  SubscriptBox["GhostZ", "R"],
-                  TraditionalForm]}]}], ")"}]}], 
-             RowBox[{"2", " ", "CW"}]]}], ")"}], " ", 
-          FormBox[
-           SubscriptBox["Gp", "R"],
-           TraditionalForm]}], "+", 
-         FractionBox[
-          RowBox[{"SW", " ", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm], " ", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-              FormBox[
-               SubscriptBox["Gp", "R"],
-               TraditionalForm]}], "+", 
-             RowBox[{
-              RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-              FormBox[
-               SubscriptBox["Hp", "R"],
-               TraditionalForm]}]}], ")"}]}], 
-          RowBox[{"2", " ", "CW"}]]}], ")"}], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "EL", " ", "MW", " ", 
-       FormBox[
-        SubscriptBox["GhostWp", "R"],
-        TraditionalForm], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"dZ", "(", "HHHH", ")"}], " ", 
-               FormBox[
-                SubscriptBox["HH", "R"],
-                TraditionalForm]}], "+", 
-              RowBox[{
-               RowBox[{"dZ", "(", "HHHL", ")"}], " ", 
-               FormBox[
-                SubscriptBox["HL", "R"],
-                TraditionalForm]}]}], ")"}]}], 
-           RowBox[{"2", " ", "SW"}]]}], "-", 
-         RowBox[{
-          FormBox[
-           SubscriptBox["HH", "R"],
-           TraditionalForm], " ", 
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{
-               FractionBox["dZe1", "SW"], "-", 
-               FractionBox["dSW1", 
-                SuperscriptBox["SW", "2"]]}], ")"}], " ", 
-             RowBox[{"cos", "(", 
-              RowBox[{"alpha", "-", "beta"}], ")"}]}], "+", 
-            FractionBox[
-             RowBox[{
-              RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-              RowBox[{"cos", "(", 
-               RowBox[{"alpha", "-", "beta"}], ")"}]}], "SW"], "+", 
-            FractionBox[
-             RowBox[{
-              RowBox[{"dbeta1", " ", 
-               RowBox[{"sin", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}], "-", 
-              RowBox[{"dalpha1", " ", 
-               RowBox[{"sin", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}]}], "SW"]}], ")"}]}]}],
-         ")"}]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "EL", " ", "MZ", " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"-", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"(", 
-               RowBox[{
-                FractionBox["dvev1", 
-                 RowBox[{"CW", " ", "SW"}]], "+", 
-                RowBox[{
-                 RowBox[{"(", 
-                  RowBox[{
-                   FractionBox[
-                    RowBox[{
-                    FractionBox["dZe1", "CW"], "-", 
-                    FractionBox["dCW1", 
-                    SuperscriptBox["CW", "2"]]}], "SW"], "-", 
-                   FractionBox["dSW1", 
-                    RowBox[{"CW", " ", 
-                    SuperscriptBox["SW", "2"]}]]}], ")"}], " ", "vev"}]}], 
-               ")"}], " ", 
-              FormBox[
-               SubscriptBox["GhostZ", "R"],
-               TraditionalForm]}], "+", 
-             FractionBox[
-              RowBox[{"vev", " ", 
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-                  FormBox[
-                   SubscriptBox["GhostA", "R"],
-                   TraditionalForm]}], "+", 
-                 RowBox[{
-                  RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-                  FormBox[
-                   SubscriptBox["GhostZ", "R"],
-                   TraditionalForm]}]}], ")"}]}], 
-              RowBox[{"2", " ", "CW", " ", "SW"}]]}], ")"}]}], " ", 
-          FormBox[
-           SubscriptBox[
-            RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-           TraditionalForm]}], "-", 
-         FractionBox[
-          RowBox[{"vev", " ", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm], " ", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-              FormBox[
-               SubscriptBox["GhostA", "R"],
-               TraditionalForm]}], "+", 
-             RowBox[{
-              RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-              FormBox[
-               SubscriptBox[
-                RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-               TraditionalForm]}]}], ")"}]}], 
-          RowBox[{"2", " ", "CW", " ", "SW"}]]}], ")"}], " ", 
-       RowBox[{"RXi", "(", "Z", ")"}]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "EL", " ", "MZ", " ", 
-       FormBox[
-        SubscriptBox["GhostWp", "R"],
-        TraditionalForm], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{"-", 
-                FractionBox["dSW1", 
-                 SuperscriptBox["SW", "2"]]}], "+", 
-               FractionBox[
-                RowBox[{"dZ", "(", "UWUW", ")"}], 
-                RowBox[{"2", " ", "SW"}]], "+", 
-               FractionBox["dZe1", "SW"]}], ")"}], " ", 
-             FormBox[
-              SubscriptBox["Gm", "R"],
-              TraditionalForm]}], "+", 
-            FractionBox[
-             RowBox[{
-              RowBox[{
-               RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-               FormBox[
-                SubscriptBox["Gm", "R"],
-                TraditionalForm]}], "+", 
-              RowBox[{
-               RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-               FormBox[
-                SubscriptBox["Hm", "R"],
-                TraditionalForm]}]}], 
-             RowBox[{"2", " ", "SW"}]]}], ")"}], " ", 
-          FormBox[
-           SubscriptBox[
-            RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-           TraditionalForm]}], "+", 
-         FractionBox[
-          RowBox[{
-           FormBox[
-            SubscriptBox["Gm", "R"],
-            TraditionalForm], " ", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-              FormBox[
-               SubscriptBox["GhostA", "R"],
-               TraditionalForm]}], "+", 
-             RowBox[{
-              RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-              FormBox[
-               SubscriptBox[
-                RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-               TraditionalForm]}]}], ")"}]}], 
-          RowBox[{"2", " ", "SW"}]]}], ")"}], " ", 
-       RowBox[{"RXi", "(", "Z", ")"}]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "EL", " ", "MZ", " ", 
-       FormBox[
-        SubscriptBox["GhostWm", "R"],
-        TraditionalForm], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{"-", 
-                FractionBox["dSW1", 
-                 SuperscriptBox["SW", "2"]]}], "+", 
-               FractionBox[
-                RowBox[{"dZ", "(", "UWUW", ")"}], 
-                RowBox[{"2", " ", "SW"}]], "+", 
-               FractionBox["dZe1", "SW"]}], ")"}], " ", 
-             FormBox[
-              SubscriptBox["Gp", "R"],
-              TraditionalForm]}], "+", 
-            FractionBox[
-             RowBox[{
-              RowBox[{
-               RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-               FormBox[
-                SubscriptBox["Gp", "R"],
-                TraditionalForm]}], "+", 
-              RowBox[{
-               RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-               FormBox[
-                SubscriptBox["Hp", "R"],
-                TraditionalForm]}]}], 
-             RowBox[{"2", " ", "SW"}]]}], ")"}], " ", 
-          FormBox[
-           SubscriptBox[
-            RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-           TraditionalForm]}], "+", 
-         FractionBox[
-          RowBox[{
-           FormBox[
-            SubscriptBox["Gp", "R"],
-            TraditionalForm], " ", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-              FormBox[
-               SubscriptBox["GhostA", "R"],
-               TraditionalForm]}], "+", 
-             RowBox[{
-              RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-              FormBox[
-               SubscriptBox[
-                RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-               TraditionalForm]}]}], ")"}]}], 
-          RowBox[{"2", " ", "SW"}]]}], ")"}], " ", 
-       RowBox[{"RXi", "(", "Z", ")"}]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "EL", " ", "MZ", " ", 
-       RowBox[{"RXi", "(", "Z", ")"}], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            FormBox[
-             SubscriptBox["GhostZ", "R"],
-             TraditionalForm], " ", 
-            FormBox[
-             SubscriptBox["HH", "R"],
-             TraditionalForm], " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-               FormBox[
-                SubscriptBox["GhostA", "R"],
-                TraditionalForm]}], "+", 
-              RowBox[{
-               RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-               FormBox[
-                SubscriptBox[
-                 RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-                TraditionalForm]}]}], ")"}]}], 
-           RowBox[{"2", " ", "CW", " ", "SW"}]]}], "-", 
-         RowBox[{
-          FormBox[
-           SubscriptBox[
-            RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-           TraditionalForm], " ", 
-          RowBox[{"(", 
-           RowBox[{
-            FractionBox[
-             RowBox[{
-              RowBox[{"cos", "(", 
-               RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-              FormBox[
-               SubscriptBox["GhostZ", "R"],
-               TraditionalForm], " ", 
-              RowBox[{"(", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"dZ", "(", "HHHH", ")"}], " ", 
-                 FormBox[
-                  SubscriptBox["HH", "R"],
-                  TraditionalForm]}], "+", 
-                RowBox[{
-                 RowBox[{"dZ", "(", "HHHL", ")"}], " ", 
-                 FormBox[
-                  SubscriptBox["HL", "R"],
-                  TraditionalForm]}]}], ")"}]}], 
-             RowBox[{"2", " ", "CW", " ", "SW"}]], "+", 
-            RowBox[{
-             FormBox[
-              SubscriptBox["HH", "R"],
-              TraditionalForm], " ", 
-             RowBox[{"(", 
-              RowBox[{
-               FractionBox[
-                RowBox[{
-                 RowBox[{"cos", "(", 
-                  RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-                 RowBox[{"(", 
-                  RowBox[{
-                   RowBox[{
-                    RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-                    FormBox[
-                    SubscriptBox["GhostA", "R"],
-                    TraditionalForm]}], "+", 
-                   RowBox[{
-                    RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-                    FormBox[
-                    SubscriptBox["GhostZ", "R"],
-                    TraditionalForm]}]}], ")"}]}], 
-                RowBox[{"2", " ", "CW", " ", "SW"}]], "+", 
-               RowBox[{
-                FormBox[
-                 SubscriptBox["GhostZ", "R"],
-                 TraditionalForm], " ", 
-                RowBox[{"(", 
-                 RowBox[{
-                  RowBox[{
-                   RowBox[{"(", 
-                    RowBox[{
-                    FractionBox[
-                    RowBox[{
-                    FractionBox["dZe1", "CW"], "-", 
-                    FractionBox["dCW1", 
-                    SuperscriptBox["CW", "2"]]}], "SW"], "-", 
-                    FractionBox["dSW1", 
-                    RowBox[{"CW", " ", 
-                    SuperscriptBox["SW", "2"]}]]}], ")"}], " ", 
-                   RowBox[{"cos", "(", 
-                    RowBox[{"alpha", "-", "beta"}], ")"}]}], "+", 
-                  FractionBox[
-                   RowBox[{
-                    RowBox[{"dbeta1", " ", 
-                    RowBox[{"sin", "(", 
-                    RowBox[{"alpha", "-", "beta"}], ")"}]}], "-", 
-                    RowBox[{"dalpha1", " ", 
-                    RowBox[{"sin", "(", 
-                    RowBox[{"alpha", "-", "beta"}], ")"}]}]}], 
-                   RowBox[{"CW", " ", "SW"}]]}], ")"}]}]}], ")"}]}]}], 
-           ")"}]}]}], ")"}]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "EL", " ", "MW", " ", 
-       FormBox[
-        SubscriptBox["GhostWm", "R"],
-        TraditionalForm], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         FractionBox[
-          RowBox[{
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{"dalpha1", " ", 
-              RowBox[{"cos", "(", 
-               RowBox[{"alpha", "-", "beta"}], ")"}]}], "-", 
-             RowBox[{"dbeta1", " ", 
-              RowBox[{"cos", "(", 
-               RowBox[{"alpha", "-", "beta"}], ")"}]}]}], ")"}], " ", 
-           FormBox[
-            SubscriptBox["HL", "R"],
-            TraditionalForm]}], "SW"], "+", 
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{"-", 
-                FractionBox["dSW1", 
-                 SuperscriptBox["SW", "2"]]}], "+", 
-               FractionBox[
-                RowBox[{"dZ", "(", "UWUW", ")"}], "SW"], "+", 
-               FractionBox["dZe1", "SW"]}], ")"}], " ", 
-             FormBox[
-              SubscriptBox["HL", "R"],
-              TraditionalForm]}], "+", 
-            FractionBox[
-             RowBox[{
-              RowBox[{
-               RowBox[{"dZ", "(", "HLHH", ")"}], " ", 
-               FormBox[
-                SubscriptBox["HH", "R"],
-                TraditionalForm]}], "+", 
-              RowBox[{
-               RowBox[{"dZ", "(", "HLHL", ")"}], " ", 
-               FormBox[
-                SubscriptBox["HL", "R"],
-                TraditionalForm]}]}], 
-             RowBox[{"2", " ", "SW"}]]}], ")"}], " ", 
-          RowBox[{"sin", "(", 
-           RowBox[{"alpha", "-", "beta"}], ")"}]}]}], ")"}]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "EL", " ", "MW", " ", 
-       FormBox[
-        SubscriptBox["GhostWp", "R"],
-        TraditionalForm], " ", 
-       FormBox[
-        SubscriptBox[
-         RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-        TraditionalForm], " ", 
-       RowBox[{"RXi", "(", "Wp", ")"}], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         FractionBox[
-          RowBox[{
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{"dalpha1", " ", 
-              RowBox[{"cos", "(", 
-               RowBox[{"alpha", "-", "beta"}], ")"}]}], "-", 
-             RowBox[{"dbeta1", " ", 
-              RowBox[{"cos", "(", 
-               RowBox[{"alpha", "-", "beta"}], ")"}]}]}], ")"}], " ", 
-           FormBox[
-            SubscriptBox["HL", "R"],
-            TraditionalForm]}], "SW"], "+", 
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{"-", 
-                FractionBox["dSW1", 
-                 SuperscriptBox["SW", "2"]]}], "+", 
-               FractionBox[
-                RowBox[{"dZ", "(", "UWUW", ")"}], "SW"], "+", 
-               FractionBox["dZe1", "SW"]}], ")"}], " ", 
-             FormBox[
-              SubscriptBox["HL", "R"],
-              TraditionalForm]}], "+", 
-            FractionBox[
-             RowBox[{
-              RowBox[{
-               RowBox[{"dZ", "(", "HLHH", ")"}], " ", 
-               FormBox[
-                SubscriptBox["HH", "R"],
-                TraditionalForm]}], "+", 
-              RowBox[{
-               RowBox[{"dZ", "(", "HLHL", ")"}], " ", 
-               FormBox[
-                SubscriptBox["HL", "R"],
-                TraditionalForm]}]}], 
-             RowBox[{"2", " ", "SW"}]]}], ")"}], " ", 
-          RowBox[{"sin", "(", 
-           RowBox[{"alpha", "-", "beta"}], ")"}]}]}], ")"}]}], 
-      RowBox[{
-       FractionBox["1", "2"], " ", "EL", " ", "MZ", " ", 
-       RowBox[{"RXi", "(", "Z", ")"}], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         FractionBox[
-          RowBox[{
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{"dalpha1", " ", 
-              RowBox[{"cos", "(", 
-               RowBox[{"alpha", "-", "beta"}], ")"}]}], "-", 
-             RowBox[{"dbeta1", " ", 
-              RowBox[{"cos", "(", 
-               RowBox[{"alpha", "-", "beta"}], ")"}]}]}], ")"}], " ", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm], " ", 
-           FormBox[
-            SubscriptBox["HL", "R"],
-            TraditionalForm], " ", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-            TraditionalForm]}], 
-          RowBox[{"CW", " ", "SW"}]], "+", 
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"(", 
-                 RowBox[{
-                  RowBox[{
-                   RowBox[{"(", 
-                    RowBox[{
-                    FractionBox[
-                    RowBox[{
-                    FractionBox["dZe1", "CW"], "-", 
-                    FractionBox["dCW1", 
-                    SuperscriptBox["CW", "2"]]}], "SW"], "-", 
-                    FractionBox["dSW1", 
-                    RowBox[{"CW", " ", 
-                    SuperscriptBox["SW", "2"]}]]}], ")"}], " ", 
-                   FormBox[
-                    SubscriptBox["GhostZ", "R"],
-                    TraditionalForm]}], "+", 
-                  FractionBox[
-                   RowBox[{
-                    RowBox[{
-                    RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-                    FormBox[
-                    SubscriptBox["GhostA", "R"],
-                    TraditionalForm]}], "+", 
-                    RowBox[{
-                    RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-                    FormBox[
-                    SubscriptBox["GhostZ", "R"],
-                    TraditionalForm]}]}], 
-                   RowBox[{"2", " ", "CW", " ", "SW"}]]}], ")"}], " ", 
-                FormBox[
-                 SubscriptBox["HL", "R"],
-                 TraditionalForm]}], "+", 
-               FractionBox[
-                RowBox[{
-                 FormBox[
-                  SubscriptBox["GhostZ", "R"],
-                  TraditionalForm], " ", 
-                 RowBox[{"(", 
-                  RowBox[{
-                   RowBox[{
-                    RowBox[{"dZ", "(", "HLHH", ")"}], " ", 
-                    FormBox[
-                    SubscriptBox["HH", "R"],
-                    TraditionalForm]}], "+", 
-                   RowBox[{
-                    RowBox[{"dZ", "(", "HLHL", ")"}], " ", 
-                    FormBox[
-                    SubscriptBox["HL", "R"],
-                    TraditionalForm]}]}], ")"}]}], 
-                RowBox[{"2", " ", "CW", " ", "SW"}]]}], ")"}], " ", 
-             FormBox[
-              SubscriptBox[
-               RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-              TraditionalForm]}], "+", 
-            FractionBox[
-             RowBox[{
-              FormBox[
-               SubscriptBox["GhostZ", "R"],
-               TraditionalForm], " ", 
-              FormBox[
-               SubscriptBox["HL", "R"],
-               TraditionalForm], " ", 
-              RowBox[{"(", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-                 FormBox[
-                  SubscriptBox["GhostA", "R"],
-                  TraditionalForm]}], "+", 
-                RowBox[{
-                 RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-                 FormBox[
-                  SubscriptBox[
-                   RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-                  TraditionalForm]}]}], ")"}]}], 
-             RowBox[{"2", " ", "CW", " ", "SW"}]]}], ")"}], " ", 
-          RowBox[{"sin", "(", 
-           RowBox[{"alpha", "-", "beta"}], ")"}]}]}], ")"}]}]}
-    },
-    GridBoxAlignment->{
-     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
-      "RowsIndexed" -> {}},
-    GridBoxSpacings->{"Columns" -> {
-        Offset[0.27999999999999997`], {
-         Offset[0.7]}, 
-        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
-        Offset[0.2], {
-         Offset[0.4]}, 
-        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
-  TraditionalForm]], "Output",
- CellChangeTimes->{3.75052842801506*^9}]
+ CellChangeTimes->{3.750585514804178*^9}]
 }, Open  ]],
 
 Cell[BoxData[{
@@ -1885,13 +638,13 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating SVV Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{9., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "24"}],
    SequenceForm["Generating SVV Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 24],
    Editable->False], TraditionalForm]], "Print",
  CellChangeTimes->{3.75009555926698*^9, 3.7500967471920357`*^9, 
-  3.750115280028425*^9}]
+  3.750115280028425*^9, 3.750585525789938*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1920,14 +673,14 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating SSV Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{9., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "44"}],
    SequenceForm["Generating SSV Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 44],
    Editable->False], TraditionalForm]], "Print",
  CellChangeTimes->{3.7500957815814877`*^9, 3.750096855421286*^9, 
   3.750097219171283*^9, 3.750097737135295*^9, 3.7501140516483583`*^9, 
-  3.750115392383829*^9}]
+  3.750115392383829*^9, 3.750585666492034*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1956,12 +709,13 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating SSVV Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{9., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "94"}],
    SequenceForm["Generating SSVV Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 94],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750114287866447*^9, 3.750115565004488*^9}]
+ CellChangeTimes->{3.750114287866447*^9, 3.750115565004488*^9, 
+  3.750585838202847*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2007,13 +761,13 @@ Cell[BoxData[
    RowBox[{"\<\"Generating \"\>", "\[InvisibleSpace]", "2", 
     "\[InvisibleSpace]", "\<\"-Scalar Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "14"}],
    SequenceForm["Generating ", 2, "-Scalar Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 14],
    Editable->False], TraditionalForm]], "Print",
  CellChangeTimes->{3.7501196045000467`*^9, 3.7501526665992517`*^9, 
-  3.7501528791264753`*^9}]
+  3.7501528791264753`*^9, 3.750586318207707*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2043,12 +797,12 @@ Cell[BoxData[
    RowBox[{"\<\"Generating \"\>", "\[InvisibleSpace]", "3", 
     "\[InvisibleSpace]", "\<\"-Scalar Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "36"}],
    SequenceForm["Generating ", 3, "-Scalar Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 36],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.75011993307789*^9}]
+ CellChangeTimes->{3.75011993307789*^9, 3.750586757538616*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2077,12 +831,12 @@ Cell[BoxData[
    RowBox[{"\<\"Generating \"\>", "\[InvisibleSpace]", "4", 
     "\[InvisibleSpace]", "\<\"-Scalar Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "84"}],
    SequenceForm["Generating ", 4, "-Scalar Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 84],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750120839020735*^9}]
+ CellChangeTimes->{3.750120839020735*^9, 3.750587902178205*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2115,12 +869,12 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating FFS Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "12"}],
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750125928458115*^9}]
+ CellChangeTimes->{3.750125928458115*^9, 3.75059098969657*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2151,12 +905,12 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating FFS Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "12"}],
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.75012915200189*^9}]
+ CellChangeTimes->{3.75012915200189*^9, 3.750591077207803*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2189,12 +943,12 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating FFS Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{18., {0., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "12"}],
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750129181422017*^9}]
+ CellChangeTimes->{3.750129181422017*^9, 3.750591106112055*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2225,12 +979,12 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating FFS Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{18., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "12"}],
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750142456461631*^9}]
+ CellChangeTimes->{3.750142456461631*^9, 3.7505912542036123`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2263,12 +1017,12 @@ Cell[BoxData[
   InterpretationBox[
    RowBox[{"\<\"Generating FFS Vertex: \"\>", "\[InvisibleSpace]", 
     DynamicBox[ToBoxes[$CellContext`calculated, TraditionalForm],
-     ImageSizeCache->{73., {1., 13.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+     ImageSizeCache->{18., {1., 12.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
     "\[InvisibleSpace]", "12"}],
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750142480331114*^9}]
+ CellChangeTimes->{3.750142480331114*^9, 3.750591283636435*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2304,7 +1058,7 @@ Cell[BoxData[
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750142557259296*^9}]
+ CellChangeTimes->{3.750142557259296*^9, 3.750591373396146*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2342,7 +1096,7 @@ Cell[BoxData[
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750142579866707*^9}]
+ CellChangeTimes->{3.750142579866707*^9, 3.7505914025590878`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2378,16 +1132,30 @@ Cell[BoxData[
    SequenceForm["Generating FFS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 12],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750142704536047*^9}]
+ CellChangeTimes->{3.750142704536047*^9, 3.75059155451995*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"CSUU", "=", 
-  RowBox[{"UUSCouplings", "[", 
-   RowBox[{"LGhostRe", ",", "SRe", ",", "GRe"}], "]"}]}]], "Input",
- CellChangeTimes->{{3.750528480362335*^9, 3.7505285247232027`*^9}}],
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"FileExistsQ", "[", "\"\<VertexRawData/CSUU.dat\>\"", "]"}], ",", 
+    
+    RowBox[{
+     RowBox[{"CSUU", "=", 
+      RowBox[{"Get", "[", "\"\<VertexRawData/CSUU.dat\>\"", "]"}]}], ";"}], 
+    ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"CSUU", "=", 
+      RowBox[{"UUSCouplings", "[", 
+       RowBox[{"LGhostRe", ",", "SRe", ",", "GRe"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Put", "[", 
+      RowBox[{"CSUU", ",", "\"\<VertexRawData/CSUU.dat\>\""}], "]"}]}]}], 
+   "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.750585536160982*^9, 3.750585600689563*^9}}],
 
 Cell[BoxData[
  FormBox[
@@ -2399,1315 +1167,7 @@ Cell[BoxData[
    SequenceForm["Generating UUS Vertex: ", 
     Dynamic[$CellContext`calculated], "/", 40],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{3.750528527349843*^9}],
-
-Cell[BoxData[
- FormBox[
-  RowBox[{"{", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HL", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostA", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", 
-         FractionBox[
-          RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-           RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-           RowBox[{"RXi", "(", "Z", ")"}], " ", 
-           RowBox[{"sin", "(", 
-            RowBox[{"alpha", "-", "beta"}], ")"}]}], 
-          RowBox[{"4", " ", "CW", " ", "SW"}]]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HL", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         FractionBox[
-          RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-           RowBox[{"RXi", "(", "Z", ")"}], " ", 
-           RowBox[{"sin", "(", 
-            RowBox[{"alpha", "-", "beta"}], ")"}]}], 
-          RowBox[{"2", " ", "CW", " ", "SW"}]], ",", 
-         RowBox[{
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dalpha1", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"2", " ", "CW", " ", "SW"}]], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "HHHL", ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"4", " ", "CW", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"dZ", "(", "HLHL", ")"}], " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"4", " ", "CW", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"2", " ", "CW", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dZe1", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"2", " ", "CW", " ", "SW"}]], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"CW", " ", "dbeta1", " ", "SW", " ", 
-               RowBox[{"cos", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}], "+", 
-              RowBox[{
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"CW", " ", "dSW1"}], "+", 
-                 RowBox[{"dCW1", " ", "SW"}]}], ")"}], " ", 
-               RowBox[{"sin", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}]}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"2", " ", 
-            SuperscriptBox["CW", "2"], " ", 
-            SuperscriptBox["SW", "2"]}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HL", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWp", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         FractionBox[
-          RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}], " ", 
-           RowBox[{"sin", "(", 
-            RowBox[{"alpha", "-", "beta"}], ")"}]}], 
-          RowBox[{"2", " ", "SW"}]], ",", 
-         RowBox[{
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dalpha1", " ", "EL", " ", "MW", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "HHHL", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"dZ", "(", "HLHL", ")"}], " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dZe1", " ", "EL", " ", "MW", " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"dbeta1", " ", "SW", " ", 
-               RowBox[{"cos", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}], "+", 
-              RowBox[{"dSW1", " ", 
-               RowBox[{"sin", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}]}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", 
-            SuperscriptBox["SW", "2"]}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HL", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWm", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         FractionBox[
-          RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}], " ", 
-           RowBox[{"sin", "(", 
-            RowBox[{"alpha", "-", "beta"}], ")"}]}], 
-          RowBox[{"2", " ", "SW"}]], ",", 
-         RowBox[{
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dalpha1", " ", "EL", " ", "MW", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "HHHL", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"dZ", "(", "HLHL", ")"}], " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dZe1", " ", "EL", " ", "MW", " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"dbeta1", " ", "SW", " ", 
-               RowBox[{"cos", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}], "+", 
-              RowBox[{"dSW1", " ", 
-               RowBox[{"sin", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}]}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", 
-            SuperscriptBox["SW", "2"]}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HH", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostA", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", 
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"4", " ", "CW", " ", "SW"}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HH", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"2", " ", "CW", " ", "SW"}]]}], ",", 
-         RowBox[{
-          RowBox[{"-", 
-           FractionBox[
-            RowBox[{"\[ImaginaryI]", " ", "dZe1", " ", "EL", " ", "MZ", " ", 
-             RowBox[{"cos", "(", 
-              RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-             RowBox[{"RXi", "(", "Z", ")"}]}], 
-            RowBox[{"2", " ", "CW", " ", "SW"}]]}], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "HHHH", ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"4", " ", "CW", " ", "SW"}]], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"2", " ", "CW", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"dZ", "(", "HLHH", ")"}], " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"4", " ", "CW", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dalpha1", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"2", " ", "CW", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"CW", " ", "dSW1"}], "+", 
-                 RowBox[{"dCW1", " ", "SW"}]}], ")"}], " ", 
-               RowBox[{"cos", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}], "-", 
-              RowBox[{"CW", " ", "dbeta1", " ", "SW", " ", 
-               RowBox[{"sin", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}]}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"2", " ", 
-            SuperscriptBox["CW", "2"], " ", 
-            SuperscriptBox["SW", "2"]}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HH", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWp", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]]}], ",", 
-         RowBox[{
-          RowBox[{"-", 
-           FractionBox[
-            RowBox[{"\[ImaginaryI]", " ", "dZe1", " ", "EL", " ", "MW", " ", 
-             RowBox[{"cos", "(", 
-              RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-             RowBox[{"RXi", "(", "Wp", ")"}]}], 
-            RowBox[{"2", " ", "SW"}]]}], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "HHHH", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"dZ", "(", "HLHH", ")"}], " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dalpha1", " ", "EL", " ", "MW", " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"dSW1", " ", 
-               RowBox[{"cos", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}], "-", 
-              RowBox[{"dbeta1", " ", "SW", " ", 
-               RowBox[{"sin", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}]}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", 
-            SuperscriptBox["SW", "2"]}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HH", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWm", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]]}], ",", 
-         RowBox[{
-          RowBox[{"-", 
-           FractionBox[
-            RowBox[{"\[ImaginaryI]", " ", "dZe1", " ", "EL", " ", "MW", " ", 
-             RowBox[{"cos", "(", 
-              RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-             RowBox[{"RXi", "(", "Wp", ")"}]}], 
-            RowBox[{"2", " ", "SW"}]]}], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "HHHH", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"cos", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"dZ", "(", "HLHH", ")"}], " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dalpha1", " ", "EL", " ", "MW", " ", 
-            RowBox[{"sin", "(", 
-             RowBox[{"alpha", "-", "beta"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"dSW1", " ", 
-               RowBox[{"cos", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}], "-", 
-              RowBox[{"dbeta1", " ", "SW", " ", 
-               RowBox[{"sin", "(", 
-                RowBox[{"alpha", "-", "beta"}], ")"}]}]}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", 
-            SuperscriptBox["SW", "2"]}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HA", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWp", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", 
-         FractionBox[
-          RowBox[{"EL", " ", "MW", " ", 
-           RowBox[{"dZ", "(", "G0HA", ")"}], " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], 
-          RowBox[{"4", " ", "SW"}]]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HA", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWm", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", 
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{"EL", " ", "MW", " ", 
-            RowBox[{"dZ", "(", "G0HA", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Hp", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWm", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", 
-         FractionBox[
-          RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-           RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-           RowBox[{"RXi", "(", "Z", ")"}]}], 
-          RowBox[{"4", " ", "SW"}]]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Hp", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostA", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", 
-         RowBox[{
-          FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", "EL", " ", "MW", 
-          " ", 
-          RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-          RowBox[{"RXi", "(", "Wp", ")"}]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Hp", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", 
-         FractionBox[
-          RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{"2", " ", 
-              SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-           RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], 
-          RowBox[{"4", " ", "CW", " ", "SW"}]]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Hm", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWp", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", 
-         FractionBox[
-          RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-           RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-           RowBox[{"RXi", "(", "Z", ")"}]}], 
-          RowBox[{"4", " ", "SW"}]]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Hm", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostA", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", 
-         RowBox[{
-          FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", "EL", " ", "MW", 
-          " ", 
-          RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-          RowBox[{"RXi", "(", "Wp", ")"}]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Hm", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", 
-         FractionBox[
-          RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{"2", " ", 
-              SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-           RowBox[{"dZ", "(", "GpHp", ")"}], " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], 
-          RowBox[{"4", " ", "CW", " ", "SW"}]]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Gp", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWm", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         FractionBox[
-          RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-           RowBox[{"RXi", "(", "Z", ")"}]}], 
-          RowBox[{"2", " ", "SW"}]], ",", 
-         RowBox[{
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dZe1", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dSW1", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"2", " ", 
-            SuperscriptBox["SW", "2"]}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Gp", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostA", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-          RowBox[{"RXi", "(", "Wp", ")"}]}], ",", 
-         RowBox[{
-          RowBox[{"\[ImaginaryI]", " ", "dZe1", " ", "EL", " ", "MW", " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], "+", 
-          RowBox[{
-           FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", "EL", " ", "MW", 
-           " ", 
-           RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], "+", 
-          RowBox[{
-           FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", "EL", " ", "MW", 
-           " ", 
-           RowBox[{"dZ", "(", "UAUA", ")"}], " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], "+", 
-          RowBox[{
-           FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", "EL", " ", "MW", 
-           " ", 
-           RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"2", " ", 
-               SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "CW", " ", "SW"}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Gp", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         FractionBox[
-          RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{"2", " ", 
-              SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], 
-          RowBox[{"2", " ", "CW", " ", "SW"}]], ",", 
-         RowBox[{
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"CW", " ", "dSW1"}], "-", 
-              RowBox[{"dCW1", " ", "SW"}]}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", 
-            SuperscriptBox["CW", "2"], " ", 
-            SuperscriptBox["SW", "2"]}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dZe1", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"2", " ", 
-               SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "CW", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"2", " ", 
-               SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "CW", " ", "SW"}]], "+", 
-          RowBox[{
-           FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", "EL", " ", "MW", 
-           " ", 
-           RowBox[{"dZ", "(", "UAUZ", ")"}], " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"2", " ", 
-               SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "CW", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"2", " ", 
-               SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "CW", " ", "SW"}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Gm", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWp", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         FractionBox[
-          RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-           RowBox[{"RXi", "(", "Z", ")"}]}], 
-          RowBox[{"2", " ", "SW"}]], ",", 
-         RowBox[{
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dZe1", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "-", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dSW1", " ", "EL", " ", "MZ", " ", 
-            RowBox[{"RXi", "(", "Z", ")"}]}], 
-           RowBox[{"2", " ", 
-            SuperscriptBox["SW", "2"]}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Gm", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostA", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-          RowBox[{"RXi", "(", "Wp", ")"}]}], ",", 
-         RowBox[{
-          RowBox[{"\[ImaginaryI]", " ", "dZe1", " ", "EL", " ", "MW", " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], "+", 
-          RowBox[{
-           FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", "EL", " ", "MW", 
-           " ", 
-           RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], "+", 
-          RowBox[{
-           FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", "EL", " ", "MW", 
-           " ", 
-           RowBox[{"dZ", "(", "UAUA", ")"}], " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], "+", 
-          RowBox[{
-           FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", "EL", " ", "MW", 
-           " ", 
-           RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"2", " ", 
-               SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "UZUA", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "CW", " ", "SW"}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Gm", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         FractionBox[
-          RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{"2", " ", 
-              SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], 
-          RowBox[{"2", " ", "CW", " ", "SW"}]], ",", 
-         RowBox[{
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"CW", " ", "dSW1"}], "-", 
-              RowBox[{"dCW1", " ", "SW"}]}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", 
-            SuperscriptBox["CW", "2"], " ", 
-            SuperscriptBox["SW", "2"]}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "dZe1", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"2", " ", 
-               SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "CW", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"2", " ", 
-               SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "GpGp", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "CW", " ", "SW"}]], "+", 
-          RowBox[{
-           FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", "EL", " ", "MW", 
-           " ", 
-           RowBox[{"dZ", "(", "UAUZ", ")"}], " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"2", " ", 
-               SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "CW", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"\[ImaginaryI]", " ", "EL", " ", "MW", " ", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"2", " ", 
-               SuperscriptBox["SW", "2"]}], "-", "1"}], ")"}], " ", 
-            RowBox[{"dZ", "(", "UZUZ", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "CW", " ", "SW"}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["G0", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWp", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWp", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         FractionBox[
-          RowBox[{"EL", " ", "MW", " ", 
-           RowBox[{"RXi", "(", "Wp", ")"}]}], 
-          RowBox[{"2", " ", "SW"}]], ",", 
-         RowBox[{
-          FractionBox[
-           RowBox[{"EL", " ", "MW", " ", 
-            RowBox[{"dZ", "(", "G0G0", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"4", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"EL", " ", "MW", " ", 
-            RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"dZe1", " ", "EL", " ", "MW", " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "-", 
-          FractionBox[
-           RowBox[{"dSW1", " ", "EL", " ", "MW", " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", 
-            SuperscriptBox["SW", "2"]}]]}]}], "}"}], ")"}], ",", 
-      RowBox[{"FRVertex", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["G0", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostWm", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWm", "R"],
-            TraditionalForm]}], "}"}], ",", 
-         RowBox[{"-", 
-          FractionBox[
-           RowBox[{"EL", " ", "MW", " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]]}], ",", 
-         RowBox[{
-          RowBox[{"-", 
-           FractionBox[
-            RowBox[{"EL", " ", "MW", " ", 
-             RowBox[{"dZ", "(", "G0G0", ")"}], " ", 
-             RowBox[{"RXi", "(", "Wp", ")"}]}], 
-            RowBox[{"4", " ", "SW"}]]}], "-", 
-          FractionBox[
-           RowBox[{"EL", " ", "MW", " ", 
-            RowBox[{"dZ", "(", "UWUW", ")"}], " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "-", 
-          FractionBox[
-           RowBox[{"dZe1", " ", "EL", " ", "MW", " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", "SW"}]], "+", 
-          FractionBox[
-           RowBox[{"dSW1", " ", "EL", " ", "MW", " ", 
-            RowBox[{"RXi", "(", "Wp", ")"}]}], 
-           RowBox[{"2", " ", 
-            SuperscriptBox["SW", "2"]}]]}]}], "}"}], ")"}]}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HL", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostA", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostA", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HL", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostA", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HH", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostA", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostA", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HH", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostA", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HA", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostA", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostA", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HA", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostA", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HA", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostA", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["HA", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Hp", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostA", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWm", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Hm", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostA", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWp", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Gp", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostA", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWm", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["Gm", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostA", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostWp", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["G0", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostA", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostA", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["G0", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostA", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["G0", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostA", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}], 
-      ",", 
-      RowBox[{"FRVertexNULL", "(", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           FormBox[
-            SubscriptBox["G0", "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox[
-             RowBox[{"HCbar", "(", "GhostZ", ")"}], "R"],
-            TraditionalForm], ",", 
-           FormBox[
-            SubscriptBox["GhostZ", "R"],
-            TraditionalForm]}], "}"}], ",", "0", ",", "0"}], "}"}], ")"}]}], 
-     "}"}]}], "}"}], TraditionalForm]], "Output",
- CellChangeTimes->{3.750528533525159*^9}]
+ CellChangeTimes->{3.750591585998654*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -3780,12 +1240,13 @@ Cell[BoxData[
      RowBox[{"Hold", "[", "CSSSS", "]"}], ",", 
      RowBox[{"Hold", "[", "CSSV", "]"}], ",", 
      RowBox[{"Hold", "[", "CSSVV", "]"}], ",", 
-     RowBox[{"Hold", "[", "CSVV", "]"}]}], "}"}]}], ";"}]], "Input",
+     RowBox[{"Hold", "[", "CSVV", "]"}], ",", 
+     RowBox[{"Hold", "[", "CSUU", "]"}]}], "}"}]}], ";"}]], "Input",
  CellChangeTimes->{{3.74411406425021*^9, 3.7441140760470333`*^9}, {
   3.744114263788754*^9, 3.744114266682069*^9}, {3.7441151310435057`*^9, 
   3.74411516454419*^9}, {3.744115772721281*^9, 3.744115829334817*^9}, {
   3.74411637473886*^9, 3.744116396519649*^9}, {3.750151950705256*^9, 
-  3.750151955329506*^9}}]
+  3.750151955329506*^9}, {3.750585650325336*^9, 3.7505856548177977`*^9}}]
 },
 WindowSize->{1280, 755},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -3807,103 +1268,120 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 294, 6, 69, "Input"],
 Cell[CellGroupData[{
-Cell[899, 32, 2516, 67, 39, "Print"],
-Cell[3418, 101, 1301, 33, 39, "Print"],
-Cell[4722, 136, 455, 8, 38, "Print"],
-Cell[5180, 146, 440, 8, 38, "Print"]
+Cell[899, 32, 2542, 68, 39, "Print"],
+Cell[3444, 102, 1327, 34, 39, "Print"],
+Cell[4774, 138, 483, 9, 38, "Print"],
+Cell[5260, 149, 468, 9, 38, "Print"]
 }, Open  ]]
 }, Open  ]],
-Cell[5647, 158, 175, 3, 43, "Input"],
-Cell[5825, 163, 643, 11, 169, "Input"],
-Cell[6471, 176, 266, 6, 43, "Input"],
+Cell[5755, 162, 175, 3, 43, "Input"],
+Cell[5933, 167, 643, 11, 169, "Input"],
+Cell[6579, 180, 266, 6, 43, "Input"],
 Cell[CellGroupData[{
-Cell[6762, 186, 122, 2, 43, "Input"],
+Cell[6870, 190, 122, 2, 43, "Input"],
 Cell[CellGroupData[{
-Cell[6909, 192, 487, 9, 30, "Print"],
-Cell[7399, 203, 475, 8, 30, "Print"],
-Cell[7877, 213, 471, 8, 30, "Print"],
-Cell[8351, 223, 471, 8, 30, "Print"],
-Cell[8825, 233, 471, 8, 30, "Print"],
-Cell[9299, 243, 472, 8, 30, "Print"]
+Cell[7017, 196, 460, 8, 30, "Print"],
+Cell[7480, 206, 512, 8, 30, "Print"],
+Cell[7995, 216, 513, 8, 30, "Print"]
+}, Open  ]],
+Cell[8523, 227, 479, 11, 59, "Message"],
+Cell[9005, 240, 477, 11, 59, "Message"],
+Cell[CellGroupData[{
+Cell[9507, 255, 505, 8, 30, "Print"],
+Cell[10015, 265, 461, 8, 30, "Print"],
+Cell[10479, 275, 463, 8, 30, "Print"],
+Cell[10945, 285, 462, 8, 30, "Print"],
+Cell[11410, 295, 464, 8, 30, "Print"],
+Cell[11877, 305, 462, 8, 30, "Print"],
+Cell[12342, 315, 457, 8, 30, "Print"]
 }, Open  ]]
 }, Open  ]],
-Cell[9798, 255, 1057, 27, 144, "Input"],
-Cell[10858, 284, 722, 21, 119, "Input"],
-Cell[11583, 307, 2244, 65, 319, "Input"],
 Cell[CellGroupData[{
-Cell[13852, 376, 193, 4, 43, "Input"],
-Cell[14048, 382, 475, 10, 30, "Print"]
+Cell[12848, 329, 1057, 27, 144, "Input"],
+Cell[13908, 358, 453, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14560, 397, 102, 1, 43, "Input"],
-Cell[14665, 400, 48604, 1408, 127, "Output"]
-}, Open  ]],
-Cell[63284, 1811, 1547, 47, 144, "Input"],
-Cell[CellGroupData[{
-Cell[64856, 1862, 639, 18, 94, "Input"],
-Cell[65498, 1882, 517, 11, 30, "Print"]
+Cell[14398, 373, 722, 21, 119, "Input"],
+Cell[15123, 396, 455, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[66052, 1898, 615, 17, 94, "Input"],
-Cell[66670, 1917, 589, 12, 30, "Print"]
+Cell[15615, 411, 2244, 65, 319, "Input"],
+Cell[CellGroupData[{
+Cell[17884, 480, 451, 10, 30, "Print"],
+Cell[18338, 492, 451, 10, 30, "Print"],
+Cell[18792, 504, 451, 10, 30, "Print"],
+Cell[19246, 516, 451, 10, 30, "Print"]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[67296, 1934, 641, 17, 94, "Input"],
-Cell[67940, 1953, 493, 10, 30, "Print"]
+Cell[19746, 532, 657, 17, 94, "Input"],
+Cell[20406, 551, 451, 10, 30, "Print"]
+}, Open  ]],
+Cell[20872, 564, 1547, 47, 144, "Input"],
+Cell[CellGroupData[{
+Cell[22444, 615, 639, 18, 94, "Input"],
+Cell[23086, 635, 538, 11, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[68470, 1968, 1198, 33, 94, "Input"],
-Cell[69671, 2003, 601, 12, 30, "Print"]
+Cell[23661, 651, 615, 17, 94, "Input"],
+Cell[24279, 670, 610, 12, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[70309, 2020, 604, 17, 94, "Input"],
-Cell[70916, 2039, 547, 11, 30, "Print"]
+Cell[24926, 687, 641, 17, 94, "Input"],
+Cell[25570, 706, 517, 11, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[71500, 2055, 604, 16, 94, "Input"],
-Cell[72107, 2073, 548, 11, 30, "Print"]
+Cell[26124, 722, 1198, 33, 94, "Input"],
+Cell[27325, 757, 623, 12, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[72692, 2089, 756, 21, 94, "Input"],
-Cell[73451, 2112, 469, 10, 30, "Print"]
+Cell[27985, 774, 604, 17, 94, "Input"],
+Cell[28592, 793, 569, 11, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[73957, 2127, 685, 19, 94, "Input"],
-Cell[74645, 2148, 468, 10, 30, "Print"]
+Cell[29198, 809, 604, 16, 94, "Input"],
+Cell[29805, 827, 570, 11, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[75150, 2163, 766, 21, 94, "Input"],
-Cell[75919, 2186, 469, 10, 30, "Print"]
+Cell[30412, 843, 756, 21, 94, "Input"],
+Cell[31171, 866, 490, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[76425, 2201, 695, 19, 94, "Input"],
-Cell[77123, 2222, 469, 10, 30, "Print"]
+Cell[31698, 881, 685, 19, 94, "Input"],
+Cell[32386, 902, 490, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[77629, 2237, 768, 21, 94, "Input"],
-Cell[78400, 2260, 469, 10, 30, "Print"]
+Cell[32913, 917, 766, 21, 94, "Input"],
+Cell[33682, 940, 491, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[78906, 2275, 695, 19, 94, "Input"],
-Cell[79604, 2296, 469, 10, 30, "Print"]
+Cell[34210, 955, 695, 19, 94, "Input"],
+Cell[34908, 976, 493, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[80110, 2311, 768, 21, 94, "Input"],
-Cell[80881, 2334, 469, 10, 30, "Print"]
+Cell[35438, 991, 768, 21, 94, "Input"],
+Cell[36209, 1014, 491, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[81387, 2349, 697, 19, 94, "Input"],
-Cell[82087, 2370, 469, 10, 30, "Print"]
+Cell[36737, 1029, 695, 19, 94, "Input"],
+Cell[37435, 1050, 491, 10, 30, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[82593, 2385, 204, 4, 43, "Input"],
-Cell[82800, 2391, 469, 10, 30, "Print"],
-Cell[83272, 2403, 49463, 1306, 3453, "Output"]
+Cell[37963, 1065, 768, 21, 94, "Input"],
+Cell[38734, 1088, 493, 10, 30, "Print"]
 }, Open  ]],
-Cell[132750, 3712, 118, 2, 43, "Input"],
-Cell[132871, 3716, 275, 6, 44, "Input"],
-Cell[133149, 3724, 1377, 32, 119, "Input"],
-Cell[134529, 3758, 1150, 29, 94, "Input"]
+Cell[CellGroupData[{
+Cell[39264, 1103, 697, 19, 94, "Input"],
+Cell[39964, 1124, 490, 10, 30, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40491, 1139, 658, 18, 94, "Input"],
+Cell[41152, 1159, 469, 10, 30, "Print"]
+}, Open  ]],
+Cell[41636, 1172, 118, 2, 43, "Input"],
+Cell[41757, 1176, 275, 6, 44, "Input"],
+Cell[42035, 1184, 1377, 32, 119, "Input"],
+Cell[43415, 1218, 1245, 30, 94, "Input"]
 }
 ]
 *)
