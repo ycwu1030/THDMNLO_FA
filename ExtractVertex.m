@@ -84,6 +84,23 @@ fyrule=Flatten[fyrule];
 {Select[fyrule,Head[#]==FRVertex&],Select[fyrule,Head[#]==FRVertexNULL&]}
 ]
 
+SVCouplings[Lag_List,SField_List,VField_List,index_]:=Block[{vertex,vertexS,vertexV,PossibleN,i,Fields,tmp,fyrule},
+vertexS=SField;
+vertexV=VField;
+vertex=Select[Flatten/@Tuples[{vertexS,vertexV}],Total[FieldCharge[#]] == 0 &];
+PossibleN=Length[vertex];
+Print["Generating SV Vertex: ",Dynamic[calculated],"/",PossibleN];
+fyrule={};
+For[i=1,i<=PossibleN,i++,
+	calculated=i;
+	Fields=vertex[[i]];
+	tmp=FRwithCT[Lag,{QuantumField[Fields[[1]]],QuantumField[Fields[[2]],{index}]}];
+	fyrule={fyrule,tmp/.{Pair[_LorentzIndex,Momentum[Subscript[__,__]]]:>1}};
+];
+fyrule=Flatten[fyrule];
+{Select[fyrule,Head[#]==FRVertex&],Select[fyrule,Head[#]==FRVertexNULL&]}
+]
+
 
 (*Yukawa Coupling *)
 FFSCouplings[Lag_List,FField_List,SField_List,flavorindex_List,colorindex___List]:=Block[{vertex,vertexF,vertexS,PossibleN,i,Fields,tmp,fyrule,indexes},

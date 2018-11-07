@@ -391,88 +391,6 @@ M$CouplingMatrices = {
           -(dZAZ2 + dZZA2 + 1/2 dZZA1 dZZZ1 + 1/2 dZAZ1 dZAA1)/2} },
 
 
-  (* S-V: G(+) . {mom1[mu],mom2[mu] } *) (* Should be Checked and Need to be Modified*)
- 
-  C[ S[6], -V[3] ] == I MW/4 *
-    { {0, -dZW1 - dZGpGp1 - dMWsq1/MW^2},
-      {0, dZW1 + dZGpGp1 + dMWsq1/MW^2} },
-
-  C[ -S[6], V[3] ] == I MW/4 *
-    { {0, dZW1 + dZGpGp1 + dMWsq1/MW^2},
-      {0, -dZW1 - dZGpGp1 - dMWsq1/MW^2} },
-
-  C[ S[4], V[2] ] == MZ/4 *
-    { {0, dZZZ1 + dZG0G01 + dMZsq1/MZ^2},
-      {0, -dZZZ1 - dZG0G01 - dMZsq1/MZ^2} },
-
-  C[ S[4], V[1] ] == MZ/4 *
-    { {0, dZZA1},
-      {0, -dZZA1} },
-
-    C[ S[5], -V[3] ] == I MW/4 *
-    { {0, -2 (dCHp1 + dBeta1)},
-      {0, 2 (dCHp1 + dBeta1)} },
-    
-    C[ -S[5], V[3] ] == I MW/4 *
-    { {0, 2 (dCHp1 - dBeta1)},
-      {0, -2 (dCHp1 - dBeta1)} },
-
-    C[ S[3], V[2] ] == MZ/4 *
-    { {0, 2 (dCA1 + dBeta1)},
-      {0, -2 (dCA1 + dBeta1)} },
-
-    (* S-S:  G(+) . { -mom^2, 1 } *)
-(* Should be Checked and Need to be Modified *)
-    C[ S[1], S[1] ] == -I *
-    { {0, dZhh1},
-      {0, Mh0^2 dZhh1 + dMh0sq1 }
-      },
-
-    C[ S[2], S[2] ] == -I *
-    { {0, dZH0H01},
-      {0, MHH^2 dZH0H01 + dMHHsq1 }
-    },
-
-    C[ S[2], S[1] ] == -I *
-    { {0, 2 dCh1},
-      {0, dAlpha1 (MHH^2 - Mh0^2) + dCh1 (MHH^2 + Mh0^2) + dTdeltaP1 S2A/(vev S2B) }
-    },
-
-    C[ S[3], S[3] ] == -I *
-    { {0, dZA0A01},
-      {0, MA0^2 dZA0A01 + dMA0sq1 }
-    },
-
-    C[ S[4], S[4] ] == -I *
-    { {0, dZG0G01},
-      {0, dTdeltaM1/vev }
-    },
-
-    C[ S[3], S[4] ] == -I *
-    { {0, 2 dCA1},
-      {0, MA0^2 (dCA1 - dBeta1) + dTdeltaP1 /(vev)}
-    },
-
-    C[ -S[5], S[5] ] == -I *
-    { {0, dZHpHp1},
-      {0, MHp^2 dZHpHp1 + dMHpsq1}
-    },
-
-    C[ -S[6], S[6] ] == -I *
-    { {0, dZGpGp1},
-      {0, dTdeltaM1/vev}
-    },
-
-    C[ -S[5], S[6] ] == -I *
-    { {0, 2 dCHp1},
-      {0, MHp^2 (dCHp1 - dBeta1) + dTdeltaP1/vev}
-    },
-
-    C[ -S[6], S[5] ] == -I *
-    { {0, 2 dCHp1},
-      {0, MHp^2 (dCHp1 - dBeta1) + dTdeltaP1/vev}
-    },
-
   (* U-U:  G(+) . { -mom^2, 1 } *)
 
   C[ U[1], -U[1] ] == -I *
@@ -739,6 +657,6 @@ M$CouplingMatrices = {
 
   C[ -U[1], U[4], V[3] ] == -I EL *
     { {1, dZe1 + dZW1/2 - dZAA1/2 + dUW1 + CW/SW dZAZ1/2},
-      {0, 0} },
+      {0, 0} }
  
  }
