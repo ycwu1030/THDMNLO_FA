@@ -740,41 +740,5 @@ M$CouplingMatrices = {
   C[ -U[1], U[4], V[3] ] == -I EL *
     { {1, dZe1 + dZW1/2 - dZAA1/2 + dUW1 + CW/SW dZAZ1/2},
       {0, 0} },
-
-
-  (* S-U-U:  G(+) . 1 *) (* Checked *)
-
-
-  C[-S[6], U[1], -U[4]] == {{(-I)*EL*MW*GaugeXi[W]}}, 
-  
-  C[-S[6], U[2], -U[4]] == {{((I/2)*EL*MW*(-CW^2 + SW^2)*GaugeXi[W])/(CW*SW)}}, 
- 
-  C[-S[6], U[3], -U[2]] == {{((I/2)*EL*MW*GaugeXi[Z])/(CW*SW)}},
-
-  C[S[6], U[1], -U[3]] == {{(-I)*EL*MW*GaugeXi[W]}},
-
-  C[S[6], U[2], -U[3]] == {{((I/2)*EL*MW*(-CW^2 + SW^2)*GaugeXi[W])/(CW*SW)}}, 
-  
-  C[S[6], U[4], -U[2]] == {{((I/2)*EL*MW*GaugeXi[Z])/(CW*SW)}},  
-
-  C[S[2], U[2], -U[2]] == {{((-I/2)*CBA*EL*MW*GaugeXi[Z])/(CW^2*SW)}}, 
-
-  C[S[2], U[3], -U[3]] == {{((-I/2)*CBA*EL*MW*GaugeXi[W])/SW}}, 
-
-  C[S[2], U[4], -U[4]] == {{((-I/2)*CBA*EL*MW*GaugeXi[W])/SW}},
-
-  C[S[1], U[2], -U[2]] == {{((-I/2)*EL*MW*SBA*GaugeXi[Z])/(CW^2*SW)}}, 
-
-  C[S[1], U[3], -U[3]] == {{((-I/2)*EL*MW*SBA*GaugeXi[W])/SW}}, 
- 
-  C[S[1], U[4], -U[4]] == {{((-I/2)*EL*MW*SBA*GaugeXi[W])/SW}},
-
-  C[S[4], U[3], -U[3]] == {{-(EL*MW*GaugeXi[W])/(2*SW)}}, 
-
-  C[S[4], U[4], -U[4]] == {{(EL*MW*GaugeXi[W])/(2*SW)}}
-
-
-   
-  
  
  }
