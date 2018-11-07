@@ -23,7 +23,17 @@ HCbar/:RenormalizedFermion[HCbar[f_],flavor_,c___]:=PR*(Times@@(RenormalizationI
 RenormalizedFR[f_,flavor_,c___]:=Times@@RenormalizationInfoFR[f,flavor,c];*)
 
 
-RenormalizedField[f_,index___]:=Which[FieldType[f]==TypeFermion,RenormalizedFermion[f,index],FieldType[f]==TypeBoson,RenormalizedBoson[f,index]];
+(*Ghost Field Renormalization*)
+RenormalizedGhost[f_,mu___] := (RenormalizationInfo[f,mu][[1]].RenormalizationInfo[f,mu][[2]])[[RenormalizationInfo[f,mu][[3]]]];
+
+
+RenormalizedField[f_,index___]:=Which[FieldType[f]==TypeFermion,
+RenormalizedFermion[f,index],
+FieldType[f]==TypeBoson,
+RenormalizedBoson[f,index],
+FieldType[f]==TypeGhost,
+RenormalizedGhost[f,index]
+];
 
 
 Renormalization[term_]:=term; (*If no special settings, it will not be renormalized*)

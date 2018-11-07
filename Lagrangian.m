@@ -116,3 +116,13 @@ GfC[2,i_,j_]:=Mf[2,i]IndexDelta[i,j];
 Gf[type_,i_,j_]:=Module[{k},SumOver[k,NF]Mf[type,k]ULC[type,i,k]UR[type,k,j]];
 GfC[type_,i_,j_]:=Module[{k},SumOver[k,NF]Mf[type,k]URC[type,i,k]UL[type,k,j]];
 
+
+
+(*Ghost Lagrangian: Only S-U-U part, it is assumed that this part has already been renormalized*)
+LGhostFile="LagrangianData/LGhost.dat";
+If[FileExistsQ[LGhostFile],Print["Reading Ghost Terms From File: "<>LGhostFile<>"......"];LGhost=Get[LGhostFile];,
+Print["Calculating the Ghost Lagrangian......"];
+GhostDD[args_]:=Coefficient[args,\[Theta]A] QuantumField[GhostA]+Coefficient[args,\[Theta]Z]QuantumField[GhostZ]+Coefficient[args,\[Theta]p]QuantumField[GhostWp]+Coefficient[args,\[Theta]m]QuantumField[GhostWm];
+LGhost:=QuantumField[HCbar[GhostZ]]GhostDD[FZ/.{QuantumField[arg_]:>DGT[arg]}/.ScalarTransformation[[1]]]+QuantumField[HCbar[GhostWp]]GhostDD[FP/.{QuantumField[arg_]:>DGT[arg]}/.ScalarTransformation[[1]]]+QuantumField[HCbar[GhostWm]]GhostDD[FM/.{QuantumField[arg_]:>DGT[arg]}/.ScalarTransformation[[1]]];
+Put[LGhost,LGhostFile];
+]

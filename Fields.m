@@ -6,6 +6,7 @@ Needs["FeynCalc`"];
 (**)
 TypeFermion=1;
 TypeBoson=2;
+TypeGhost=3;
 QuantumField/: FieldCharge[QuantumField[f_,args___]]:=FieldCharge[f];
 QuantumField/: FieldCharge[QuantumField[Subscript[f_,r_],args___]]:=FieldCharge[f];
 QuantumField[0,args___]:=0;
@@ -159,3 +160,20 @@ FermionList[index_List]:=QuantumField[#,{},index]&/@{FUp,FDown,Fe,FNu};
 AntiFermionList[index_List]:=QuantumField[HCbar[#],{},index]&/@{FUp,FDown,Fe,FNu};
 RenormalizedFermionList[index_List]:=QuantumField[Subscript[#,R],{},index]&/@{FUp,FDown,Fe,FNu};
 RenormalizedAntiFermionList[index_List]:=QuantumField[Subscript[HCbar[#],R],{},index]&/@{FUp,FDown,Fe,FNu};
+
+
+(*Ghost, temporarily we don't consider field renormalization of ghost (Actually, I don't know how to pin down ghost field renormalization) *)
+GhostWp/:RenormalizationInfo[GhostWp]:={(*FieldNormalization[{UW,UW}]*)DiagonalMatrix[{1,1}],{QuantumField[Subscript[GhostWp,R]],0},1,TypeGhost};
+GhostWp/:FieldType[GhostWp]:=TypeGhost;
+GhostWp/:FieldCharge[GhostWp]:=1;
+GhostWm/:RenormalizationInfo[GhostWm]:={(*FieldNormalization[{UW,UW}]*)DiagonalMatrix[{1,1}],{QuantumField[Subscript[GhostWm,R]],0},1,TypeGhost};
+GhostWm/:FieldType[GhostWm]:=TypeGhost;
+GhostWm/:FieldCharge[GhostWm]:=-1;
+GhostZ/:RenormalizationInfo[GhostZ]:={(*FieldNormalization[{UZ,UA}]*)DiagonalMatrix[{1,1}],{QuantumField[Subscript[GhostZ,R]],QuantumField[Subscript[GhostA,R]]},1,TypeGhost};
+GhostZ/:FieldType[GhostZ]:=TypeGhost;
+GhostZ/:FieldCharge[GhostZ]:=0;
+GhostA/:RenormalizationInfo[GhostA]:={(*FieldNormalization[{UZ,UA}]*)DiagonalMatrix[{1,1}],{QuantumField[Subscript[GhostZ,R]],QuantumField[Subscript[GhostA,R]]},2,TypeGhost};
+GhostA/:FieldType[GhostA]:=TypeGhost;
+GhostA/:FieldCharge[GhostA]:=0;
+
+HCbar/:RenormalizationInfo[HCbar[f_]]:=RenormalizationInfo[f]/.{f->HCbar[f]};

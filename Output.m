@@ -13,6 +13,10 @@ QuantumField[Hm]->S[5],
 QuantumField[Hp]->-S[5],
 QuantumField[Gm]->S[6],
 QuantumField[Gp]->-S[6],
+QuantumField[GhostA]->U[1],
+QuantumField[GhostZ]->U[2],
+QuantumField[GhostWm]->U[3],
+QuantumField[GhostWp]->U[4],
 QuantumField[gamma,args___]:>V[1],
 QuantumField[Z,args___]:>V[2],
 QuantumField[Wm,args___]:>V[3],
@@ -37,7 +41,8 @@ dZfRC[cate_,flav1_,flav2_]:>Conjugate[dZfR1[cate,flav1,flav2]]
 (*Some special replacement*)
 SpecialReplacement={Pair[LorentzIndex[i_],LorentzIndex[j_]]:>1,
 VCKM[args___]:>CKM[args],VCKMC[args___]:>Conjugate[CKM[args]],dVCKM[args___]:>dCKM1[args],dVCKMC[args___]:>Conjugate[dCKM1[args]],
-(exprs_ SumOver[index_,range_]):>IndexSum[exprs,{index,range}]
+(exprs_ SumOver[index_,range_]):>IndexSum[exprs,{index,range}],
+RXi[Z]->GaugeXi[Z],RXi[Wp]->GaugeXi[W],RXi[Wm]->GaugeXi[W]
 };
 
 
