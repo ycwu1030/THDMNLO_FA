@@ -81,7 +81,7 @@ Cases[{expr},FRVertex[{{fields__},lo_,nlo_}]:>FRVertex[C[fields],{{lo,nlo}}]]];
 check=Cases[{expr},FRVertex[{{fields__},lo_,nlo_}]:>{{fields},lo,nlo}];
 tmp=If[Length[check[[1,1]]]==2,(*Check whether we are dealing with 2-point vertex: either S-S or S-V*)
 If[Length[Cases[check[[1,1]],QuantumField[__,_LorentzIndex]]]==1, (*If 1, it is S-V type vertex*)
-{FRVertex[C@@check[[1,1]],{{0,check[[1,3]]/2},{0,-check[[1,3]]/2}}]},(*otherwise, it is S-S type vertex*){FRVertex[C@@check[[1,1]],{{0,Coefficient[check[[1,3]]/.{Pair[_Momentum,_Momentum]:>pp2},pp2]},{0,check[[1,3]]/.{Pair[_Momentum,_Momentum]:>0}}}]}],
+{FRVertex[C@@check[[1,1]],{{0,check[[1,3]]/2},{0,-check[[1,3]]/2}}]},(*otherwise, it is S-S type vertex*){FRVertex[C@@check[[1,1]],{{0,-Coefficient[check[[1,3]]/.{Pair[_Momentum,_Momentum]:>pp2},pp2]},{0,check[[1,3]]/.{Pair[_Momentum,_Momentum]:>0}}}]}],
 tmp];
 tmp=tmp//.FieldCode//.FieldRenormalizationConstantReplace//.SpecialReplacement;
 FormattedStyle[tmp[[1]]]

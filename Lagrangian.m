@@ -56,7 +56,8 @@ PartialDSelf[f_,mu_]:=RightPartialD[mu].f;
 CovariantDoubletD[f_List,mu_]:=(ExpandPartialD[(PartialDSelf[#,mu]&/@f)]/.{RightPartialD[LorentzIndex[nu_]]:>0})-I EL/(2 SW)(Plus@@(PauliSigma[]*Wi[mu])).f+I EL/(2 CW) (IdentityMatrix[2]*BB[mu]).f;
 CovariantDoubletDC[f_List,mu_]:=(ExpandPartialD[(PartialDSelf[#,mu]&/@f)]/.{RightPartialD[LorentzIndex[nu_]]:>0})+I EL/(2 SW)(Plus@@(Conjugate[PauliSigma[]]*Wi[mu])).f-I EL/(2 CW) (IdentityMatrix[2]*BB[mu]).f;
 Print["Calculating the Scalar Kinetic Terms......"];
-LScalarKinetic=Module[{mu},Simplify[CovariantDoubletDC[Phi1C,mu].CovariantDoubletD[Phi1,mu]+CovariantDoubletDC[Phi2C,mu].CovariantDoubletD[Phi2,mu]]];
+LScalarKineticPre=Module[{mu},Simplify[CovariantDoubletDC[Phi1C,mu].CovariantDoubletD[Phi1,mu]+CovariantDoubletDC[Phi2C,mu].CovariantDoubletD[Phi2,mu]]];
+LScalarKinetic=LScalarKineticPre//Expand;
 LScalarKinetic=LScalarKinetic//.{QuantumField[FCPartialD[index_],F_,args___]^2:>-QuantumField[F,args] QuantumField[FCPartialD[index],FCPartialD[index],F,args],
 QuantumField[FCPartialD[index_],F1_,args1___]QuantumField[FCPartialD[index_],F2_,args2___]:>-QuantumField[F1,args1] QuantumField[FCPartialD[index],FCPartialD[index],F2,args2]};
 Put[LScalarKinetic,LSKFile];
