@@ -28,20 +28,31 @@ VMHp2 = D[VScalarPotential,QuantumField[Hp],QuantumField[Hm]]/.{QuantumField[___
 VHHHLMix = D[VScalarPotential,QuantumField[HH],QuantumField[HL]]/.{QuantumField[___]:>0}//FullSimplify;
 
 Print["...... Generating the rules transforming from Lagrangian parameters to physics parameters ......"];
-ReorganizationRules=Solve[{VHH==THH,VHL==THL,VMHH2==MHH2,VMHL2==MHL2,VMHA2==MHA2,VMHp2==MHp2,VHHHLMix==0,M2==m122/(Sin[beta] Cos[beta])},{m112,m222,m122,Lam1,Lam2,Lam3,Lam4,Lam5}];
+(*First replace the parameters in the quadratic terms by the Tadpole parameter, which should be 0 at tree level *)
+VacuumRequirement=Solve[{VHH==THH,VHL==THL},{m112,m222}];
+(*Then replace other parameters by the physical masses using the Tree-level relation, i.e. THH=0 and THL=0*)
+PhysicalParameter=Solve[{
+(VMHH2/.VacuumRequirement[[1]]/.{THH->0,THL->0})==MHH2,
+(VMHL2/.VacuumRequirement[[1]]/.{THH->0,THL->0})==MHL2,
+(VMHA2/.VacuumRequirement[[1]]/.{THH->0,THL->0})==MHA2,
+(VMHp2/.VacuumRequirement[[1]]/.{THH->0,THL->0})==MHp2,
+(VHHHLMix/.VacuumRequirement[[1]]/.{THH->0,THL->0})==0,
+M2==m122/(Sin[beta] Cos[beta])},{Lam1,Lam2,Lam3,Lam4,Lam5,m122}];
+ReorganizationRules=Join[VacuumRequirement[[1]],PhysicalParameter[[1]]];
+(*Solve[{VHH==THH,VHL==THL,VMHH2==MHH2,VMHL2==MHL2,VMHA2==MHA2,VMHp2==MHp2,VHHHLMix==0,M2==m122/(Sin[beta] Cos[beta])},{m112,m222,m122,Lam1,Lam2,Lam3,Lam4,Lam5}];*)
 
 Print["...... Simplify the parameter transformation rules. This will take long time, Be patient ......"];
 ReorganizationRules=Collect[ReorganizationRules,{THH,THL,MHH2,MHL2,MHA2,MHp2,M2},Simplify];
 
 Print["...... Collecting the new Scalar potential. This will take long time, Be patient ......"];
-Tm112=Simplify[Tm112//.ReorganizationRules[[1]]];
-Tm222=Simplify[Tm222//.ReorganizationRules[[1]]];
-Tm122=Simplify[Tm122//.ReorganizationRules[[1]]];
-TLam1=Simplify[TLam1//.ReorganizationRules[[1]]];
-TLam2=Simplify[TLam2//.ReorganizationRules[[1]]];
-TLam3=Simplify[TLam3//.ReorganizationRules[[1]]];
-TLam4=Simplify[TLam4//.ReorganizationRules[[1]]];
-TLam5=Simplify[TLam5//.ReorganizationRules[[1]]];
+Tm112=Simplify[Tm112//.ReorganizationRules];
+Tm222=Simplify[Tm222//.ReorganizationRules];
+Tm122=Simplify[Tm122//.ReorganizationRules];
+TLam1=Simplify[TLam1//.ReorganizationRules];
+TLam2=Simplify[TLam2//.ReorganizationRules];
+TLam3=Simplify[TLam3//.ReorganizationRules];
+TLam4=Simplify[TLam4//.ReorganizationRules];
+TLam5=Simplify[TLam5//.ReorganizationRules];
 
 VScalarPotentialPhysics = Tm112 + Tm222 + Tm122 + TLam1 + TLam2 + TLam3 + TLam4 + TLam5;
 LScalarPotentialPhysics = -VScalarPotentialPhysics;
@@ -126,4 +137,17 @@ Print["Calculating the Ghost Lagrangian......"];
 GhostDD[args_]:=Coefficient[args,\[Theta]A] QuantumField[GhostA]+Coefficient[args,\[Theta]Z]QuantumField[GhostZ]+Coefficient[args,\[Theta]p]QuantumField[GhostWp]+Coefficient[args,\[Theta]m]QuantumField[GhostWm];
 LGhost:=QuantumField[HCbar[GhostZ]]GhostDD[FZ/.{QuantumField[arg_]:>DGT[arg]}/.ScalarTransformation[[1]]]+QuantumField[HCbar[GhostWp]]GhostDD[FP/.{QuantumField[arg_]:>DGT[arg]}/.ScalarTransformation[[1]]]+QuantumField[HCbar[GhostWm]]GhostDD[FM/.{QuantumField[arg_]:>DGT[arg]}/.ScalarTransformation[[1]]];
 Put[LGhost,LGhostFile];
+]
+
+
+(*Gauge Fixing terms, only goldstone part, And we assume that the gauge fixing terms are expressed in terms of renormalized variables, so no need to renormalize them.
+ISSUE: It seems that the mass terms provided by these gauge fixing terms are not used in determining the renormalization constants in G0-A and G^\[PlusMinus]-H^\[PlusMinus] sector. 
+*)
+LGaugeFixFile="LagrangianData/LGaugeFix.dat";
+LGaugeFixReFile="LagrangianData/LGaugeFixRe.dat";
+If[FileExistsQ[LGaugeFixFile],Print["Reading Gauge Fixing Terms From File: "<>LGaugeFixFile<>"......"];LGaugeFix=Get[LGaugeFixFile];,
+LGaugeFix=-1/2/RXi[Z] FZ^2-1/RXi[W]FP FM;
+Put[LGaugeFix,LGaugeFixFile];
+LGaugeFixRe=List@@Expand[LGaugeFix]/.{QuantumField[f_]:>QuantumField[Subscript[f,R]]};
+Put[{LGaugeFixRe,{}},LGaugeFixReFile];
 ]

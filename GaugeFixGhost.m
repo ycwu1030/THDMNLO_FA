@@ -3,7 +3,7 @@
 (*The Gauge Fixing and Ghost related Terms*)
 
 (*Gauge Transformation*)
-(*For Gauge boson part, temporarily ignore the partial derivative part *)
+(*For Gauge boson part, temporarily ignore the partial derivative part, ref:1209.6213v2 *)
 gamma/:GaugeTransform[gamma]:=-I EL (Wp \[Theta]m- Wm \[Theta]p);
 Z/:GaugeTransform[Z]:=I EL/SW CW (Wp \[Theta]m-Wm \[Theta]p);
 Wp/:GaugeTransform[Wp]:=I EL/SW (\[Theta]p(Z CW-gamma SW)-(\[Theta]Z CW-\[Theta]a SW)Wp);
@@ -34,5 +34,5 @@ Union[Cases[Level[{dPhi1,dPhi1C,dPhi2,dPhi2C},Infinity],_DGT]]]//Simplify;
 (*Gauge Fixing terms*)
 (*FA:=RightPartialD[mu].QuantumField[Subscript[gamma,R],{mu}];*)
 FZ:=(*RightPartialD[mu].QuantumField[Subscript[Z,R],{mu}]*)-RXi[Z]MZ QuantumField[G0];
-FP:=(*RightPartialD[mu].QuantumField[Subscript[Wp,R],{mu}]*)-I RXi[Wp]MW QuantumField[Gp];
-FM:=(*RightPartialD[mu].QuantumField[Subscript[Wm,R],{mu}]*)+I RXi[Wp]MW QuantumField[Gm];
+FP:=(*RightPartialD[mu].QuantumField[Subscript[Wp,R],{mu}]*)-I RXi[W]MW QuantumField[Gp];
+FM:=(*RightPartialD[mu].QuantumField[Subscript[Wm,R],{mu}]*)+I RXi[W]MW QuantumField[Gm];
