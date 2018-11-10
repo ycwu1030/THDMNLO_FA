@@ -148,6 +148,6 @@ LGaugeFixReFile="LagrangianData/LGaugeFixRe.dat";
 If[FileExistsQ[LGaugeFixFile],Print["Reading Gauge Fixing Terms From File: "<>LGaugeFixFile<>"......"];LGaugeFix=Get[LGaugeFixFile];,
 LGaugeFix=-1/2/RXi[Z] FZ^2-1/RXi[W]FP FM;
 Put[LGaugeFix,LGaugeFixFile];
+];
 LGaugeFixRe=List@@Expand[LGaugeFix]/.{QuantumField[f_]:>QuantumField[Subscript[f,R]]};
 Put[{LGaugeFixRe,{}},LGaugeFixReFile];
-]
