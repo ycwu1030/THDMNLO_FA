@@ -57,7 +57,8 @@ RightPartialD[LorentzIndex[mu_]]:>0
 (*PreHandling[Lag_]:=ExpandPartialD[Lag]/.MomentumInsert;*)
 $Calculated=0;
 PrepareRenormalizedLag[Lag_] := Block[{Ltemp,Tree,CTs,Term,Lens,LTree,LCTs,i},
-Ltemp=List@@Expand[Lag];
+Ltemp=Expand[Lag];
+If[Head[Ltemp]===Plus,Ltemp=List@@Ltemp];
 Lens=Length[Ltemp];
 Tree={};
 CTs={};

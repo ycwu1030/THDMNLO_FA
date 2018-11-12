@@ -9,12 +9,15 @@ TypeBoson=2;
 TypeGhost=3;
 QuantumField/: FieldCharge[QuantumField[f_,args___]]:=FieldCharge[f];
 QuantumField/: FieldCharge[QuantumField[Subscript[f_,r_],args___]]:=FieldCharge[f];
+QuantumField/: FieldType[QuantumField[f_,args___]]:=FieldType[f];
+QuantumField/: FieldType[QuantumField[Subscript[f_,r_],args___]]:=FieldType[f];
 QuantumField[0,args___]:=0;
 QuantumField[Subscript[0,r_],args___]:=0;
 QuantumField[FCPartialD[LorentzIndex[index__]],Subscript[0,r_],args___]:=0;
 Subscript/: FieldCharge[Subscript[f_,r_]]:=FieldCharge[f];
 Subscript/: HCbar[Subscript[f_,r_]]:=Subscript[HCbar[f],r];
 SetAttributes[FieldCharge,Listable];
+
 
 
 (*Scalar Fields and their renormalization*)
