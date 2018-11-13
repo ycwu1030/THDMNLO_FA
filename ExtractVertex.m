@@ -131,6 +131,26 @@ FR$SS=Flatten[FR$SS];FR$SSS=Flatten[FR$SSS];FR$SSSS=Flatten[FR$SSSS];
 FR$SV=Flatten[FR$SV];FR$SSV=Flatten[FR$SSV];FR$SVV=Flatten[FR$SVV];FR$SSVV=Flatten[FR$SSVV];
 FR$FFS=Flatten[FR$FFS];FR$UUS=Flatten[FR$UUS];
 ];
+(*Arrange the List calculated from GetFRsFromLagList *)
+CombineFRs[FR_List,Vertex_]:=Block[{All,LOs,CTs},
+All=Plus@@Cases[FR,FRVertex[{Vertex,fr_}]:>fr];
+LOs=Collect[All/.{CT$Order1->0},{MHL2,MHH2,MHA2,MHp2,M2},Simplify[#,SW^2+CW^2==1]&];
+CTs=Collect[Coefficient[All,CT$Order1],{dMHL21,dMHH21,dMHA21,dMHp21,dZe1,dbeta1,dalpha1,_dMf,_dZ},Simplify[#,CW^2+SW^2==1]&];
+FRVertex[{Vertex,LOs,CTs}]
+];
+RearrangeFRList[FR_]:=Block[{Vertices,tmp,NVertices,i},
+Vertices=Union[Cases[FR,FRVertex[{ver_,fr_}]:>ver]];
+NVertices=Length[Vertices];
+tmp={};
+$Calculated=0;
+Print["Handling Vertices: ",Dynamic[$Calculated],"/",NVertices];
+For[i=1,i<=NVertices,i++,
+$Calculated=i;
+tmp={tmp,CombineFRs[FR,Vertices[[i]]]};
+];
+FR=Flatten[tmp];
+]
+SetAttributes[RearrangeFRList,HoldFirst];
 (*The function to extract the Feynman Rules*)
 FRwithCT[Lag_List,Fields_List]:=Block[{vertex,vertexCT},
 vertex=Collect[Plus@@((FunctionalD[I #,Fields]/.{QuantumField[args1___].QuantumField[args2___]:>0,QuantumField[args___]:>0})&/@Lag[[1]]),{MHL2,MHH2,MHp2},Simplify[#,CW^2+SW^2==1]&];
