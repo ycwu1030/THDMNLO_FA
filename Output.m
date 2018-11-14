@@ -29,6 +29,22 @@ QuantumField[FDown,{},{i_,c_}]:>F[4,{i,c}]
 };
 
 
+Sigma1PI={
+TP$Sigma[fields_]:>-(TadpoleRC[fields]//.FieldCode),
+Derivative[1][PP$Sigma[fields1_,fields2_]][m2_]:>-(FieldRC[fields1]//.FieldCode),
+PP$Sigma[QuantumField[Subscript[HL,R]],QuantumField[Subscript[HL,R]]][MHL2]->(MassRC[QuantumField[Subscript[HL,R]]]//.FieldCode),
+PP$Sigma[QuantumField[Subscript[HH,R]],QuantumField[Subscript[HH,R]]][MHH2]->(MassRC[QuantumField[Subscript[HH,R]]]//.FieldCode),
+PP$Sigma[QuantumField[Subscript[HH,R]],QuantumField[Subscript[HL,R]]][MHH2]->(FieldRC[QuantumField[Subscript[HL,R]],QuantumField[Subscript[HH,R]]](MHL2-MHH2)/2//.FieldCode),
+PP$Sigma[QuantumField[Subscript[HH,R]],QuantumField[Subscript[HL,R]]][MHL2]->(FieldRC[QuantumField[Subscript[HH,R]],QuantumField[Subscript[HL,R]]](MHH2-MHL2)/2//.FieldCode),
+PP$Sigma[QuantumField[Subscript[HA,R]],QuantumField[Subscript[HA,R]]][MHA2]->(MassRC[QuantumField[Subscript[HA,R]]]//.FieldCode),
+PP$Sigma[QuantumField[Subscript[G0,R]],QuantumField[Subscript[HA,R]]][MHA2]->(FieldRC[QuantumField[Subscript[G0,R]],QuantumField[Subscript[HA,R]]](-MHA2)/2//.FieldCode),
+PP$Sigma[QuantumField[Subscript[G0,R]],QuantumField[Subscript[HA,R]]][0]->(FieldRC[QuantumField[Subscript[HA,R]],QuantumField[Subscript[G0,R]]](MHA2)/2//.FieldCode),
+PP$Sigma[QuantumField[Subscript[Hm,R]],QuantumField[Subscript[Hp,R]]][MHp2]->(MassRC[QuantumField[Subscript[Hm,R]]]//.FieldCode),
+PP$Sigma[QuantumField[Subscript[Gm,R]],QuantumField[Subscript[Hp,R]]][MHp2]->(FieldRC[QuantumField[Subscript[Gm,R]],QuantumField[Subscript[Hm,R]]](-MHp2)/2//.FieldCode),
+PP$Sigma[QuantumField[Subscript[Gp,R]],QuantumField[Subscript[Hm,R]]][0]->(FieldRC[QuantumField[Subscript[Hm,R]],QuantumField[Subscript[Gm,R]]](MHp2)/2//.FieldCode)
+};
+
+
 (*Field Renormalization Constant*)
 FieldRenormalizationConstantReplace={dZ[f_]:>ToExpression["dZ"<>ToString[f]<>"1"],
 dZfL[cate_,flav1_,flav2_]:>dZfL1[cate,flav1,flav2],
@@ -92,3 +108,15 @@ str=OpenWrite[filename];
 WriteString[str,FAOutput];
 Close[str];
 ]
+
+
+ToFeynArtsRenConst[filename_,RenConstList_]:=Block[{SingleConvert,RClist,str},
+SingleConvert[exp_]:=Block[{RC,tmp},
+RC=Cases[{exp},HoldPattern[args1_->args2_]:>{args1,args2}][[1]];
+ToString[InputForm[RenConst[RC[[1]]//.FieldRenormalizationConstantReplace]]]<>" := "<>ToString[InputForm[RC[[2]]//.FieldRenormalizationConstantReplace//.Sigma1PI]]
+];
+RClist=StringRiffle[SingleConvert/@RenConstList,"\n\n"];
+str=OpenWrite[filename];
+WriteString[str,RClist];
+Close[str];
+];

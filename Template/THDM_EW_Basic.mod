@@ -202,7 +202,7 @@ M$ClassesDescription = {
   S[1] == {
   SelfConjugate -> True,
   Indices -> {},
-  Mass -> Mh0,
+  Mass -> MHL,
   PropagatorLabel -> ComposedChar["h", Null, "0"],
   PropagatorType -> ScalarDash,
   PropagatorArrow -> None },
@@ -219,7 +219,7 @@ M$ClassesDescription = {
   S[3] == {
   SelfConjugate -> True,
   Indices -> {},
-  Mass -> MA0,
+  Mass -> MHA,
   PropagatorLabel -> ComposedChar["A", Null, "0"],
   PropagatorType -> ScalarDash,
   PropagatorArrow -> None },
