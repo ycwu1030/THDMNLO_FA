@@ -26,6 +26,10 @@ The definition of above symbol is according to [arXiv:1209.6213](https://arxiv.o
 Counter terms and Renormalization constants are calculated and defined according to KOSY scheme (Phys.Rev.D 70(2004)115002)
 
 ## Usage
+- Copy all the .mod files in ModelFiles and Template to some specific place where FeynArts can read.
+- Do whatever you want in FeynArts.
+
+If you want to regenerate all the THDM part model files: (in this way you may modify some part of the source code to accommodate your conventions or even change to your own models)
 
 - Before running the notebook, please make two new directories:
     1. LagrangianData
