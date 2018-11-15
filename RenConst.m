@@ -41,11 +41,13 @@ FRVertex[{f:{QuantumField[Field[[i,1]]],QuantumField[Field[[j,2]]]}|{QuantumFiel
 :>((lo+nlo+I (PP$Sigma@@f)[p2])/I/.{Pair[_Momentum,_Momentum]:>p2}//Simplify)
 ][[1]],
 {i,1,nField},{j,1,nField}];
+Print[PP[p2]];
 (*Get the mass involved*)
 Msq=Range[nField];
 For[k=1,k<=nField,k++,
 Msq[[k]]=-(PP[0][[k,k]])/.((#->0)&/@CT)/.{PP$Sigma[arg1_,arg2_][arg3_]:>0,dTHL1->0,dTHH1->0};
 ];
+Print[Msq];
 (*Get the solution for the renormalization constant*)
 EquationsForFieldNormalization={
 PP'[Msq[[1]]][[1,1]]==1,(*For first field renormalization*)

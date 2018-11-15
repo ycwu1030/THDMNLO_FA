@@ -31,17 +31,22 @@ QuantumField[FDown,{},{i_,c_}]:>F[4,{i,c}]
 
 Sigma1PI={
 TP$Sigma[fields_]:>-(TadpoleRC[fields]//.FieldCode),
+(*ISSUE: Check whether we should modify the FieldRC to DSelfEnergy[f\[Rule]f,0] for Goldstone*)
 Derivative[1][PP$Sigma[fields1_,fields2_]][m2_]:>-(FieldRC[fields1]//.FieldCode),
 PP$Sigma[QuantumField[Subscript[HL,R]],QuantumField[Subscript[HL,R]]][MHL2]->(MassRC[QuantumField[Subscript[HL,R]]]//.FieldCode),
 PP$Sigma[QuantumField[Subscript[HH,R]],QuantumField[Subscript[HH,R]]][MHH2]->(MassRC[QuantumField[Subscript[HH,R]]]//.FieldCode),
 PP$Sigma[QuantumField[Subscript[HH,R]],QuantumField[Subscript[HL,R]]][MHH2]->(FieldRC[QuantumField[Subscript[HL,R]],QuantumField[Subscript[HH,R]]](MHL2-MHH2)/2//.FieldCode),
 PP$Sigma[QuantumField[Subscript[HH,R]],QuantumField[Subscript[HL,R]]][MHL2]->(FieldRC[QuantumField[Subscript[HH,R]],QuantumField[Subscript[HL,R]]](MHH2-MHL2)/2//.FieldCode),
+(*Note: 
+As in this version, we didn't renormalize the Gauge Fixing term, so when calculate the renormalization constants related to the Goldstone, we need to treat it as massless (but it actually is massive),
+So, we can't use FieldRC for G0-HA mixing and Gp-Hp mixing, because FormCalc will treat G0 Gp having mass MZ and MW. So need to directly use SelfEnergy.
+*)
 PP$Sigma[QuantumField[Subscript[HA,R]],QuantumField[Subscript[HA,R]]][MHA2]->(MassRC[QuantumField[Subscript[HA,R]]]//.FieldCode),
-PP$Sigma[QuantumField[Subscript[G0,R]],QuantumField[Subscript[HA,R]]][MHA2]->(FieldRC[QuantumField[Subscript[G0,R]],QuantumField[Subscript[HA,R]]](-MHA2)/2//.FieldCode),
-PP$Sigma[QuantumField[Subscript[G0,R]],QuantumField[Subscript[HA,R]]][0]->(FieldRC[QuantumField[Subscript[HA,R]],QuantumField[Subscript[G0,R]]](MHA2)/2//.FieldCode),
+PP$Sigma[QuantumField[Subscript[G0,R]],QuantumField[Subscript[HA,R]]][MHA2]->(SelfEnergy[QuantumField[Subscript[HA,R]]->QuantumField[Subscript[G0,R]],MHA]//.FieldCode),
+PP$Sigma[QuantumField[Subscript[G0,R]],QuantumField[Subscript[HA,R]]][0]->(SelfEnergy[QuantumField[Subscript[HA,R]]->QuantumField[Subscript[G0,R]],0]//.FieldCode),
 PP$Sigma[QuantumField[Subscript[Hm,R]],QuantumField[Subscript[Hp,R]]][MHp2]->(MassRC[QuantumField[Subscript[Hm,R]]]//.FieldCode),
-PP$Sigma[QuantumField[Subscript[Gm,R]],QuantumField[Subscript[Hp,R]]][MHp2]->(FieldRC[QuantumField[Subscript[Gm,R]],QuantumField[Subscript[Hm,R]]](-MHp2)/2//.FieldCode),
-PP$Sigma[QuantumField[Subscript[Gp,R]],QuantumField[Subscript[Hm,R]]][0]->(FieldRC[QuantumField[Subscript[Hm,R]],QuantumField[Subscript[Gm,R]]](MHp2)/2//.FieldCode)
+PP$Sigma[QuantumField[Subscript[Gm,R]],QuantumField[Subscript[Hp,R]]][MHp2]->(SelfEnergy[QuantumField[Subscript[Hm,R]]->QuantumField[Subscript[Gm,R]],MHp]//.FieldCode),
+PP$Sigma[QuantumField[Subscript[Gp,R]],QuantumField[Subscript[Hm,R]]][0]->(SelfEnergy[QuantumField[Subscript[Hm,R]]->QuantumField[Subscript[Gm,R]],0]//.FieldCode)
 };
 
 
@@ -58,7 +63,7 @@ dZfRC[cate_,flav1_,flav2_]:>Conjugate[dZfR1[cate,flav1,flav2]]
 SpecialReplacement={Pair[LorentzIndex[i_],LorentzIndex[j_]]:>1,
 VCKM[args___]:>CKM[args],VCKMC[args___]:>Conjugate[CKM[args]],dVCKM[args___]:>dCKM1[args],dVCKMC[args___]:>Conjugate[dCKM1[args]],
 (exprs_ SumOver[index_,range_]):>IndexSum[exprs,{index,range}],
-RXi[Z]->GaugeXi[Z],RXi[Wp]->GaugeXi[W],RXi[Wm]->GaugeXi[W]
+RXi[Z]->GaugeXi[Z],RXi[Wp]->GaugeXi[W],RXi[Wm]->GaugeXi[W],RXi[W]->GaugeXi[W]
 };
 
 
@@ -112,7 +117,7 @@ Close[str];
 
 ToFeynArtsRenConst[filename_,RenConstList_]:=Block[{SingleConvert,RClist,str},
 SingleConvert[exp_]:=Block[{RC,tmp},
-RC=Cases[{exp},HoldPattern[args1_->args2_]:>{args1,args2}][[1]];
+RC=Cases[{exp},HoldPattern[args1_->args2_]:>{args1,Collect[args2,{_MassRC,_FieldRC,dTHL1,dTHH1},Simplify]}][[1]];
 ToString[InputForm[RenConst[RC[[1]]//.FieldRenormalizationConstantReplace]]]<>" := "<>ToString[InputForm[RC[[2]]//.FieldRenormalizationConstantReplace//.Sigma1PI]]
 ];
 RClist=StringRiffle[SingleConvert/@RenConstList,"\n\n"];
