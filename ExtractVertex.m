@@ -6,7 +6,7 @@ Flatten[
 Cases[
 Level[term,1],
 QuantumField[args___]|QuantumField[args___]^n_
-]/.{QuantumField[args___]^n_:>Table[QuantumField[args],n]}
+]/.{QuantumField[args___]^n_:>Table[QuantumField[args],{i,n}]}
 ]];
 (*Identifier for Vertex Type*)
 VT$SS=2;VT$SSS=3;VT$SSSS=4;

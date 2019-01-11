@@ -23,4 +23,4 @@ UR/:SumOver[k_,NF]UR[type_,i_,k_]URC[type_,k_,j_]:=IndexDelta[i,j];
 UR/:SumOver[k_,NF]UR[type_,k_,i_]URC[type_,j_,k_]:=IndexDelta[i,j];
 
 UL/:SumOver[k_,NF]UL[3,i_,k_]ULC[4,k_,j_]:=VCKM[i,j];
-UL/:SumOver[k_,NF]UL[4,i_,k_]ULC[3,k_,j_]:=VCKMC[i,j];
+UL/:SumOver[k_,NF]UL[4,i_,k_]ULC[3,k_,j_]:=VCKMC[j,i];
