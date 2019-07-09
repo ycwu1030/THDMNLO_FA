@@ -38,7 +38,7 @@ RenConst[ dZZA1 ] := FieldRC[V[2], V[1]]
 
 RenConst[ dZZZ1 ] := FieldRC[V[2]]
 
-RenConst[ dZW1 ] := FieldRC[V[3]]
+RenConst[ dZWW1 ] := FieldRC[V[3]]
 
 (*RenConst[ dSW1 ] := CW^2/SW/2 (dMZsq1/MZ^2 - dMWsq1/MW^2)*)
 
