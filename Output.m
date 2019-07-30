@@ -125,3 +125,131 @@ str=OpenWrite[filename];
 WriteString[str,RClist];
 Close[str];
 ];
+
+
+LatexBar[s_String]:=Block[{pieces},
+pieces=StringSplit[s,"_"];
+"\\bar{"<>pieces[[1]]<>"}_"<>Rest[pieces]
+];
+LatexCode={QuantumField[Subscript[f_,__],args___]:>QuantumField[f,args],
+QuantumField[HL]->"h ",
+QuantumField[HH]->"H ",
+QuantumField[HA]->"A ",
+QuantumField[Hm]->"H^{-} ",
+QuantumField[Hp]->"H^{+} ",
+QuantumField[G0]->"G^{0} ",
+QuantumField[Gm]->"G^{-} ",
+QuantumField[Gp]->"G^{+} ",
+QuantumField[GhostA]->"c_{\\gamma} ",
+QuantumField[GhostZ]->"c_{Z} ",
+QuantumField[GhostWm]->"c_{W^{-}} ",
+QuantumField[GhostWp]->"c_{W^{+}} ",
+QuantumField[gamma,args___]:>"\\gamma ",
+QuantumField[Z,args___]:>"Z ",
+QuantumField[Wm,args___]:>"W^{-} ",
+QuantumField[Wp,args___]:>"W^{+} ",
+QuantumField[HCbar[f_], args___]:>LatexBar[QuantumField[f,args]],
+QuantumField[FNu,{},{i_}]:>"\\nu_{"<>ToString[i]<>"} ",
+QuantumField[Fe,{},{i_}]:>"\\ell_{"<>ToString[i]<>"} ",
+QuantumField[FUp,{},{i_,c_}]:>"u_{"<>ToString[i]<>"} ",
+QuantumField[FDown,{},{i_,c_}]:>"d_{"<>ToString[i]<>"} "
+};
+LatexSymbol={
+EL->e,
+vev->v,
+beta->\[Beta],
+alpha->\[Alpha],
+MHH2->
+
+
+
+\!\(\*SubsuperscriptBox[\(m\), \(H\), \(2\)]\),
+MHL2->
+
+
+
+\!\(\*SubsuperscriptBox[\(m\), \(h\), \(2\)]\),
+MHA2->
+
+
+
+\!\(\*SubsuperscriptBox[\(m\), \(A\), \(2\)]\),
+MHp2 -> 
+\!\(\*SubsuperscriptBox[\(m\), \(p\), \(2\)]\),
+SW->Subscript[s, W],
+CW->Subscript[c, W],
+PL->Subscript[P, L],
+PR->Subscript[P, R],
+IndexDelta[c1,c2]->1,
+IndexDelta[i_,j_]:>KroneckerDelta[i,j],
+VCKM[i_,j_]:>Subscript[V, i,j],
+VCKMC[i_,j_]:>
+
+
+\!\(\*SubsuperscriptBox[\(V\), \(i, j\), \(*\)]\),
+Mf[__,i_]:>Subscript[m, Subscript[f, i]],
+M2->Subscript[M, 2]
+};
+RotationMatrixSimplify[exp_]:=Block[{tmp},
+tmp=exp//Simplify[#,CW^2+SW^2==1]&;
+tmp//Expand
+]
+
+
+ConvertToSingleTerms[exp_]:=Block[{tmpexp,exphead,tmp},
+tmpexp=Expand[exp];
+exphead=Head[tmpexp];
+If[exphead===Plus,
+tmp=List@@tmpexp;,
+tmp={tmpexp};
+];
+tmp
+]
+SingleTermLatexStyle[exp_]:=Block[{exphead,sign,tmp},
+exphead=Head[exp];
+If[exphead===Symbol||exphead===Integer,
+  tmp=ToString[InputForm[TeXForm[exp]]];,
+  sign=Sign[(List@@exp)[[1]]];
+  If[sign===-1||sign===-I,
+  tmp=ToString[InputForm[TeXForm[exp]]];,
+  tmp="+"<>ToString[InputForm[TeXForm[exp]]];
+  ];
+];
+tmp
+];
+
+FormattedLatexStyle[exp_]:=Block[{FieldList,FRs,Content,TermsList,SListFirst,SListRest},
+FieldList=exp/.{FRVertex[arg1_,arg2_]:>arg1};
+FRs=exp/.{FRVertex[arg1_,arg2_]:>arg2};
+Content="g_{"<>StringRiffle[FieldList,""]<>"}=\n\t";
+TermsList=ConvertToSingleTerms[FRs[[1]]];
+SListFirst=ToString[InputForm[TeXForm[TermsList[[1]]]]];
+SListRest=StringRiffle[SingleTermLatexStyle[#]&/@(Rest[TermsList]),"\n\t"];
+Content<>SListFirst<>"\n\t"<>SListRest
+];
+ToLatexFile[filename_,Vertex_List,WithFermion_:False]:=Block[{SingleConvert,str,i,totalN,FAOutput,rulelist,Header,Content,Ender},
+Vertex=ReleaseHold[Vertex];
+totalN=Length[Vertex];
+Header="\\begin{align}\n\\begin{autobreak}\n";
+Ender="\n\\end{autobreak}\n\\end{align}\n";
+FAOutput=Header;
+SingleConvert[exp_]:=Block[{expr,tmp},
+expr=exp;
+tmp=Cases[{expr},FRVertex[{{fields__},lo_,nlo_}]:>FRVertex[{fields},{lo//RotationMatrixSimplify}]];
+(*check=Cases[{expr},FRVertex[{{fields__},lo_,nlo_}]:>{{fields},lo,nlo}];*)
+(*tmp=If[Length[check[[1,1]]]==2,(*Check whether we are dealing with 2-point vertex: either S-S or S-V*)
+If[Length[Cases[check[[1,1]],QuantumField[__,_LorentzIndex]]]==1, (*If 1, it is S-V type vertex*)
+{FRVertex[check[[1,1]],{{0,check[[1,3]]/2},{0,-check[[1,3]]/2}}]},
+(*otherwise, it is S-S type vertex*)
+{FRVertex[check[[1,1]],{{0,-Coefficient[check[[1,3]]/.{Pair[_Momentum,_Momentum]:>pp2},pp2]},{0,check[[1,3]]/.{Pair[_Momentum,_Momentum]:>0}}}]}
+],
+tmp];*)
+tmp=tmp//.LatexCode//.LatexSymbol;
+FormattedLatexStyle[tmp[[1]]]
+];
+rulelist=StringRiffle[SingleConvert/@Vertex,",\n\\end{autobreak}\n\\end{align}\n\\begin{align}\n\\begin{autobreak}\n"];
+FAOutput=FAOutput<>rulelist<>Ender;
+str=OpenWrite[filename];
+WriteString[str,FAOutput];
+Close[str];
+]

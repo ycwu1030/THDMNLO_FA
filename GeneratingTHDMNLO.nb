@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     22088,        646]
-NotebookOptionsPosition[     20059,        586]
-NotebookOutlinePosition[     20445,        603]
-CellTagsIndexPosition[     20402,        600]
+NotebookDataLength[     23429,        684]
+NotebookOptionsPosition[     21324,        622]
+NotebookOutlinePosition[     21705,        639]
+CellTagsIndexPosition[     21662,        636]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -582,11 +582,47 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"PathPrefix", "<>", "\"\<ScalarRCs.mod\>\""}], ",", 
     "RenConstList"}], "]"}], ";"}]], "Input",
- CellChangeTimes->{{3.7512010883446407`*^9, 3.7512010966984453`*^9}}]
+ CellChangeTimes->{{3.7512010883446407`*^9, 3.7512010966984453`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PathPrefixLatex", "=", "\"\<LatexFiles/THDM_\>\""}], 
+  ";"}]], "Input",
+ CellChangeTimes->{
+  3.760995544578289*^9, {3.773490786808597*^9, 3.773490788690361*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ToLatexFile", "[", 
+     RowBox[{
+      RowBox[{"PathPrefixLatex", "<>", 
+       RowBox[{"StringTake", "[", 
+        RowBox[{
+         RowBox[{"ToString", "[", "#", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"9", ",", 
+           RowBox[{"-", "2"}]}], "}"}]}], "]"}], "<>", "\"\<.tex\>\""}], ",", 
+      
+      RowBox[{"ReleaseHold", "[", "#", "]"}]}], "]"}], "&"}], "/@", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Hold", "[", "FR$SSS", "]"}], ",", 
+     RowBox[{"Hold", "[", "FR$SSSS", "]"}], ",", 
+     RowBox[{"Hold", "[", "FR$SSV", "]"}], ",", 
+     RowBox[{"Hold", "[", "FR$SSVV", "]"}], ",", 
+     RowBox[{"Hold", "[", "FR$SVV", "]"}], ",", 
+     RowBox[{"Hold", "[", "FR$UUS", "]"}], ",", 
+     RowBox[{"Hold", "[", "FR$FFSI", "]"}], ",", 
+     RowBox[{"Hold", "[", "FR$FFSII", "]"}], ",", 
+     RowBox[{"Hold", "[", "FR$FFSLS", "]"}], ",", 
+     RowBox[{"Hold", "[", "FR$FFSFL", "]"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.773490814469446*^9, 3.773490825846469*^9}}]
 },
 WindowToolbars->"EditBar",
-WindowSize->{1920, 979},
-WindowMargins->{{Automatic, -310}, {800, Automatic}},
+WindowSize->{1280, 699},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 16, \
 2016)",
 StyleDefinitions->"Default.nb"
@@ -607,9 +643,9 @@ Cell[855, 28, 175, 3, 43, "Input"],
 Cell[1033, 33, 643, 11, 169, "Input"],
 Cell[1679, 46, 266, 6, 43, "Input"],
 Cell[1948, 54, 122, 2, 43, "Input"],
-Cell[2073, 58, 1057, 27, 119, "Input"],
-Cell[3133, 87, 722, 21, 94, "Input"],
-Cell[3858, 110, 2244, 65, 219, "Input"],
+Cell[2073, 58, 1057, 27, 144, "Input"],
+Cell[3133, 87, 722, 21, 119, "Input"],
+Cell[3858, 110, 2244, 65, 319, "Input"],
 Cell[6105, 177, 657, 17, 94, "Input"],
 Cell[6765, 196, 160, 3, 43, "Input"],
 Cell[6928, 201, 160, 3, 43, "Input"],
@@ -635,19 +671,21 @@ Cell[11624, 354, 205, 5, 43, "Input"],
 Cell[11832, 361, 209, 5, 43, "Input"],
 Cell[12044, 368, 203, 5, 43, "Input"],
 Cell[12250, 375, 203, 5, 43, "Input"],
-Cell[12456, 382, 735, 11, 135, "Text"],
+Cell[12456, 382, 735, 11, 164, "Text"],
 Cell[13194, 395, 122, 2, 43, "Input"],
-Cell[13319, 399, 696, 18, 43, "Input"],
-Cell[14018, 419, 632, 17, 43, "Input"],
-Cell[14653, 438, 937, 26, 43, "Input"],
+Cell[13319, 399, 696, 18, 69, "Input"],
+Cell[14018, 419, 632, 17, 69, "Input"],
+Cell[14653, 438, 937, 26, 69, "Input"],
 Cell[15593, 466, 265, 7, 43, "Input"],
 Cell[15861, 475, 118, 1, 46, "Text"],
-Cell[15982, 478, 843, 24, 43, "Input"],
+Cell[15982, 478, 843, 24, 69, "Input"],
 Cell[16828, 504, 118, 2, 43, "Input"],
 Cell[16949, 508, 275, 6, 44, "Input"],
 Cell[17227, 516, 1218, 27, 69, "Input"],
-Cell[18448, 545, 1350, 31, 69, "Input"],
-Cell[19801, 578, 254, 6, 43, "Input"]
+Cell[18448, 545, 1350, 31, 94, "Input"],
+Cell[19801, 578, 254, 6, 43, "Input"],
+Cell[20058, 586, 198, 5, 44, "Input"],
+Cell[20259, 593, 1061, 27, 94, "Input"]
 }
 ]
 *)
