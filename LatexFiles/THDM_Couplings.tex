@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have images in pdf, png or jpg format)
+
+\usepackage{jheppub} % for details on the use of the package, please see the JHEP-author-manual
+\usepackage{graphicx}  % needed for figures
+\usepackage{dcolumn}   % needed for some tablese$\cdot$cm
+\usepackage{bm}        % for math
+\usepackage{amssymb}   % for math
+\usepackage{subfigure}
+\usepackage{epstopdf}
+\usepackage{color}
+\usepackage{slashed}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+\usepackage{footnote}
+\usepackage{amsmath}
+\usepackage{autobreak}
+\allowdisplaybreaks[4]
+\usepackage{accents}
+\newlength{\dhatheight}
+\newcommand{\doublehat}[1]{%
+    \settoheight{\dhatheight}{\ensuremath{\hat{#1}}}%
+    \addtolength{\dhatheight}{-0.35ex}%
+    \hat{\vphantom{\rule{1pt}{\dhatheight}}%
+    \smash{\hat{#1}}}}
+\newcommand{\ycwu}[1]{{\bf \color{red} yc: #1}}
+\usepackage{hyperref}
+
+\title{The Couplings in THDM}
+\author[a]{ Yongcheng Wu }
+\affiliation[a]{Ottawa-Carleton Institute for Physics, Carleton University, 1125 Colonel By Drive, Ottawa, Ontario K1S 5B6, Canada}
+\emailAdd{ycwu@physics.carleton.ca}
+
+
+%\date{\today}
+
+\abstract{
+Here I list the couplings in {\color{red} THDM}.
+}
+
+
+\begin{document}
+\titlepage
+\maketitle
+\newpage
+
+\flushbottom
+\section{Notation}
+I list the couplings in {\color{red} THDM}. The couplings listed below should be understood as the feynman rules for corresponding vertex (thus, I have included extra $i$ and multiplied by the symmetry factor if we have same particle in the vertex. Further, for SSS and SSSS vertex, since $\mathcal{L}=-V$, there is an extra $-1$). In particular, the SSV coupling is also multiplied by extra $(p_{s_1}-p_{s_2})^\mu$ for $g_{s_1 s_2 V}$.
+
+\section{SSS Couplings}
+\input{THDM_SSS.tex}
+
+\section{SSSS Couplings}
+\input{THDM_SSSS.tex}
+
+\section{SVV Couplings}
+\input{THDM_SVV}
+
+\section{SSV Couplings}
+\input{THDM_SSV}
+
+\section{SSVV Couplings}
+\input{THDM_SSVV}
+
+\section{FFS Couplings Type I}
+\input{THDM_FFSI}
+
+\section{FFS Couplings Type II}
+\input{THDM_FFSII}
+
+\section{FFS Couplings Type FL}
+\input{THDM_FFSFL}
+
+\section{FFS Couplings Type LS}
+\input{THDM_FFSLS}
+
+\begin{acknowledgments}
+Acknowledgments
+\end{acknowledgments}
+
+\bibliographystyle{bibsty}
+\bibliography{references}
+
+\end{document}
